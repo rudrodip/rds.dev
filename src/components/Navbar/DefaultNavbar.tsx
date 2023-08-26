@@ -1,0 +1,205 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { cn } from "@lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@src/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@src/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
+import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
+import { projects } from "@src/constants/projects";
+import { Button } from "../ui/button";
+
+const DynamicLottieAnimation = dynamic(
+  () => import("@src/components/Header/LottieAnimation"),
+  {
+    loading: () => <p>...</p>,
+  }
+);
+
+export default function Navbar() {
+  return (
+    <nav className="sticky top-0 bg-background bg-blur mb-1 z-50 bg-opacity-30 backdrop-blur-lg">
+      <div className="flex justify-between m-3 lg:mx-24">
+        <div className="flex">
+          <div className="lg:hidden mr-2 flex items-center">
+            <Sheet>
+              <SheetTrigger>
+                <Menu />
+              </SheetTrigger>
+              <SheetContent className="flex-col">
+                <SheetHeader>
+                  <SheetTitle>explore !!!</SheetTitle>
+                  <SheetDescription></SheetDescription>
+                </SheetHeader>
+                <SheetClose asChild>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="flex justify-start"
+                  >
+                    <Link href="/about">about</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="flex justify-start"
+                  >
+                    <Link href="/project">project</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="flex justify-start"
+                  >
+                    <Link href="/blog">blog</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="flex justify-start"
+                  >
+                    <Link href="/#contact">contact</Link>
+                  </Button>
+                </SheetClose>
+              </SheetContent>
+            </Sheet>
+          </div>
+          <Logo />
+          <div className="hidden lg:block">
+            <NavMenu />
+          </div>
+        </div>
+        <ThemeToggleDropDown />
+      </div>
+    </nav>
+  );
+}
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
+
+const NavMenu = () => {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>about me</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/about"
+                  >
+                    <DynamicLottieAnimation />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      rds/rudrodip
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      self-taught programmer with a passion for learning and
+                      creating
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="/#journey" title="journey">
+                my self taught programming journey starts in 2019
+              </ListItem>
+              <ListItem href="/#aboutme" title="who am I?">
+                I&apos;m Rudrodip Sarker, currently a student and a self-taught
+                programmer
+              </ListItem>
+              <ListItem href="/#contact" title="contact">
+                feel free to contact me...
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>projects</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {projects.map((project) => (
+                <ListItem
+                  key={project.title}
+                  title={project.title}
+                  href={project.href}
+                >
+                  {project.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/blog" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              blog
+            </NavigationMenuLink>
+          </Link>
+          <Link href="/#contact" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              contact
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+};
+
+const Logo = () => {
+  return (
+    <Button asChild variant="link">
+      <Link href="/">/rudrodip</Link>
+    </Button>
+  );
+};

@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.main {
+  z-index: -1000;
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/assets/bg/grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.2;
+  filter: invert(var(--invert-value));
+}
+
+.underline_animation {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.underline_animation::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+.underline_animation:hover::after {
+  transform: scaleX(1);
+}
+
+.underline_blue {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.underline_blue::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: hsl(var(--primary));
+}
+
+.mdx-heading {
+  --duration: 1s;
+  --ease: cubic-bezier(0.42, 0, 0.58, 1);
+  display: inline-block;
+  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) calc(100% - var(--p,0%)) / 0 var(--p, 0%) no-repeat;
+  transition: background-size var(--duration) ease-in-out;
+}
+
+.mdx-heading:target {
+  animation: sweepAnimation var(--duration) ease-in-out forwards;
+}
+
+@keyframes sweepAnimation {
+  0% {
+    --p: 0%;
+    color: hsl(var(--secondary-foreground));
+    background-size: 0 var(--p, 0%);
+  }
+  50% {
+    --p: 100%;
+    color: hsl(var(--secondary));
+    background-size: 100% var(--p, 0%);
+  }
+  100% {
+    --p: 200%;
+    color: hsl(var(--secondary-foreground));
+    background-size: 210% var(--p, 0%);
+  }
+}
+
+.heading-animation{
+  @apply text-zinc-500 dark:text-zinc-400
+}
+
+.heading-animation {
+  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+  transition: 0.4s, background-position 0s;
+}
+.heading-animation:hover {
+  --p: 100%;
+  color: hsl(var(--secondary));
+}
+
+/* Tailwind Styles */
+
+.app {
+  @apply relative flex justify-center items-center flex-col overflow-x-hidden max-w-7xl mx-3 lg:mx-auto;
+}
+
+.blogs-container {
+  @apply overflow-x-hidden max-w-5xl mx-3 lg:mx-auto;
+}
+
+.head_text {
+  @apply mt-5 text-5xl font-extrabold font-heading leading-[1.15] sm:text-6xl;
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.gray_gradient {
+  @apply bg-gradient-to-r from-gray-500 to-zinc-500 dark:from-slate-400 dark:to-zinc-400 bg-clip-text text-transparent;
+}
+
+.desc {
+  @apply mt-5 text-lg sm:text-xl max-w-2xl;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
