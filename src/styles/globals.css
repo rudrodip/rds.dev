@@ -213,3 +213,7 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.nav-button{
+  @apply bg-transparent;
+}
