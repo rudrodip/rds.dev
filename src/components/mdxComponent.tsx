@@ -13,6 +13,28 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { cn } from "@/lib/utils";
 import { Callout } from "@src/components/callout";
 import { MdxCard } from "@src/components/mdxCard";
+import { CopyButton } from "./copybutton";
+
+const CustomCodeBlock = ({
+  children,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLPreElement>) => {
+  // Convert the children into a string
+  return (
+    <div className="mb-4 mt-6 relative rounded-lg font-mono text-sm">
+      <div className="flex justify-end py-1 pr-3 bg-zinc-600 text-gray-300 rounded-t-lg">
+        <CopyButton>{children}</CopyButton>
+      </div>
+      <pre
+        className={cn("overflow-x-auto bg-black py-4 rounded-b-lg", className)}
+        {...props}
+      >
+        <code>{children}</code>
+      </pre>
+    </div>
+  );
+};
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -90,7 +112,10 @@ const components = {
   li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
     <li className={cn("mt-2", className)} {...props} />
   ),
-  blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
+  blockquote: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className={cn(
         "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
@@ -119,7 +144,10 @@ const components = {
       {...props}
     />
   ),
-  th: ({ className, ...props }: React.HTMLAttributes<HTMLTableHeaderCellElement>) => (
+  th: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLTableHeaderCellElement>) => (
     <th
       className={cn(
         "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
@@ -128,7 +156,10 @@ const components = {
       {...props}
     />
   ),
-  td: ({ className, ...props }: React.HTMLAttributes<HTMLTableDataCellElement>) => (
+  td: ({
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLTableDataCellElement>) => (
     <td
       className={cn(
         "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
@@ -137,15 +168,7 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  pre: CustomCodeBlock,
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
