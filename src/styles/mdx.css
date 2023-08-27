@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 [data-rehype-pretty-code-fragment] code {
   @apply grid min-w-full break-words border-none bg-transparent pl-3 text-sm text-black;
   counter-reset: line;
