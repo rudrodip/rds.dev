@@ -41,7 +41,7 @@ export default function Header({}: Props) {
             {...motionProps}
             transition={{ delay: 0.1 }}
           >
-            I&apos;m <span className="heading-animation">Rudrodip Sarker</span>
+            I&apos;m <span className="sweep-hover-animation">Rudrodip Sarker</span>
           </motion.h1>
           <motion.p
             className="desc"
@@ -83,7 +83,7 @@ export default function Header({}: Props) {
         >
           <motion.div>
             <Button asChild variant="outline">
-              <Link href="/contact">Get in touch</Link>
+              <Link href="/#contact">Get in touch</Link>
             </Button>
           </motion.div>
           <SocialIcons />
