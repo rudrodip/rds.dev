@@ -89,7 +89,7 @@ export default function Header({}: Props) {
           <SocialIcons />
         </motion.div>
       </div>
-      <div className="svg absolute -z-10 opacity-10 lg:relative lg:z-0 lg:opacity-100">
+      <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100">
         <LottieAnimation />
       </div>
     </div>
