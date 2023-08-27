@@ -9,24 +9,16 @@
 'use client'
 
 import { cn } from '@lib/utils';
-import React, { useRef } from 'react'
 import { ComponentProps } from 'react';
-import { motion, useInView } from 'framer-motion';
 
 const CodeQuote = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "0px 100px -50px 0px" })
-
   return (
-    <motion.blockquote
+    <blockquote
       className={cn(
         'flex gap-2 pt-2 text-3xl',
         'md:text-4xl lg:pt-0 lg:text-5xl',
         'mb-6 lg:mb-24'
       )}
-      initial={{ x: -100, opacity: 0}}
-      animate={isInView ? { x: 0, opacity: 100 } : { x: -100 }}
-      transition={{ type: 'spring', damping: 10, stiffness: 200, duration: 0.4 }}
     >
       <QuoteIcon
         className={cn(
@@ -34,7 +26,7 @@ const CodeQuote = () => {
           'md:-mt-3 md:h-16 lg:h-24',
         )}
       />
-      <span className={cn('flex flex-col')} ref={ref}>
+      <span className={cn('flex flex-col')}>
         <span className={cn('leading-[1.15]')}>
           <em>Coding</em>{' '}
         </span>
@@ -102,7 +94,7 @@ const CodeQuote = () => {
           </span>
         </span>
       </span>
-    </motion.blockquote>
+    </blockquote>
 
   );
 };
