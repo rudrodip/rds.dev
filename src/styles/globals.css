@@ -155,15 +155,15 @@
   }
 }
 
-.heading-animation{
+.sweep-hover-animation{
   @apply text-zinc-500 dark:text-zinc-400
 }
 
-.heading-animation {
+.sweep-hover-animation {
   background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) var(--p, 0) / var(--p, 0) no-repeat;
   transition: 0.4s, background-position 0s;
 }
-.heading-animation:hover {
+.sweep-hover-animation:hover {
   --p: 100%;
   color: hsl(var(--secondary));
 }
