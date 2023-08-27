@@ -36,7 +36,7 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 bg-blur mb-1 z-50 bg-opacity-30 backdrop-blur-lg">
+    <nav className="sticky top-0 dark:bg-black bg-blur mb-1 z-50 dark:bg-opacity-60 backdrop-blur-lg py-[1px]">
       <div className="flex justify-between m-3 lg:mx-24">
         <div className="flex">
           <div className="lg:hidden mr-2 flex items-center">
@@ -95,7 +95,7 @@ const NavMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>about me</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="nav-button">about me</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -129,7 +129,7 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>projects</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="nav-button">projects</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {projects.map((project) => (
@@ -146,12 +146,12 @@ const NavMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'nav-button')}>
               blog
             </NavigationMenuLink>
           </Link>
           <Link href="/#contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'nav-button')}>
               contact
             </NavigationMenuLink>
           </Link>
@@ -163,7 +163,7 @@ const NavMenu = () => {
 
 const Logo = () => {
   return (
-    <Button asChild variant="link">
+    <Button asChild variant="link" className="bg-transparent">
       <Link href="/">/rudrodip</Link>
     </Button>
   );
