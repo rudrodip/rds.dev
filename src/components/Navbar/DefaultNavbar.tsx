@@ -19,13 +19,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@src/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
 import { projects } from "@src/constants/projects";
 import { Button } from "../ui/button";
+import MobileNav from "./MobileNavbar";
 
 const DynamicLottieAnimation = dynamic(
   () => import("@src/components/Header/LottieAnimation"),
@@ -49,42 +49,7 @@ export default function Navbar() {
                   <SheetTitle>explore !!!</SheetTitle>
                   <SheetDescription></SheetDescription>
                 </SheetHeader>
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="flex justify-start"
-                  >
-                    <Link href="/about">about</Link>
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="flex justify-start"
-                  >
-                    <Link href="/project">project</Link>
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="flex justify-start"
-                  >
-                    <Link href="/blog">blog</Link>
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="flex justify-start"
-                  >
-                    <Link href="/#contact">contact</Link>
-                  </Button>
-                </SheetClose>
+                <MobileNav />
               </SheetContent>
             </Sheet>
           </div>
