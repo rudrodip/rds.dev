@@ -1,6 +1,7 @@
 import Header from "@src/components/Header/Header";
 import TerminalUI from "@src/components/TerminalUI/TerminalUI";
 import CodeQuote from "@src/components/Typographics/CodeQuote";
+import ContactPage from "@src/components/Contact/contact";
 import dynamic from "next/dynamic";
 import LoadSpinner from "@src/components/loadspinner";
 
@@ -10,14 +11,6 @@ const DynamicJourney = dynamic(
     loading: () => <LoadSpinner />,
   }
 );
-
-const DynamicContact = dynamic(
-  () => import("@src/components/Contact/contact"),
-  {
-    loading: () => <LoadSpinner />,
-  }
-);
-
 export default function Home() {
   return (
     <>
@@ -31,7 +24,7 @@ export default function Home() {
         <TerminalUI />
       </div>
       <DynamicJourney />
-      <DynamicContact />
+      <ContactPage />
     </>
   );
 }
