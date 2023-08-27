@@ -29,7 +29,7 @@ export const metadata = {
   },
   images: [
     {
-      url: "https://firebasestorage.googleapis.com/v0/b/rcsc-web.appspot.com/o/profilePics%2Fpotrait.jpg?alt=media&token=47b2dd3f-2aab-47b5-921b-e5b007a2fd76",
+      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
       width: 800,
       height: 600,
       alt: "Rudrodip Sarker",
@@ -46,7 +46,7 @@ export const metadata = {
     siteName: "Rudrodip Sarker",
     images: [
       {
-        url: "https://firebasestorage.googleapis.com/v0/b/rcsc-web.appspot.com/o/profilePics%2Fpotrait.jpg?alt=media&token=47b2dd3f-2aab-47b5-921b-e5b007a2fd76",
+        url: "https://avatars.githubusercontent.com/u/77154365?v=4",
         width: 1200,
         height: 630,
         alt: "Rudrodip Sarker",
@@ -64,7 +64,7 @@ export const metadata = {
     description:
       "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
     image: {
-      url: "https://firebasestorage.googleapis.com/v0/b/rcsc-web.appspot.com/o/profilePics%2Fpotrait.jpg?alt=media&token=47b2dd3f-2aab-47b5-921b-e5b007a2fd76",
+      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
       width: 1200,
       height: 630,
       alt: "Rudrodip Sarker",
@@ -79,7 +79,7 @@ export const metadata = {
     description:
       "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
     image: {
-      url: "https://firebasestorage.googleapis.com/v0/b/rcsc-web.appspot.com/o/profilePics%2Fpotrait.jpg?alt=media&token=47b2dd3f-2aab-47b5-921b-e5b007a2fd76",
+      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
       width: 1200,
       height: 630,
       alt: "Rudrodip Sarker",
