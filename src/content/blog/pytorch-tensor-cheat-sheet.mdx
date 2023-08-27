@@ -1,0 +1,260 @@
+---
+title: PyTorch Tensor Operations Cheat Sheet
+description: A comprehensive cheat sheet for common tensor operations in PyTorch.
+date: "2023-08-25"
+image: /assets/images/blog/torch-tensor-cheatsheet.png
+authors:
+  - rds
+---
+
+## PyTorch Tensor Operations Cheat Sheet
+
+### Creating Tensors
+1. Create a tensor:
+   ```python
+   tensor = torch.tensor([1, 2, 3])
+   ```
+
+2. Create a zero tensor:
+   ```python
+   zeros = torch.zeros(3, 3)
+   ```
+
+3. Create an identity matrix:
+   ```python
+   identity = torch.eye(3)
+   ```
+
+4. Create a tensor with random values:
+   ```python
+   rand_tensor = torch.rand(3, 3)
+   ```
+
+5. Create a tensor with specific range:
+   ```python
+   range_tensor = torch.arange(0, 10, 2)
+   ```
+
+### Indexing and Slicing
+1. Index a tensor:
+   ```python
+   element = tensor[0]
+   ```
+
+2. Slice a tensor:
+   ```python
+   slice = tensor[1:3]
+   ```
+
+3. Access rows/columns:
+   ```python
+   row = tensor[0, :]
+   col = tensor[:, 0]
+   ```
+
+### Shape Manipulation
+1. Get tensor shape:
+   ```python
+   shape = tensor.shape
+   ```
+
+2. Reshape tensor:
+   ```python
+   reshaped = tensor.view(2, 2)
+   ```
+
+3. Flatten tensor:
+   ```python
+   flattened = tensor.flatten()
+   ```
+
+### Arithmetic Operations
+1. Addition:
+   ```python
+   result = tensor1 + tensor2
+   ```
+
+2. Subtraction:
+   ```python
+   result = tensor1 - tensor2
+   ```
+
+3. Multiplication:
+   ```python
+   result = tensor1 * tensor2
+   ```
+
+4. Division:
+   ```python
+   result = tensor1 / tensor2
+   ```
+
+### Element-wise Operations
+1. Element-wise square root:
+   ```python
+   sqrt = torch.sqrt(tensor)
+   ```
+
+2. Element-wise exponentiation:
+   ```python
+   exp = torch.exp(tensor)
+   ```
+
+3. Element-wise logarithm:
+   ```python
+   log = torch.log(tensor)
+   ```
+
+4. Element-wise absolute value:
+   ```python
+   abs = torch.abs(tensor)
+   ```
+
+### Reduction Operations
+1. Sum of all elements:
+   ```python
+   sum = tensor.sum()
+   ```
+
+2. Mean of all elements:
+   ```python
+   mean = tensor.mean()
+   ```
+
+3. Maximum element:
+   ```python
+   max_val = tensor.max()
+   ```
+
+4. Minimum element:
+   ```python
+   min_val = tensor.min()
+   ```
+
+### Matrix Operations
+1. Matrix multiplication:
+   ```python
+   matmul = torch.matmul(matrix1, matrix2)
+   ```
+
+2. Element-wise matrix multiplication:
+   ```python
+   element_wise = matrix1 * matrix2
+   ```
+
+3. Matrix transposition:
+   ```python
+   transposed = matrix.T
+   ```
+
+4. Matrix inverse:
+   ```python
+   inverse = torch.inverse(matrix)
+   ```
+
+### Broadcasting
+1. Expand tensor dimensions:
+   ```python
+   expanded = tensor.unsqueeze(0)
+   ```
+
+2. Broadcast tensors for element-wise operations:
+   ```python
+   result = tensor1 + tensor2
+   ```
+
+### GPU Acceleration
+1. Move tensor to GPU:
+   ```python
+   tensor.to('cuda')
+   ```
+
+2. Perform operations on GPU:
+   ```python
+   result = tensor1 + tensor2
+   ```
+
+### Conversion
+1. Convert to NumPy array:
+   ```python
+   numpy_array = tensor.numpy()
+   ```
+
+2. Convert to Python scalar:
+   ```python
+   scalar = tensor.item()
+   ```
+
+### Concatenation and Stacking
+1. Concatenate tensors along a dimension:
+   ```python
+   concatenated = torch.cat([tensor1, tensor2], dim=0)
+   ```
+
+2. Stack tensors along a new dimension:
+   ```python
+   stacked = torch.stack([tensor1, tensor2], dim=0)
+   ```
+
+### Element-wise Comparison
+1. Element-wise equality:
+   ```python
+   equal = torch.eq(tensor1, tensor2)
+   ```
+
+2. Element-wise greater than:
+   ```python
+   gt = torch.gt(tensor1, tensor2)
+   ```
+
+3. Element-wise less than or equal:
+   ```python
+   le = torch.le(tensor1, tensor2)
+   ```
+
+### Element-wise Logic Operations
+1. Element-wise logical AND:
+   ```python
+   logical_and = tensor1 & tensor2
+   ```
+
+2. Element-wise logical OR:
+   ```python
+   logical_or = tensor1 | tensor2
+   ```
+
+3. Element-wise logical NOT:
+   ```python
+   logical_not = ~tensor
+   ```
+
+### Random Number Generation
+1. Generate random tensor from uniform distribution:
+   ```python
+   uniform = torch.rand(3, 3)
+   ```
+
+2. Generate random tensor from normal distribution:
+   ```python
+   normal = torch.randn(3, 3)
+   ```
+
+### Element-wise Round Operations
+1. Round elements to nearest integer:
+   ```python
+   rounded = torch.round(tensor)
+   ```
+
+2. Floor elements to nearest integer:
+   ```python
+   floored = torch.floor(tensor)
+   ```
+
+3. Ceiling elements to nearest integer:
+   ```python
+   ceiled = torch.ceil(tensor)
+   ```
+
+This comprehensive cheat sheet covers a wide range of tensor operations in PyTorch. Experiment with these operations to enhance your understanding and proficiency in working with tensors. For more advanced operations and details, refer to the [official PyTorch documentation](https://pytorch.org/docs/stable/tensors.html).
+
+Feel free to use this cheat sheet as a reference guide for tensor operations in PyTorch!
