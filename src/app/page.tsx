@@ -17,7 +17,7 @@ export default function Home() {
       <div className="flex items-center min-h-screen -translate-y-10">
         <Header />
       </div>
-      <div id="aboutme">
+      <div id="aboutme" className="lg:mb-32">
         <CodeQuote />
       </div>
       <div>
