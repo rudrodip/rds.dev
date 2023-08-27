@@ -78,7 +78,7 @@ export default async function PostPage({ params }: PostPageProps) {
           priority
         />
       )}
-      <div className="hidden text-sm min-[1690px]:inline-flex">
+      <div className="hidden text-sm min-[1790px]:inline-flex">
         <div className="fixed top-28 right-[100px] h-full z-50">
           <DashboardTableOfContents toc={toc} />
         </div>
