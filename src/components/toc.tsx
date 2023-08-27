@@ -5,6 +5,7 @@ import * as React from "react"
 import { TableOfContents } from "@lib/toc"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@hooks/use-mounted"
+import { Separator } from "@src/components/ui/separator"
 
 interface TocProps {
   toc: TableOfContents
@@ -30,8 +31,9 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   }
 
   return mounted ? (
-    <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
+    <div className="flex flex-col justify-between py-3 px-5 space-y-2 border-2 border-secondary rounded-lg">
+      <p className="font-bold mb-2">Table of contents</p>
+      <Separator />
       <Tree tree={toc} activeItem={activeHeading} />
     </div>
   ) : null
@@ -91,13 +93,13 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
     <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0 pt-2")}>
+          <li key={index} className={cn("mt-0")}>
             <a
               href={item.url}
               className={cn(
-                "inline-block no-underline",
+                "inline-block no-underline px-2 py-2",
                 item.url === `#${activeItem}`
-                  ? "font-medium text-primary"
+                  ? "text-primary bg-secondary rounded-sm"
                   : "text-sm text-muted-foreground"
               )}
             >
