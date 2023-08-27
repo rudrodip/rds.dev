@@ -82,14 +82,14 @@ export default function Header({}: Props) {
           transition={{ delay: 0.3 }}
         >
           <motion.div>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="my-5">
               <Link href="/#contact">Get in touch</Link>
             </Button>
           </motion.div>
           <SocialIcons />
         </motion.div>
       </div>
-      <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100">
+      <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
         <LottieAnimation />
       </div>
     </div>
