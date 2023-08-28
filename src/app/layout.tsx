@@ -18,11 +18,11 @@ const fontHeading = localFont({
 });
 
 export const metadata = {
-  metadataBase: "https://rudrodipsarker.vercel.app",
+  metadataBase: "https://rudrodip.vercel.app",
   title: "Rudrodip Sarker",
   description:
     "Rudrodip Sarker is a student at Rajshahi College and enthusiast computer programmer who creates web apps, mobile apps, backend, Python scripts for automation, embedded system programming with C++, robotics, and more.",
-  url: "https://rudrodipsarker.vercel.app/",
+  url: "https://rudrodip.vercel.app/",
   siteName: "Rudrodip Sarker",
   icons: {
     icon: "/assets/logo/logo.png",
@@ -42,7 +42,7 @@ export const metadata = {
     title: "Rudrodip Sarker",
     description:
       "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
-    url: "https://rudrodipsarker.vercel.app",
+    url: "https://rudrodip.vercel.app",
     siteName: "Rudrodip Sarker",
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata = {
   // Twitter metadata
   twitter: {
     card: "summary_large_image",
-    // site: '@yourTwitterHandle',
+    site: '@rds_agi',
     title: "Rudrodip Sarker",
     description:
       "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
@@ -75,7 +75,7 @@ export const metadata = {
   discord: {
     title: "Rudrodip Sarker",
     type: "website",
-    url: "https://rudrodipsarker.vercel.app",
+    url: "https://rudrodip.vercel.app",
     description:
       "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
     image: {
