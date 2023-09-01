@@ -10,6 +10,8 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
+import rehypeKatex from "rehype-katex"
+import remarkMath from 'remark-math'
 import remarkGfm from "remark-gfm"
 import { ComputedFields } from "contentlayer/source-files"
 import { LineElement } from "rehype-pretty-code"
@@ -155,9 +157,10 @@ export default makeSource({
   contentDirPath: "src/content",
   documentTypes: [Page, Doc, Guide, Post, Author],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
       rehypeSlug,
+      rehypeKatex,
       [
         rehypePrettyCode,
         {
