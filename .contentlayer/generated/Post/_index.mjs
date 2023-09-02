@@ -5,7 +5,6 @@ import blog__harmonicOscillationAnalyzerMdx from './blog__harmonic-oscillation-a
 import blog__jsCheatSheetMdx from './blog__js-cheat-sheet.mdx.json' assert { type: 'json' }
 import blog__pythonAutomationMdx from './blog__python-automation.mdx.json' assert { type: 'json' }
 import blog__pytorchTensorCheatSheetMdx from './blog__pytorch-tensor-cheat-sheet.mdx.json' assert { type: 'json' }
-import blog__testMdx from './blog__test.mdx.json' assert { type: 'json' }
 import blog__tsCheatSheetMdx from './blog__ts-cheat-sheet.mdx.json' assert { type: 'json' }
 
-export const allPosts = [blog__expressjsCheatSheetMdx, blog__harmonicOscillationAnalyzerMdx, blog__jsCheatSheetMdx, blog__pythonAutomationMdx, blog__pytorchTensorCheatSheetMdx, blog__testMdx, blog__tsCheatSheetMdx]
+export const allPosts = [blog__expressjsCheatSheetMdx, blog__harmonicOscillationAnalyzerMdx, blog__jsCheatSheetMdx, blog__pythonAutomationMdx, blog__pytorchTensorCheatSheetMdx, blog__tsCheatSheetMdx]
