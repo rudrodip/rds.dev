@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   HoverCard,
   HoverCardContent,
@@ -25,42 +21,10 @@ type SocialIconProps = {
   pfpLink?: string;
 };
 
-const variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const icons = {
-  hidden: {
-    opacity: 0,
-    x: -20,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.2,
-      type: "spring",
-      damping: 10,
-      stiffness: 200,
-    },
-  },
-};
-
 const SocialIcons = () => {
   return (
-    <motion.div
-      className="socials flex justify-start my-5"
-      variants={variants}
-      initial="hidden"
-      whileInView="show"
-      transition={{ delay: 0.2 }}
-      viewport={{ once: true }}
+    <div
+      className="flex justify-start mb-5"
     >
       <SocialIcon
         Icon={Github}
@@ -97,7 +61,7 @@ const SocialIcons = () => {
         link="https://www.instagram.com/martian_agi"
         pfpLink="https://cdn.discordapp.com/avatars/841126921886498817/01c63c7ec8f0c00b7ed14c9d3abafbfd?size=1024"
       />
-    </motion.div>
+    </div>
   );
 };
 
@@ -110,13 +74,13 @@ const SocialIcon: React.FC<SocialIconProps> = ({
   pfpLink,
 }) => {
   return (
-    <HoverCard>
+    <HoverCard openDelay={20} closeDelay={5}>
       <HoverCardTrigger asChild>
         <div
           className="w-8 h-8 rounded-full mr-3"
         >
           <a href={link} target="_blank">
-            <Icon className="hover:scale-105 transition-all ease-in-out" />
+            <Icon className="hover:scale-105 transition-all ease-in-out opacity-75" />
           </a>
         </div>
       </HoverCardTrigger>
