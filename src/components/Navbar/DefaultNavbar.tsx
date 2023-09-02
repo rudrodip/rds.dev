@@ -36,7 +36,7 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 dark:bg-black bg-blur mb-1 z-50 dark:bg-opacity-60 backdrop-blur-lg py-[1px]">
+    <nav className="sticky top-0 dark:bg-black bg-white mb-1 z-50 py-[1px]">
       <div className="flex justify-between m-3 lg:mx-24">
         <div className="flex">
           <div className="lg:hidden mr-2 flex items-center">
