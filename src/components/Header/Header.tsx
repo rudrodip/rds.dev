@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SocialIcons from "@src/components/Socials/SocialIcons";
+import TechStack from "@src/components/TechStack/TechStack";
 import { Button } from "@src/components/ui/button";
 import { motion } from "framer-motion";
 import LottieAnimation from "@src/components/Header/LottieAnimation";
@@ -21,20 +22,9 @@ export default function Header({}: Props) {
         <div>
           <motion.div className="text-2xl flex" {...motionProps}>
             <motion.div>Hi there!</motion.div>
-            <motion.div
-              className="text-2xl ml-2"
-              animate={{ rotate: 60 }}
-              transition={{
-                ease: "linear",
-                duration: 0.5,
-                repeat: Infinity,
-                repeatType: "mirror",
-              }}
-            >
-              <span role="img" aria-label="Wave">
-                👋
+              <span role="img" aria-label="Wave" className="wave-emoji mx-2">
+                🙋🏻‍♂️
               </span>
-            </motion.div>
           </motion.div>
           <motion.h1
             className="head_text"
@@ -73,7 +63,13 @@ export default function Header({}: Props) {
               robotics
             </a>
             ! Right now, I&apos;m learning about machine learning and AI,
-            specifically neural networks.
+            specifically neural networks. Checkout my{" "}
+            <Link
+              href="/projects"
+              className="gray_gradient underline_animation"
+            >
+              projects.
+            </Link>
           </motion.p>
         </div>
         <motion.div
@@ -87,6 +83,7 @@ export default function Header({}: Props) {
             </Button>
           </motion.div>
           <SocialIcons />
+          <TechStack />
         </motion.div>
       </div>
       <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
