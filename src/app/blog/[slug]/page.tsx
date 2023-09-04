@@ -7,8 +7,9 @@
 */
 
 import { notFound } from "next/navigation";
-import { allAuthors, allPosts } from "contentlayer/generated";
+import { Post, allAuthors, allPosts } from "contentlayer/generated";
 
+import { env } from "@env.mjs";
 import { Mdx } from "@src/components/mdxComponent";
 import BlogHeaderAnimation from "@src/components/blog-header-animation";
 import { getTableOfContents } from "@lib/toc";
@@ -17,7 +18,7 @@ import "@src/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { cn, formatDate } from "@lib/utils";
+import { cn, absoluteUrl } from "@lib/utils";
 import { buttonVariants } from "@src/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 
@@ -36,6 +37,52 @@ async function getPostFromParams(params: { slug: string }) {
   }
   return post;
 }
+
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const post = await getPostFromParams(params);
+
+  if (!post) {
+    return {};
+  }
+
+  const url = env.NEXT_PUBLIC_APP_URL;
+
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set("heading", post.title);
+  ogUrl.searchParams.set("type", "Blog Post");
+  ogUrl.searchParams.set("mode", "dark");
+
+  return {
+    title: post.title,
+    description: post.description,
+    authors: post.authors.map((author) => ({
+      name: author,
+    })),
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: absoluteUrl(post.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [ogUrl.toString()],
+    },
+  };
+}
+
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
