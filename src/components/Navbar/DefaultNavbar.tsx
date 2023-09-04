@@ -95,7 +95,11 @@ const NavMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="nav-button">about me</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn(navigationMenuTriggerStyle(), "nav-button")}
+          >
+            <Link href="/about">/about</Link>
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -129,7 +133,9 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="nav-button">projects</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="nav-button">
+            projects
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {projects.map((project) => (
@@ -146,12 +152,16 @@ const NavMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'nav-button')}>
+            <NavigationMenuLink
+              className={cn(navigationMenuTriggerStyle(), "nav-button")}
+            >
               blog
             </NavigationMenuLink>
           </Link>
           <Link href="/#contact" legacyBehavior passHref>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'nav-button')}>
+            <NavigationMenuLink
+              className={cn(navigationMenuTriggerStyle(), "nav-button")}
+            >
               contact
             </NavigationMenuLink>
           </Link>
