@@ -18,6 +18,8 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.6",
+    "@t3-oss/env-core": "^0.6.1",
+    "@t3-oss/env-nextjs": "^0.6.1",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "20.5.3",
     "@types/react": "18.2.21",
@@ -53,6 +55,7 @@
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "zod": "^3.22.2"
   }
 }
