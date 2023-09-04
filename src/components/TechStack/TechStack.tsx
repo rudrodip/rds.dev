@@ -14,7 +14,7 @@ type TechIconProps = {
 const TechStack = () => {
   return (
     <div className="flex-col justify-start my-5">
-      <h1 className="desc mb-4">techs I prefer</h1>
+      <h1 className="text-sm font-mono mb-4 ml-5">{'> techs_i_prefer'}</h1>
       <TechIcon iconUrl="/assets/images/techlogo/react.svg" tooltip="React" />
       <TechIcon iconUrl="/assets/images/techlogo/nodejs.svg" tooltip="Node.js" />
       <TechIcon iconUrl="/assets/images/techlogo/ts.svg" tooltip="Typescript" />
