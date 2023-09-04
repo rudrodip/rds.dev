@@ -24,7 +24,7 @@ type SocialIconProps = {
 const SocialIcons = () => {
   return (
     <div
-      className="flex justify-start mb-5"
+      className="flex justify-start items-center space-x-3"
     >
       <SocialIcon
         Icon={Github}
@@ -77,10 +77,10 @@ const SocialIcon: React.FC<SocialIconProps> = ({
     <HoverCard openDelay={20} closeDelay={5}>
       <HoverCardTrigger asChild>
         <div
-          className="w-8 h-8 rounded-full mr-3"
+          className="flex w-8 h-8 rounded-full items-center"
         >
           <a href={link} target="_blank">
-            <Icon className="hover:scale-105 transition-all ease-in-out opacity-75" />
+            <Icon className="hover:scale-105 transition-all ease-in-out" strokeWidth={1.25} />
           </a>
         </div>
       </HoverCardTrigger>
