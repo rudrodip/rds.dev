@@ -22,16 +22,17 @@ export default function Header({}: Props) {
         <div>
           <motion.div className="text-2xl flex" {...motionProps}>
             <motion.div>Hi there!</motion.div>
-              <span role="img" aria-label="Wave" className="wave-emoji mx-2">
-                🙋🏻‍♂️
-              </span>
+            <span role="img" aria-label="Wave" className="wave-emoji mx-2">
+              🙋🏻‍♂️
+            </span>
           </motion.div>
           <motion.h1
             className="head_text"
             {...motionProps}
             transition={{ delay: 0.1 }}
           >
-            I&apos;m <span className="sweep-hover-animation">Rudrodip Sarker</span>
+            I&apos;m{" "}
+            <span className="sweep-hover-animation">Rudrodip Sarker</span>
           </motion.h1>
           <motion.p
             className="desc"
@@ -72,19 +73,21 @@ export default function Header({}: Props) {
             </Link>
           </motion.p>
         </div>
-        <motion.div
-          className="text-2xl"
-          {...motionProps}
-          transition={{ delay: 0.3 }}
-        >
-          <motion.div>
+        <div className="text-2xl">
+          <motion.div
+            className="flex space-x-4 align-middle"
+            {...motionProps}
+            transition={{ delay: 0.3 }}
+          >
             <Button asChild variant="outline" className="my-5">
               <Link href="/#contact">Get in touch</Link>
             </Button>
+            <SocialIcons />
           </motion.div>
-          <SocialIcons />
-          <TechStack />
-        </motion.div>
+          <motion.div {...motionProps} transition={{ delay: 0.4 }}>
+            <TechStack />
+          </motion.div>
+        </div>
       </div>
       <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
         <LottieAnimation />
