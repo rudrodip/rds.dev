@@ -1,7 +1,7 @@
 ---
 title: Computer Vision-Based Harmonic Oscillation Analysis
 description: This Python project is designed to analyze the harmonic oscillation of an object using computer vision techniques.
-date: "2023-09-04"
+date: "2023-09-05"
 image: /assets/images/blog/harmonic-oscillator/blog-bg.png
 authors:
   - rds
@@ -11,13 +11,9 @@ authors:
 
 ---
 
-<Callout>
-  It is highly advisable for you, to thoroughly go through [UI](#user-interface) section. Doing so will greatly facilitate the project setup process and enable a better grasp of the user interface (UI). Your understanding of this section is pivotal in ensuring the efficient configuration of the project and in comprehending the UI.
-</Callout>
-
 ## Introduction
 
-Sometimes, stepping out of our comfort zone and diving headfirst into a challenge can lead to unexpectedly rewarding experiences. This is precisely what happened when I stumbled upon the [Creative Coding Challenge](https://youtu.be/qaq24krSKow) organized by [Radu Mariescu-Istodor](https://www.youtube.com/@Radu) A call to blend artistry and technology, the challenge was an invitation to explore the limitless possibilities of coding and its potential for creative expression.
+A few days ago, I stumbled upon the [Creative Coding Competition](https://youtu.be/qaq24krSKow) organized by [Radu Mariescu-Istodor](https://www.youtube.com/@Radu), someone I've been following for quite a while. I even joined his Discord server in May 2023. Inspired by his projects and tutorials, I've been recreating some of his work for a while now. I first got hooked on his machine learning tutorials using JavaScript, which I discovered on [freecodecamp.org](https://www.youtube.com/@freecodecamp) youtube channel. So, when I saw this competition, I couldn't resist giving it a shot. It was a bit out of my comfort zone, but the experience turned out to be unexpectedly rewarding. Coding became a canvas for creative expression, and I couldn't be more excited to share this newfound adventure with you today.
 
 ## The Challenge
 
@@ -25,15 +21,55 @@ The challenge was straightforward and enticing: Take a piece of video footage an
 
 ---
 
+<Callout>
+  This is my submission of the project
+
+  [`github.com/rudrodip/Harmonic-Oscillator-CV`](https://github.com/rudrodip/Harmonic-Oscillator-CV)
+</Callout>
+
 # Overview of the project
 
-This project is designed to analyze the harmonic oscillation of an object using computer vision techniques. It leverages various libraries, including OpenCV for video feed processing, SciPy for data analysis, NumPy for numerical operations, and PyQt5 for creating a graphical user interface (GUI). The project detects and tracks an object in a video feed, extracts its motion data, fits it to a damped oscillation function, and calculates physical parameters such as pendulum length and pivot point location.
+This project is a powerful tool designed to analyze harmonic oscillation of objects using computer vision techniques. Leveraging a variety of libraries, including OpenCV for video feed processing, SciPy for data analysis, NumPy for numerical operations, and PyQt5 for a user-friendly graphical interface, it offers a wide range of features to facilitate detailed analysis.
+
+## Key Features
+
+1. **Bob Color Detection**: The system can accurately detect the bob of any color, providing flexibility in object selection.
+
+2. **Contour Detection Options**: Choose from three contour detection methods - color-based, edge-based, or circle detection - to suit your specific tracking needs.
+
+3. **Video Source Flexibility**: Analyze harmonic oscillations from various sources, including:
+   - **Local Video**: Process videos stored on your device for in-depth analysis.
+   - **Webcam**: Utilize your webcam for real-time tracking and motion analysis.
+
+4. **Display Options**:
+   - **Main Video**: Observe the original video feed.
+   - **Contours**: Visualize the detected contours for better tracking insights.
+   - **Mask**: Monitor the real-time masking process and make adjustments as needed.
+
+5. **Real-time Parameter Adjustment**: Easily fine-tune masking parameters in real time and save your configurations for future reference.
+
+6. **Parameter Saving**: After prediction, you can conveniently save the calculated parameters for further analysis and documentation.
+
+7. **Frame Offset Control**: Within the code, set a frame offset and utilize a built-in function to save critical data points, streamlining the analysis process.
+
+8. **Rotation Compensation**: The system intelligently compensates for video rotation, ensuring accurate analysis even when dealing with rotated footage.
+
+9. **Prediction Capabilities**:
+   - **Pivot Point Prediction**: Accurately predict the pivot point of the bob's motion.
+   - **Mean Point Determination**: Find the mean point of the bob's trajectory.
+   - **Path Analysis**: Analyze the bob's path and generate predictions of its corresponding harmonic motion equation.
+
+10. **Physical Properties Estimation**: Utilizing parameters derived from the predicted harmonic motion equation, the system can estimate crucial physical properties of the system, such as the length of the string or other relevant characteristics.
+
+This project provides a robust and versatile platform for in-depth analysis of harmonic oscillations using computer vision techniques. Its user-friendly interface, real-time adjustments, and predictive capabilities make it an invaluable tool for researchers, educators, and enthusiasts exploring dynamic systems and motion analysis.
 
 ---
 
 # How to use it?
 
-Its highly recommended for you to read this section, otherwise it will not be easy to setup the project and to understand the UI.
+<Callout>
+  It is highly advisable for you, to thoroughly go through [UI](#user-interface) section. Doing so will greatly facilitate the project setup process and enable a better grasp of the user interface (UI). Your understanding of this section is pivotal in ensuring the efficient configuration of the project and in comprehending the UI.
+</Callout>
 
 ## Prerequisites
 
@@ -57,13 +93,13 @@ git clone https://github.com/rudrodip/Harmonic-Oscillator-CV
 3. Navigate to your project directory:
 
 ```bash
- cd Harmonic-Oscillator-CV
+cd Harmonic-Oscillator-CV
 ```
 
 4. Create a virtual environment (replace `venv` with your preferred name):
 
 ```bash
-  python -m venv venv
+python -m venv venv
 ```
 
 5. Activate the virtual environment:
@@ -71,13 +107,13 @@ git clone https://github.com/rudrodip/Harmonic-Oscillator-CV
   - On Windows:
 
 ```bash
-  venv\Scripts\activate
+venv\Scripts\activate
 ```
 
   - On macOS and Linux:
 
 ```bash
-  source venv/bin/activate
+source venv/bin/activate
 ```
 
 6. Your terminal prompt should now show the name of the virtual environment, indicating that it's active.
@@ -92,7 +128,7 @@ Once you have your virtual environment set up and activated, you can install the
 2. Install the dependencies from the `requirements.txt` file:
 
 ```bash
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -105,27 +141,11 @@ python app/app.py
 
 If you find any difficulties installing or running it, feel free to [contact](mailto:official.rudrodipsarker@gmail.com) me. I have developed this project on linux (ubuntu 22.04), if you have any issues installing packages on your machine, feel free to change the code.
 
-Note: The OpenCV library you will be using for this project is opencv-python-headless (not opencv-python), so make sure you have the correct library installed in virtual environment, otherwise uninstall opencv-python and reinstall opencv-python-headless using this command
+**Note:** The OpenCV library you will be using for this project is opencv-python-headless (not opencv-python), so make sure you have the correct library installed in virtual environment, otherwise uninstall opencv-python and reinstall opencv-python-headless using this command
 
 ```bash
 pip install opencv-python-headless --no-cache-dir
 ```
-
-## Project Sections
-
-The project can be divided into three major sections:
-
-1. [**Programming**](#programming): In this section, I've covered the development of the user interface and the image processing pipeline, using libraries such as OpenCV and `cvzone`. The UI creation was straightforward, thanks to Python and PyQt5.
-
-2. [**Mathematics**](#mathematics): In the mathematics section of the project, I utilize powerful mathematical tools to extract insights from the data
-
-    - **Curve Fitting with `curve_fit`**: I use SciPy's `curve_fit` function to fit collected data points to a damped oscillation function. This helps me accurately detect and analyze harmonic motion patterns.
-
-    - **`least_square` for Circular Path Detection**: The `least_square` algorithm is not only used for curve fitting but also for assessing the accuracy of circular paths. It ensures that predicted paths closely match the actual object motion, validating the precision of path predictions and harmonic motion analysis.
-
-3. [**Physics**](#physics): While closely related to mathematics, the physics aspect primarily focuses on extracting physical parameters such as pendulum length and pivot point location. These parameters provide valuable insights into the object's harmonic motion.
-
-This breakdown of the user interface and project sections should provide a clearer picture of the project's structure and functionality.
 
 ---
 
@@ -192,6 +212,24 @@ The graph section is perhaps the most visually appealing part of the UI. It util
 
 ---
 
+## Project Sections
+
+The project can be divided into three major sections:
+
+1. [**Programming**](#programming): In this section, I've covered the development of the user interface and the image processing pipeline, using libraries such as OpenCV and `cvzone`. The UI creation was straightforward, thanks to Python and PyQt5.
+
+2. [**Mathematics**](#mathematics): In the mathematics section of the project, I utilize powerful mathematical tools to extract insights from the data
+
+    - **Curve Fitting with `curve_fit`**: I use SciPy's `curve_fit` function to fit collected data points to a damped oscillation function. This helps me accurately detect and analyze harmonic motion patterns.
+
+    - **`least_square` for Circular Path Detection**: The `least_square` algorithm is not only used for curve fitting but also for assessing the accuracy of circular paths. It ensures that predicted paths closely match the actual object motion, validating the precision of path predictions and harmonic motion analysis.
+
+3. [**Physics**](#physics): While closely related to mathematics, the physics aspect primarily focuses on extracting physical parameters such as pendulum length and pivot point location. These parameters provide valuable insights into the object's harmonic motion.
+
+This breakdown of the user interface and project sections should provide a clearer picture of the project's structure and functionality.
+
+---
+
 # Programming
 
 Let's dive deep 🙂
@@ -232,7 +270,7 @@ The main loop of the project was the heart of the image processing section. Here
 
 In this section, I'll take you on a mathematical journey through the key tools and techniques that drive this project, making it easier to understand.
 
-## Detecting Circular Motion with <ins>least_square</ins>
+## Detecting Circular Motion with *least_square*
 
 In this section, I'll walk you through the critical steps involved in using `least_square` to detect circular motion, ***even if the video is rotated***. Let's dive into how I achieved this:
 
@@ -246,85 +284,36 @@ In this section, I'll walk you through the critical steps involved in using `lea
 
 **Why?** To assess how closely the detected path resembles a circle and understand any deviations.
 
-**How?** I implemented the `rotated_circle_residuals` function, powered by `least_square`. This function calculates the differences between the observed data points and the expected points on a rotated circle.
+**How?** I implemented the `circle_residuals` function, powered by `least_square`. This function calculates the differences between the observed data points and the expected points on a circle.
 
 ```py
-def rotated_circle_residuals(params, x, y):
-    """
-    Parameters:
-        params (list): A list containing the parameters of the rotated circle.
-            params[0] (float): 'a' - X-coordinate of the circle's center.
-            params[1] (float): 'b' - Y-coordinate of the circle's center.
-            params[2] (float): 'r' - Radius of the circle.
-            params[3] (float): 'theta' - Angle of rotation of the circle (in radians).
-        x (array): Array containing the x-coordinates of data points.
-        y (array): Array containing the y-coordinates of data points.
+def circle_residuals(params, x, y):
+  """
+  Calculate the residuals for circle fitting.
 
-    Returns:
-        predicted_y (array): Array of residuals, i.e., the differences between
-        the observed data points and the corresponding points on the rotated circle.
+  Args:
+      params: Parameters of the circle (a, b, r).
+      x: x-coordinates of data points.
+      y: y-coordinates of data points.
 
-    Notes:
-        This function calculates the residuals for fitting a rotated circle to a set of data points.
-        It transforms the data points based on the specified center ('a', 'b') and rotation ('theta')
-        and computes the differences between the observed 'y' values and the predicted 'y' values
-        on the rotated circle.
-    """
-    a, b, r, theta = params  # Extract the parameters
-
-    if np.isclose(theta, 0, atol=1e-6):
-        x_rotated = x - a
-        y_rotated = y - b
-    else:
-        x_rotated = (x - a) * np.cos(theta) + (y - b) * np.sin(theta)
-        y_rotated = (y - b) * np.cos(theta) - (x - a) * np.sin(theta)
-
-    predicted_y = x_rotated**2 + y_rotated**2 - r**2  # Calculate residuals based on the rotated circle
-    return predicted_y
+  Returns:
+      Residuals indicating the difference between the data points and the circle model.
+  """
+  a, b, r = params
+  return np.sqrt((x - a) ** 2 + (y - b) ** 2) - r
 ```
 
 $$
-\text{Rotated Circle Residuals: } \text{predicted}_y = (x_{\text{rotated}}^2 + y_{\text{rotated}}^2) - r^2
+\text{Circle Residuals: } y_\text{predicted} = \sqrt{x^2 + y^2} - r
 $$
 
 Where:
 
 - $$ \text{predicted}_y $$ represents the predicted residuals.
-- $$ x_{\text{rotated}} $$ and $$ y_{\text{rotated}} $$ are the transformed coordinates based on the specified center $$a$$, $$b$$ and rotation $$ \theta $$.
 - $$ r $$ is the radius of the circle.
-- $$ \theta $$ is the angle of rotation of the circle (in radians).
 - $$ x $$ and $$ y $$ are the arrays containing the x and y coordinates of data points.
 
-This equation calculates the residuals for fitting a rotated circle to a set of data points, taking into account the transformation of coordinates based on the specified center and rotation.
-
-The rotation of coordinates in the `rotated_circle_residuals` function is based on the following mathematical transformations:
-
-1. If $$\theta$$ (the angle of rotation) is approximately zero:
-
-$$
-\begin{align*}
-x_{\text{rotated}} &= x - a \\
-y_{\text{rotated}} &= y - b
-\end{align*}
-$$
-
-2. If $$\theta$$ is not zero:
-
-$$
-\begin{align*}
-x_{\text{rotated}} &= (x - a) \cdot \cos(\theta) + (y - b) \cdot \sin(\theta) \\
-y_{\text{rotated}} &= (y - b) \cdot \cos(\theta) - (x - a) \cdot \sin(\theta)
-\end{align*}
-$$
-
-Where:
-
-- $$ x_{\text{rotated}} $$ and $$ y_{\text{rotated}} $$ represent the rotated coordinates.
-- $$ x $$ and $$ y $$ are the original coordinates.
-- $$ a $$ and $$ b $$ are the coordinates of the circle's center.
-- $$ theta $$ is the angle of rotation (in radians).
-
-These equations describe how the rotation of coordinates is applied to the data points based on the specified center ('a', 'b') and rotation angle ('theta') in the `rotated_circle_residuals` function.
+This equation calculates the residuals for fitting a circle to a set of data points.
 
 
 ### 3. Optimization
@@ -344,7 +333,7 @@ These equations describe how the rotation of coordinates is applied to the data 
 **The Result?** This entire workflow ensured that I could analyze harmonic motion, correct for video rotation, and extract precise data for further analysis.
 
 
-## Fitting the Harmonic Puzzle with <ins>curve_fit</ins>
+## Fitting the Harmonic Puzzle with *curve_fit*
 
 At the heart of this mathematical marvel lies the `curve_fit` function from SciPy. This is where the magic unfolds, as I delve deep into the data to uncover the secrets of harmonic oscillations.
 
@@ -415,20 +404,23 @@ Now, let's explore the fascinating physics behind harmonic motion in a way that'
 
 ## The Second-Order ODE: What's That?
 
-In the world of physics, we often describe how things move using equations. For our system, we use something called a second-order ordinary differential equation (ODE). Don't worry, it's not as scary as it sounds!
+In the realm of physics, we often describe the motion of objects using mathematical equations. In our system, we employ a second-order ordinary differential equation (ODE):
 
-This equation looks like this:
+Here's the equation in its mathematical form:
 
 $$ 
 m \frac{d^2x(t)}{dt^2} + \gamma \frac{dx(t)}{dt} + kx(t) = 0 
 $$
 
-Here's what it means:
-- $$ x(t) $$ is how far our mass has moved from its resting position at a certain time $$t$$.
-- The squiggly $$d$$ things represent derivatives, which are just fancy ways of talking about how things change. $$\frac{dx(t)}{dt}$$ is the velocity, and $$\frac{d^2x(t)}{dt^2}$$ is the acceleration.
-- $$m$$ is the mass of our object.
-- $$\gamma$$ is how much the damper slows things down.
-- $$k$$ is the spring constant, which tells us how stiff the spring is.
+Here's what each component means:
+
+- $$ x(t) $$ is the object's position at time $$t$$.
+- $$\frac{dx(t)}{dt}$$ is its velocity, and $$\frac{d^2x(t)}{dt^2}$$ is its acceleration.
+- $$m$$ is the object's mass.
+- $$\gamma$$ represents damping coefficient, which resists motion.
+- $$k$$ is the spring constant, indicating how stiff the spring is.
+
+This equation is essential for understanding our system's physics.
 
 ### The Harmonic Solution: It's Beautiful
 
@@ -440,9 +432,9 @@ $$
 
 Let me break it down:
 - $$A$$ is the amplitude, which is like how far our mass swings.
-- $$\gamma$$ is still the damping thing, but don't worry, it's not as scary anymore.
-- $$\omega$$ is the angular frequency, and it's related to how fast our system naturally likes to swing. It depends on things like the length of a pendulum's string.
-- $$\phi$$ is the phase angle, which is all about the timing of our oscillation.
+- $$\gamma$$ represents damping coefficient, which resists motion.
+- $$\omega$$ is the angular frequency.
+- $$\phi$$ is the phase angle.
 - $$C$$ is just a constant that might shift our motion up or down.
 
 ### Relating to a Damped Pendulum
@@ -456,7 +448,7 @@ $$
 $$
 
 - $$\theta(t)$$ is the angle our pendulum makes with the vertical.
-- $$\gamma$$ is still that damping thing.
+- $$\gamma$$ represents damping coefficient, which resists motion.
 - $$\omega_0$$ is the natural angular frequency of the pendulum, and it depends on the length of the string and gravity.
 
 ### Why $$\omega$$ Matters
@@ -512,22 +504,11 @@ $$
 
 A compound pendulum, also known as a physical pendulum, is different from a simple pendulum because it has an extended mass distribution rather than a point mass at the end of a string. To calculate the angular frequency ($$\omega_0$$) for a compound pendulum, you need to consider the moment of inertia (MOI) of the pendulum about its pivot point.
 
-The formula for the angular frequency ($$\omega_0$$) of a compound pendulum is given as follows:
-
-$$
-\omega_0 = \sqrt{\frac{mgd}{I}}
-$$
-
-Where:
-- $$\omega$$ is the angular frequency of the compound pendulum.
-- $$m$$ is the mass of the pendulum.
-- $$g$$ is the acceleration due to gravity.
-- $$d$$ is the distance between the pivot point and the center of mass of the pendulum.
-- $$I$$ is the moment of inertia of the pendulum about the pivot point.
-
 The moment of inertia ($$I$$) depends on the shape and distribution of mass in the pendulum. The moment of inertia of the spherical bob about its center is given by:
 
-$$I_{\text{bob}} = \frac{2}{5} m r^2$$
+$$
+I_{\text{bob}} = \frac{2}{5} m r^2
+$$
 
 Where:
 - $$m$$ is the mass of the spherical bob.
@@ -535,7 +516,9 @@ Where:
 
 The moment of inertia of the pendulum about its pivot point, taking into account both the bob and the string, is the sum of the moments of inertia of the bob and the string:
 
-$$I = I_{\text{bob}} + ml^2$$
+$$
+I = I_{\text{bob}} + ml^2
+$$
 
 Where:
 - $$I$$ is the moment of inertia of the compound pendulum about its pivot point.
@@ -557,3 +540,7 @@ Where:
 So, we can say $$\omega_0$$ (natural frequency of a damped pendulum) is a function of both length ($$L$$) and radius ($$r$$).
 
 We have reached a point where we have gathered essential information to grasp the project. By utilizing the [curve_fit](#fitting-the-harmonic-puzzle-with-curve_fit), I can extract the suitable parameters for the [model](#fitting-the-harmonic-puzzle-with-curve_fit). Subsequently, I apply these parameters to the physics principles discussed earlier to calculate the length of the pendulum string. However, determining the radius of the bob is more intricate, as the angular frequency ($$\omega$$) relies on both the length and radius. To address this challenge, I derive the length of the string using the assumption that the natural angular frequency ($$\omega_0$$) adheres to the formula $$\omega_0 = \sqrt{\frac{g}{l}}$$, where $$g$$ is the acceleration due to gravity.
+
+---
+
+Until our next coding escapade, happy coding, and may your bugs be as elusive as Schroedinger's cat! 🐱💻✨
