@@ -75,11 +75,11 @@ export default function Header({}: Props) {
         </div>
         <div className="text-2xl">
           <motion.div
-            className="flex space-x-4 align-middle"
+            className="flex space-x-4 align-middle flex-wrap my-5"
             {...motionProps}
             transition={{ delay: 0.3 }}
           >
-            <Button asChild variant="outline" className="my-5">
+            <Button asChild variant="outline" className="hidden lg:inline-block">
               <Link href="/#contact">Get in touch</Link>
             </Button>
             <SocialIcons />

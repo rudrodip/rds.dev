@@ -1,28 +1,8 @@
-import Image from "next/image";
-import Logo from "@public/assets/logo/rds.png";
-import Link from "next/link";
-
-interface CategoryProps {
-  name: string;
-  links: Record<string, string>;
-}
-
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-secondary">
       <div className="bg-opacity-75">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row s">
-          <Link href="/">
-            <div className="flex title-font font-medium items-center mx-4">
-              <Image
-                src={Logo}
-                alt="RDS"
-                width={25}
-                height={25}
-                className="rounded-md"
-              />
-            </div>
-          </Link>
           <p className="text-sm text-center sm:text-left flex flex-row justify-center">
             © 2023,
             <a

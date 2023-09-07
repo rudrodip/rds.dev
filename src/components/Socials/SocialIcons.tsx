@@ -24,7 +24,7 @@ type SocialIconProps = {
 const SocialIcons = () => {
   return (
     <div
-      className="flex justify-start items-center space-x-3"
+      className="flex justify-start items-center space-x-3 flex-wrap"
     >
       <SocialIcon
         Icon={Github}
