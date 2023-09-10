@@ -5,7 +5,7 @@ import SocialIcons from "@src/components/Socials/SocialIcons";
 import TechStack from "@src/components/TechStack/TechStack";
 import { Button } from "@src/components/ui/button";
 import { motion } from "framer-motion";
-import LottieAnimation from "@src/components/Header/LottieAnimation";
+import Image from "next/image";
 
 type Props = {};
 
@@ -79,7 +79,11 @@ export default function Header({}: Props) {
             {...motionProps}
             transition={{ delay: 0.3 }}
           >
-            <Button asChild variant="outline" className="hidden lg:inline-block">
+            <Button
+              asChild
+              variant="outline"
+              className="hidden lg:inline-block"
+            >
               <Link href="/#contact">Get in touch</Link>
             </Button>
             <SocialIcons />
@@ -89,8 +93,20 @@ export default function Header({}: Props) {
           </motion.div>
         </div>
       </div>
-      <div className="svg absolute -z-10 opacity-20 dark:opacity-10 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
-        <LottieAnimation />
+      <div className="svg absolute -z-10 opacity-30 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
+        <Image
+          src="/assets/images/pfp-outline.svg"
+          alt=""
+          width={500}
+          height={500}
+          className="absolute overlay-img"
+        />
+        <Image
+          src="/assets/images/pfp-bg.png"
+          alt=""
+          width={500}
+          height={500}
+        />
       </div>
     </div>
   );

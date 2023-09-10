@@ -129,7 +129,8 @@
   --duration: 1s;
   --ease: cubic-bezier(0.42, 0, 0.58, 1);
   display: inline-block;
-  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) calc(100% - var(--p,0%)) / 0 var(--p, 0%) no-repeat;
+  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0)
+    calc(100% - var(--p, 0%)) / 0 var(--p, 0%) no-repeat;
   transition: background-size var(--duration) ease-in-out;
 }
 
@@ -155,18 +156,39 @@
   }
 }
 
-.sweep-hover-animation{
-  @apply text-zinc-500 dark:text-zinc-400
+.sweep-hover-animation {
+  @apply text-zinc-500 dark:text-zinc-400;
 }
 
 .sweep-hover-animation {
-  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+  background: linear-gradient(hsl(var(--secondary-foreground)) 0 0) var(--p, 0) /
+    var(--p, 0) no-repeat;
   transition: 0.4s, background-position 0s;
 }
 .sweep-hover-animation:hover {
   --p: 100%;
   color: hsl(var(--secondary));
 }
+
+.overlay-img {
+  animation: overlayAnimation 3s linear infinite;
+}
+
+@keyframes overlayAnimation {
+  0% {
+    transform: translate(-0.5px, -0.5px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(2px, 2px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-0.5px, -0.5px);
+    opacity: 0.7;
+  }
+}
+
 
 /* Tailwind Styles */
 
@@ -219,5 +241,5 @@
 }
 
 .wave-emoji {
-  @apply animate-bounce
+  @apply animate-bounce;
 }
