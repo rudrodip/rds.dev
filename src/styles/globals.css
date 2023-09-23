@@ -157,7 +157,7 @@
 }
 
 .sweep-hover-animation {
-  @apply text-zinc-500 dark:text-zinc-400;
+  @apply text-zinc-500 dark:text-zinc-200;
 }
 
 .sweep-hover-animation {
