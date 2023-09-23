@@ -10,7 +10,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Bot,
   LucideIcon,
 } from "lucide-react";
 
@@ -42,12 +41,6 @@ const SocialIcons = () => {
         Icon={Linkedin}
         accountName="Rudrodip Sarker"
         link="https://www.linkedin.com/in/rudrodip-sarker-964392262"
-      />
-      <SocialIcon
-        Icon={Bot}
-        accountName="im_banana_man"
-        link="https://discordapp.com/users/841126921886498817"
-        pfpLink="https://cdn.discordapp.com/avatars/841126921886498817/01c63c7ec8f0c00b7ed14c9d3abafbfd?size=1024"
       />
       <SocialIcon
         Icon={Facebook}
