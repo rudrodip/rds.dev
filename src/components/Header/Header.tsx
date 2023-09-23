@@ -6,6 +6,7 @@ import TechStack from "@src/components/TechStack/TechStack";
 import { Button } from "@src/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import DiscordAppearance from "@src/components/Socials/DiscordApperance";
 
 type Props = {};
 
@@ -34,6 +35,7 @@ export default function Header({}: Props) {
             I&apos;m{" "}
             <span className="sweep-hover-animation">Rudrodip Sarker</span>
           </motion.h1>
+          <DiscordAppearance />
           <motion.p
             className="desc"
             {...motionProps}
