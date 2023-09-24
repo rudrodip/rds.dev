@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Card } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@src/components/ui/avatar";
 import { DiscordData } from "discord";
+import { Skeleton } from "../ui/skeleton";
 
 function DiscordApperance() {
   const [data, setData] = useState<DiscordData | null>(null);
@@ -30,7 +31,7 @@ function DiscordApperance() {
   }, []);
 
   if (!data) {
-    return "";
+    return <Skeleton className="h-20 w-2/3 my-4" />;
   }
 
   const custom_state = data.activities.find(
