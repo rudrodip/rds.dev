@@ -5,8 +5,8 @@ import SocialIcons from "@src/components/Socials/SocialIcons";
 import TechStack from "@src/components/TechStack/TechStack";
 import { Button } from "@src/components/ui/button";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import DiscordAppearance from "@src/components/Socials/DiscordApperance";
+import LottieAnimation from "./LottieAnimation";
 
 type Props = {};
 
@@ -92,21 +92,7 @@ export default function Header({}: Props) {
           </motion.div>
         </div>
       </div>
-      <div className="svg absolute -z-10 opacity-30 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
-        <Image
-          src="/assets/images/pfp-outline.svg"
-          alt=""
-          width={500}
-          height={500}
-          className="absolute overlay-img"
-        />
-        <Image
-          src="/assets/images/pfp-bg.png"
-          alt=""
-          width={500}
-          height={500}
-        />
-      </div>
+      <LottieAnimation />
     </div>
   );
 }

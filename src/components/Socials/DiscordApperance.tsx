@@ -1,86 +1,104 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Card } from "../ui/card";
+import React from "react";
+import { Card } from "@src/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@src/components/ui/avatar";
-import { DiscordData } from "discord";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@src/components/ui/skeleton";
+import { useLanyard } from "react-use-lanyard";
 
 function DiscordApperance() {
-  const [data, setData] = useState<DiscordData | null>(null);
+  const { status } = useLanyard({
+    userId: "841126921886498817",
+    socket: true,
+  });
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const laneyard = await fetch(
-          "https://api.lanyard.rest/v1/users/841126921886498817"
-        );
-
-        if (laneyard.ok) {
-          const response = await laneyard.json();
-          setData(response.data);
-        } else {
-          console.error("Failed to fetch data from Lanyard API");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  if (!data) {
-    return <Skeleton className="h-20 w-2/3 my-4" />;
-  }
-
-  const custom_state = data.activities.find(
-    (elem) => elem.name == "Custom Status"
-  )?.state;
-  return (
-    <Card className="text-sm font-mono flex my-2 lg:w-2/3 sweep-hover-animation">
-      <a href="https://discordapp.com/users/841126921886498817" target="_blank">
+  if (!status) {
+    return (
+      <Card className="h-20 w-2/3 my-4">
         <div className="flex gap-3 p-3 items-start">
           <div>
+            <Skeleton className="w-10 h-10 rounded-full" />
+          </div>
+          <div>
+            <Skeleton className="w-40 h-5 mb-2" />
+            <Skeleton className="w-5 h-5 rounded-full" />
+          </div>
+        </div>
+      </Card>
+    );
+  }
+
+  const custom_state = status.activities.find(
+    (elem) => elem.name == "Custom Status"
+  )?.state;
+  const coding = status.activities.find((elem) => elem.name == "Code");
+
+  return (
+    <Card className="text-sm font-mono flex my-2 lg:w-2/3">
+      <div className="flex gap-3 p-3 items-start">
+        <div>
+          <a
+            href="https://discordapp.com/users/841126921886498817"
+            target="_blank"
+          >
             <Avatar>
-              {(data.active_on_discord_desktop ||
-                data.active_on_discord_mobile ||
-                data.active_on_discord_web) && (
+              {(status.active_on_discord_desktop ||
+                status.active_on_discord_mobile ||
+                status.active_on_discord_web) && (
                 <span className="w-3 h-3 bg-green-500 rounded-full absolute bottom-0 right-0 border border-white"></span>
               )}
 
               <AvatarImage
-                src={`https://cdn.discordapp.com/avatars/841126921886498817/${data.discord_user.avatar}`}
+                src={`https://cdn.discordapp.com/avatars/841126921886498817/${status.discord_user.avatar}`}
               />
               <AvatarFallback>RDS</AvatarFallback>
             </Avatar>
-          </div>
-          <div>
-            <p>{data.discord_user.username}</p>
-            <div className="flex space-x-2">
-              <span>
-                {
-                  data.activities.find((elem) => elem.name == "Custom Status")
-                    ?.emoji?.name
-                }
-              </span>
+          </a>
+        </div>
+        <div>
+          <p>{status.discord_user.username}</p>
+          <div className="flex space-x-2">
+            <span>
+              {
+                status.activities.find((elem) => elem.name == "Custom Status")
+                  ?.emoji?.name
+              }
+            </span>
+            <div>
               {custom_state ? (
                 <h1>{custom_state}</h1>
-              ) : data.listening_to_spotify ? (
-                <h1>
-                  listening to{" "}
-                  <span className="text-cyan-500">{data.spotify?.song}</span>
-                </h1>
-              ) : data.activities.length >= 1 ? (
-                <h1>{data.activities[1]?.details}</h1>
+              ) : status.listening_to_spotify ? (
+                <div>
+                  <h1>
+                    listening to{" "}
+                    <a
+                      className="text-cyan-500"
+                      href={`https://open.spotify.com/track/${status.spotify?.track_id}`}
+                      target="_blank"
+                    >
+                      {status.spotify?.song}
+                    </a>
+                  </h1>
+                </div>
+              ) : status.activities.length >= 1 ? (
+                <h1>{status.activities[1]?.details}</h1>
               ) : (
                 "not too much"
               )}
             </div>
-            <p>coding 24/7, 366 days a year</p>
+          </div>
+          <div>
+            {coding ? (
+              <div>
+                <p>{coding.state}</p>
+                <p>{coding.details}</p>
+              </div>
+            ) : (
+              "coding 24/7, 366 days a year"
+            )}
           </div>
         </div>
-      </a>
+      </div>
     </Card>
   );
 }
