@@ -21,7 +21,7 @@ export default function Header({}: Props) {
     <div className="flex w-full justify-around my-10 lg:my-32">
       <div className="flex flex-col justify-between">
         <div>
-          <motion.div className="text-2xl flex" {...motionProps}>
+          <motion.div className="text-2xl flex">
             <motion.div>Hi there!</motion.div>
             <span role="img" aria-label="Wave" className="wave-emoji mx-2">
               🙋🏻‍♂️
@@ -29,17 +29,15 @@ export default function Header({}: Props) {
           </motion.div>
           <motion.h1
             className="head_text"
-            {...motionProps}
-            transition={{ delay: 0.1 }}
           >
             I&apos;m{" "}
             <span className="sweep-hover-animation">Rudrodip Sarker</span>
           </motion.h1>
-          <DiscordAppearance />
+          <motion.div>
+            <DiscordAppearance />
+          </motion.div>
           <motion.p
             className="desc"
-            {...motionProps}
-            transition={{ delay: 0.2 }}
           >
             I love creating web and mobile apps,{" "}
             <a
@@ -79,7 +77,6 @@ export default function Header({}: Props) {
           <motion.div
             className="flex space-x-4 align-middle flex-wrap my-5"
             {...motionProps}
-            transition={{ delay: 0.3 }}
           >
             <Button
               asChild
@@ -90,7 +87,7 @@ export default function Header({}: Props) {
             </Button>
             <SocialIcons />
           </motion.div>
-          <motion.div {...motionProps} transition={{ delay: 0.4 }}>
+          <motion.div {...motionProps} transition={{ delay: 0.2 }}>
             <TechStack />
           </motion.div>
         </div>
