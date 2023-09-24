@@ -71,9 +71,9 @@ function DiscordApperance() {
                   <span className="text-cyan-500">{data.spotify?.song}</span>
                 </h1>
               ) : data.activities.length >= 1 ? (
-                <h1>{data.activities[1].details}</h1>
+                <h1>{data.activities[1]?.details}</h1>
               ) : (
-                "idling "
+                "not too much"
               )}
             </div>
             <p>coding 24/7, 366 days a year</p>
