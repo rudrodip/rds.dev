@@ -27,18 +27,14 @@ export default function Header({}: Props) {
               🙋🏻‍♂️
             </span>
           </motion.div>
-          <motion.h1
-            className="head_text"
-          >
+          <motion.h1 className="head_text">
             I&apos;m{" "}
             <span className="sweep-hover-animation">Rudrodip Sarker</span>
           </motion.h1>
           <motion.div>
             <DiscordAppearance />
           </motion.div>
-          <motion.p
-            className="desc"
-          >
+          <motion.p className="desc">
             I love creating web and mobile apps,{" "}
             <a
               href="https://github.com/rudrodip/student-management-api"
@@ -92,7 +88,9 @@ export default function Header({}: Props) {
           </motion.div>
         </div>
       </div>
-      <LottieAnimation />
+      <div className="absolute -z-10 opacity-30 lg:relative lg:z-0 lg:opacity-100 lg:dark:opacity-100">
+        <LottieAnimation />
+      </div>
     </div>
   );
 }
