@@ -29,30 +29,31 @@ const SocialIcons = () => {
         Icon={Github}
         accountName="rudrodip"
         link="https://github.com/rudrodip"
-        pfpLink="https://avatars.githubusercontent.com/u/77154365?v=4"
+        pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
       <SocialIcon
         Icon={Twitter}
         accountName="@rds_agi"
         link="https://twitter.com/rds_agi"
-        pfpLink="https://pbs.twimg.com/profile_images/1694236905268019200/_8bnWrQ5_400x400.jpg"
+        pfpLink="https://unavatar.io/twitter/rds_agi"
       />
       <SocialIcon
         Icon={Linkedin}
         accountName="Rudrodip Sarker"
         link="https://www.linkedin.com/in/rudrodip-sarker-964392262"
+        pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
       <SocialIcon
         Icon={Facebook}
         accountName="Rudrodip Sarker"
         link="https://facebook.com/enthusiast.math"
-        pfpLink="https://cdn.discordapp.com/avatars/841126921886498817/01c63c7ec8f0c00b7ed14c9d3abafbfd?size=1024"
+        pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
       <SocialIcon
         Icon={Instagram}
         accountName="@martian_agi"
         link="https://www.instagram.com/martian_agi"
-        pfpLink="https://cdn.discordapp.com/avatars/841126921886498817/01c63c7ec8f0c00b7ed14c9d3abafbfd?size=1024"
+        pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
     </div>
   );
@@ -81,7 +82,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
         <div className="flex justify-between space-x-4">
           <Avatar>
             <AvatarImage src={pfpLink} />
-            <AvatarFallback>VC</AvatarFallback>
+            <AvatarFallback>RDS</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
             <a
