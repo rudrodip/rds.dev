@@ -34,7 +34,7 @@ export default function Header({}: Props) {
           <motion.div>
             <DiscordAppearance />
           </motion.div>
-          <motion.p className="desc">
+          <motion.p className="max-w-2xl">
             I love creating web and mobile apps,{" "}
             <a
               href="https://github.com/rudrodip/student-management-api"
