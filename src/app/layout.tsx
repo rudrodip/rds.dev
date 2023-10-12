@@ -2,7 +2,7 @@ import "@src/styles/globals.css";
 import { ThemeProvider } from "@src/components/theme-provider";
 import Navbar from "@src/components/Navbar/DefaultNavbar";
 import Footer from "@src/components/Footer/Footer";
-import { cn } from "@lib/utils";
+import { cn } from "@src/lib/utils";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { cn } from "@lib/utils";
+import { cn } from "@src/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,

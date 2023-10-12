@@ -10,7 +10,7 @@ import * as React from "react";
 import Image, { ImageProps } from "next/image";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@src/lib/utils";
 import { Callout } from "@src/components/callout";
 import { MdxCard } from "@src/components/mdxCard";
 import { CopyButton } from "./copybutton";

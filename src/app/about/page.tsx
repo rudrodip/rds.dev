@@ -3,7 +3,7 @@ import { allPages } from "contentlayer/generated";
 
 import { Mdx } from "@src/components/mdxComponent";
 import MdxHeaderAnimation from "@src/components/mdx-header-animation";
-import { getTableOfContents } from "@lib/toc";
+import { getTableOfContents } from "@src/lib/toc";
 import { DashboardTableOfContents } from "@src/components/toc";
 import "@src/styles/mdx.css";
 import { Metadata } from "next";

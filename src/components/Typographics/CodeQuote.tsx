@@ -8,7 +8,7 @@
 
 'use client'
 
-import { cn } from '@lib/utils';
+import { cn } from '@src/lib/utils';
 import { ComponentProps } from 'react';
 
 const CodeQuote = () => {

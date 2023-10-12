@@ -6,7 +6,7 @@
   GitHub: https://github.com/rudrodip
 */
 
-import { cn } from "@/lib/utils"
+import { cn } from "@src/lib/utils"
 
 interface CalloutProps {
   icon?: string

@@ -12,13 +12,13 @@ import { Post, allAuthors, allPosts } from "contentlayer/generated";
 import { env } from "@env.mjs";
 import { Mdx } from "@src/components/mdxComponent";
 import BlogHeaderAnimation from "@src/components/blog-header-animation";
-import { getTableOfContents } from "@lib/toc";
+import { getTableOfContents } from "@src/lib/toc";
 import { DashboardTableOfContents } from "@src/components/toc";
 import "@src/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { cn, absoluteUrl } from "@lib/utils";
+import { cn, absoluteUrl } from "@src/lib/utils";
 import { buttonVariants } from "@src/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 

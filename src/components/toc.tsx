@@ -2,9 +2,9 @@
 
 import * as React from "react"
 
-import { TableOfContents } from "@lib/toc"
-import { cn } from "@/lib/utils"
-import { useMounted } from "@hooks/use-mounted"
+import { TableOfContents } from "@src/lib/toc"
+import { cn } from "@src/lib/utils"
+import { useMounted } from "@src/hooks/use-mounted"
 import { Separator } from "@src/components/ui/separator"
 
 interface TocProps {
