@@ -24,6 +24,14 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
+
+    --grad1: 215, 98%, 61%;
+    --grad2: 125, 98%, 72%;
+    --grad3: 354, 98%, 61%;
+    --grad4: 256, 96%, 67%;
+    --grad5: 38, 60%, 74%;
+    --grad6: 222, 67%, 73%;
+    --grad7: 343, 68%, 79%;
   }
 
   .dark {
@@ -189,6 +197,30 @@
   }
 }
 
+*::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 0.5rem;
+  border-radius: 100vw;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+  border-radius: 25vw;
+}
+
+::-moz-selection {
+  color: hsl(var(--secondary));
+  background: hsl(var(--accent));
+}
+
+::selection {
+  color: hsl(var(--secondary));
+  background: hsl(var(--accent));
+}
 
 /* Tailwind Styles */
 
