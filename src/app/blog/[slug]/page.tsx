@@ -7,7 +7,7 @@
 */
 
 import { notFound } from "next/navigation";
-import { Post, allAuthors, allPosts } from "contentlayer/generated";
+import { allAuthors, allPosts } from "contentlayer/generated";
 
 import { env } from "@env.mjs";
 import { Mdx } from "@src/components/mdxComponent";
@@ -107,7 +107,7 @@ export default async function PostPage({ params }: PostPageProps) {
         )}
       >
         <ArrowLeftIcon className="mr-2 h-4 w-4" />
-        See all posts
+        See all blogs
       </Link>
       <BlogHeaderAnimation
         title={post.title}
@@ -137,7 +137,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
           <ArrowLeftIcon className="mr-2 h-4 w-4" />
-          See all posts
+          See all blogs
         </Link>
       </div>
     </article>
