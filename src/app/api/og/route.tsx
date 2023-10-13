@@ -43,8 +43,8 @@ export async function GET(req: Request) {
           }}
         >
           <img
-            src="https://rudrodip.vercel.app/assets/images/profile.svg"
-            alt=""
+            src="https://rudrodip.vercel.app/android-chrome-512x512.png"
+            alt="rds_agi"
             width={120}
             height={120}
           />
