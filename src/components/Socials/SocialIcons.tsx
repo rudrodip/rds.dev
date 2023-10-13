@@ -52,7 +52,7 @@ const SocialIcons = () => {
       <SocialIcon
         Icon={Instagram}
         accountName="@martian_agi"
-        link="https://www.instagram.com/martian_agi"
+        link="https://www.instagram.com/rds_agi"
         pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
     </div>
