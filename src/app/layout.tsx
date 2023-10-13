@@ -5,6 +5,7 @@ import Footer from "@src/components/Footer/Footer";
 import { cn } from "@src/lib/utils";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import { siteConfig } from "@src/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,35 +22,65 @@ export const metadata = {
   metadataBase: "https://rudrodip.vercel.app",
   title: "Rudrodip Sarker",
   description:
-    "Rudrodip Sarker is a student at Rajshahi College and enthusiast computer programmer who creates web apps, mobile apps, backend, Python scripts for automation, embedded system programming with C++, robotics, and more.",
+    "Hey! I'm Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer who creates web apps, mobile apps, backend, Python scripts for automation, embedded system programming with C++, robotics, and more.",
   url: "https://rudrodip.vercel.app/",
-  siteName: "Rudrodip Sarker",
+  keywords: [
+    "Rudrodip",
+    "Rudrodip Sarker",
+    "Rudrodip Sarker Sumit",
+    "rds",
+    "rds_agi",
+    "I'm banana man",
+    "discord banana",
+    "rds rcsc",
+    "rcsc",
+    "rajshahi college science club",
+    "Sumit",
+    "Sumit Sarker",
+    "martian_agi",
+    "ml dev",
+    "full stack dev",
+    "iot dev",
+  ],
+  authors: [
+    {
+      name: "rudrodip",
+      url: "https://rudrodip.vercel.app",
+    },
+  ],
+  creator: "rudrodip",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  siteName: siteConfig.name,
   icons: {
-    icon: "/assets/logo/logo.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   images: [
     {
-      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
+      url: siteConfig.ogImage,
       width: 800,
       height: 600,
-      alt: "Rudrodip Sarker",
+      alt: siteConfig.name,
     },
   ],
   locale: "bn_BD",
   type: "website",
   // OpenGraph metadata
   openGraph: {
-    title: "Rudrodip Sarker",
-    description:
-      "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
-    url: "https://rudrodip.vercel.app",
-    siteName: "Rudrodip Sarker",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/77154365?v=4",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Rudrodip Sarker",
+        alt: siteConfig.name,
       },
     ],
     type: "website",
@@ -60,11 +91,10 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@rds_agi",
-    title: "Rudrodip Sarker",
-    description:
-      "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
+    title: siteConfig.name,
+    description: siteConfig.description,
     image: {
-      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
+      url: siteConfig.ogImage,
       width: 1200,
       height: 630,
       alt: "Rudrodip Sarker",
@@ -73,18 +103,18 @@ export const metadata = {
 
   // Discord metadata
   discord: {
-    title: "Rudrodip Sarker",
+    title: siteConfig.name,
     type: "website",
-    url: "https://rudrodip.vercel.app",
-    description:
-      "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
+    url: siteConfig.url,
+    description: siteConfig.description,
     image: {
-      url: "https://avatars.githubusercontent.com/u/77154365?v=4",
+      url: siteConfig.url,
       width: 1200,
       height: 630,
-      alt: "Rudrodip Sarker",
+      alt: siteConfig.name,
     },
   },
+  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export default function RootLayout({
