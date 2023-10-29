@@ -18,7 +18,7 @@ const motionProps = {
 
 export default function Header({}: Props) {
   return (
-    <div className="flex w-full justify-around my-10 lg:my-32">
+    <div className="flex w-full justify-around">
       <div className="flex flex-col justify-between">
         <div>
           <motion.div className="text-2xl flex">
