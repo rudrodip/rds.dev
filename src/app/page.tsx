@@ -2,15 +2,8 @@ import Header from "@src/components/Header/Header";
 import TerminalUI from "@src/components/TerminalUI/TerminalUI";
 import CodeQuote from "@src/components/Typographics/CodeQuote";
 import ContactPage from "@src/components/Contact/contact";
-import dynamic from "next/dynamic";
-import LoadSpinner from "@src/components/loadspinner";
+import Projects from "@src/components/Project/Projects";
 
-const DynamicJourney = dynamic(
-  () => import("@src/components/Journey/Journey"),
-  {
-    loading: () => <LoadSpinner />,
-  }
-);
 export default function Home() {
   return (
     <>
@@ -20,10 +13,8 @@ export default function Home() {
       <div id="aboutme" className="lg:mb-32">
         <CodeQuote />
       </div>
-      <div>
-        <TerminalUI />
-      </div>
-      <DynamicJourney />
+      <TerminalUI />
+      <Projects />
       <ContactPage />
     </>
   );
