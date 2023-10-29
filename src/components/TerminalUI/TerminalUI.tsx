@@ -30,8 +30,8 @@ const prompts = {
 
 const TerminalUI = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div ref={ref} className="my-16 lg:my-0 font-mono">
-      <div className='bg-background border-2 rounded-lg m-1 md:m-3 lg:mx-5 p-2 lg:p-4 bg-opacity-100 md:bg-opacity-70 shadow-lg backdrop-filter-none lg:backdrop-filter backdrop-blur-lg' >
+    <div ref={ref} className="font-mono">
+      <div className='bg-background border-2 rounded-lg m-1 md:m-3 p-2 lg:p-4 bg-opacity-100 md:bg-opacity-70 shadow-lg backdrop-filter-none lg:backdrop-filter backdrop-blur-lg' >
         <div id="menu" className="flex">
           <span id="red" className="relative lg:w-4 lg:h-4 w-3 h-3 rounded-full bg-gray-400 hover:bg-red-500 transition-all delay-75"></span>
           <span id="red" className="relative lg:w-4 lg:h-4 w-3 h-3 rounded-full ml-2 bg-gray-500 hover:bg-yellow-400 transition-all delay-75"></span>
@@ -39,7 +39,7 @@ const TerminalUI = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
         <motion.div
           id="propmts"
-          className="my-4 lg:my-16 mx-2 md:mx-4 lg:mx-8 break-words text-sm md:text-md lg:text-lg backdrop-filter-none"
+          className="my-4 lg:my-16 break-words text-sm md:text-md lg:text-lg backdrop-filter-none"
           variants={variants}
           initial="hidden"
           whileInView="show"
