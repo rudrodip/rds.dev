@@ -48,7 +48,7 @@ export async function GET(req: Request) {
             width={120}
             height={120}
           />
-          <div tw="flex flex-col flex-1 py-10">
+          <div tw="flex flex-col flex-1 py-2">
             <div
               tw="flex text-xl uppercase font-bold tracking-tight"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
@@ -72,7 +72,7 @@ export async function GET(req: Request) {
               tw="flex text-xl mt-1"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-              rudrodip.vercel.app
+              rudrodip.tech
             </div>
             <div
               tw="flex items-center text-xl"
