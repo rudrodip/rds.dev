@@ -62,7 +62,7 @@ const Footer = () => {
             </a>
             <a
               className="ml-3 text-gray-400"
-              href="https://www.linkedin.com/in/rudrodip-sarker-964392262"
+              href="https://www.linkedin.com/in/rudrodip"
               target="_blank"
             >
               <svg

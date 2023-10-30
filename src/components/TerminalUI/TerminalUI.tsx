@@ -67,7 +67,7 @@ const TerminalUI = () => {
           ,
           <a
             className="underline_animation"
-            href="https://www.linkedin.com/in/rudrodip-sarker-964392262"
+            href="https://www.linkedin.com/in/rudrodip"
             target="_blank"
           >
             {" "}
