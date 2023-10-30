@@ -34,7 +34,7 @@ function DiscordApperance() {
   const coding = status.activities.find((elem) => elem.name == "Code");
 
   return (
-    <Card className="text-sm font-mono flex my-2 lg:w-2/3">
+    <Card className="shine shine-anim text-sm font-mono flex my-2 lg:w-2/3">
       <div className="flex gap-3 p-3 items-start">
         <div>
           <a
@@ -72,7 +72,7 @@ function DiscordApperance() {
                   <h1>
                     listening to{" "}
                     <a
-                      className="text-cyan-500"
+                      className="blue_gradient underline_animation"
                       href={`https://open.spotify.com/track/${status.spotify?.track_id}`}
                       target="_blank"
                     >
