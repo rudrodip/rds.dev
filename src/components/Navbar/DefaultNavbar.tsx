@@ -23,7 +23,7 @@ import {
 import { Menu } from "lucide-react";
 import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
-import { projects } from "@src/constants/projects";
+import { projects } from "@src/config/projects";
 import { Button } from "../ui/button";
 import MobileNav from "./MobileNavbar";
 
@@ -138,15 +138,17 @@ const NavMenu = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {projects.map((project) => (
-                <ListItem
-                  key={project.title}
-                  title={project.title}
-                  href={project.href}
-                >
-                  {project.description}
-                </ListItem>
-              ))}
+              {projects.categories.map(
+                (category, id) =>
+                  category.name === "Featured" &&
+                  projects.categories[id].items.map((project, id) => {
+                    return (
+                      <ListItem key={id} title={project.title} href="#projects">
+                        {project.desc}
+                      </ListItem>
+                    );
+                  })
+              )}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
