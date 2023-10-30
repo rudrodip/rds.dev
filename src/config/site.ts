@@ -3,8 +3,8 @@ import { SiteConfig } from "@src/types"
 export const siteConfig: SiteConfig = {
   name: "Rudrodip Sarker",
   description: "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
-  url: "https://rudrodip.vercel.app",
-  ogImage: "https://rudrodip.vercel.app/og.png",
+  url: "https://rudrodip.tech",
+  ogImage: "https://rudrodip.tech/og.png",
   links: {
     twitter: "https://twitter.com/rds_agi",
     github: "https://github.com/rudrodip",

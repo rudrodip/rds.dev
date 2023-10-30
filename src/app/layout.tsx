@@ -19,11 +19,10 @@ const fontHeading = localFont({
 });
 
 export const metadata = {
-  metadataBase: "https://rudrodip.vercel.app",
+  metadataBase: siteConfig.url,
   title: "Rudrodip Sarker",
-  description:
-    "Hey! I'm Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer who creates web apps, mobile apps, backend, Python scripts for automation, embedded system programming with C++, robotics, and more.",
-  url: "https://rudrodip.vercel.app/",
+  description: siteConfig.description,
+  url: siteConfig.url,
   keywords: [
     "Rudrodip",
     "Rudrodip Sarker",
@@ -45,7 +44,7 @@ export const metadata = {
   authors: [
     {
       name: "rudrodip",
-      url: "https://rudrodip.vercel.app",
+      url: siteConfig.url,
     },
   ],
   creator: "rudrodip",

@@ -40,7 +40,7 @@ const SocialIcons = () => {
       <SocialIcon
         Icon={Linkedin}
         accountName="Rudrodip Sarker"
-        link="https://www.linkedin.com/in/rudrodip-sarker-964392262"
+        link="https://www.linkedin.com/in/rudrodip"
         pfpLink="https://avatars.githubusercontent.com/u/77154365"
       />
       <SocialIcon
