@@ -12,9 +12,15 @@ const webProjects: item[] = [
       },
       {
         name: "TailwindCSS",
+        image: "/assets/images/techlogo/tailwind.svg",
       },
       {
         name: "Typescript",
+        image: "/assets/images/techlogo/ts.svg",
+      },
+      {
+        name: "Redux",
+        image: "/assets/images/techlogo/redux.svg",
       },
       {
         name: "ShadCn",
@@ -62,9 +68,11 @@ const webProjects: item[] = [
       },
       {
         name: "TailwindCSS",
+        image: "/assets/images/techlogo/tailwind.svg",
       },
       {
         name: "Typescript",
+        image: "/assets/images/techlogo/ts.svg",
       },
       {
         name: "ShadCn",
@@ -96,6 +104,11 @@ const webProjects: item[] = [
       },
       {
         name: "TailwindCSS",
+        image: "/assets/images/techlogo/tailwind.svg",
+      },
+      {
+        name: "Javascript",
+        image: "/assets/images/techlogo/js.svg",
       },
       {
         name: "Firebase",
@@ -123,9 +136,15 @@ const webProjects: item[] = [
       },
       {
         name: "TailwindCSS",
+        image: "/assets/images/techlogo/tailwind.svg",
       },
       {
         name: "Typescript",
+        image: "/assets/images/techlogo/ts.svg",
+      },
+      {
+        name: "Redux",
+        image: "/assets/images/techlogo/redux.svg",
       },
       {
         name: "ShadCn",
@@ -157,9 +176,15 @@ const webProjects: item[] = [
       },
       {
         name: "TailwindCSS",
+        image: "/assets/images/techlogo/tailwind.svg",
       },
       {
         name: "Typescript",
+        image: "/assets/images/techlogo/ts.svg",
+      },
+      {
+        name: "Redux",
+        image: "/assets/images/techlogo/redux.svg",
       },
       {
         name: "ShadCn",
@@ -189,9 +214,11 @@ const simulationProjects: item[] = [
     otherLinks: [
       {
         name: "Python",
+        image: "/assets/images/techlogo/python.svg",
       },
       {
         name: "OpenCV-headless",
+        image: "/assets/images/techlogo/opencv.svg",
       },
       {
         name: "CVZone",
@@ -222,8 +249,12 @@ const simulationProjects: item[] = [
     desc: "Description for self-driving-car-simulation",
     links: [
       {
-        name: "self-driving-car-simulation",
-        url: "https://example.com/self-driving-car-simulation",
+        name: "Website",
+        url: "https://sdc-simulation.vercel.app",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/rudrodip/self-driving-car-simulation",
       },
     ],
     otherLinks: [
@@ -234,6 +265,7 @@ const simulationProjects: item[] = [
       },
       {
         name: "Javascript",
+        image: "/assets/images/techlogo/js.svg",
       },
       {
         name: "HTML Canvas",
@@ -259,6 +291,7 @@ const backendProjects: item[] = [
     otherLinks: [
       {
         name: "Node JS",
+        image: "/assets/images/techlogo/nodejs.svg",
       },
       {
         name: "Express",
@@ -340,6 +373,7 @@ const botProjects: item[] = [
     otherLinks: [
       {
         name: "Python",
+        image: "/assets/images/techlogo/python.svg",
       },
       {
         name: "Pycord",
@@ -368,6 +402,7 @@ const botProjects: item[] = [
     otherLinks: [
       {
         name: "Python",
+        image: "/assets/images/techlogo/python.svg",
       },
       {
         name: "Python-telegram-bot",
@@ -390,6 +425,7 @@ const botProjects: item[] = [
     otherLinks: [
       {
         name: "Python",
+        image: "/assets/images/techlogo/python.svg",
       },
       {
         name: "Pycord",
@@ -418,9 +454,11 @@ const roboticsProjects: item[] = [
     otherLinks: [
       {
         name: "C++",
+        image: "/assets/images/techlogo/cpp.svg",
       },
       {
         name: "Arduino",
+        image: "/assets/images/techlogo/arduino.svg",
       },
       {
         name: "PlatformIO",
@@ -446,9 +484,11 @@ const roboticsProjects: item[] = [
     otherLinks: [
       {
         name: "C++",
+        image: "/assets/images/techlogo/cpp.svg",
       },
       {
         name: "Arduino",
+        image: "/assets/images/techlogo/arduino.svg",
       },
       {
         name: "PlatformIO",
@@ -477,12 +517,14 @@ const mobileProjects: item[] = [
     otherLinks: [
       {
         name: "Flutter",
+        image: "/assets/images/techlogo/flutter.svg",
       },
       {
         name: "Dart",
       },
       {
         name: "Firebase",
+        image: "/assets/images/techlogo/firebase.svg",
       },
       {
         name: "Syncfusion",
@@ -508,9 +550,11 @@ const mobileProjects: item[] = [
     otherLinks: [
       {
         name: "React Native",
+        image: "/assets/images/techlogo/react.svg",
       },
       {
         name: "Javascript",
+        image: "/assets/images/techlogo/js.svg",
       },
       {
         name: "React Native BLE PLX",
@@ -533,9 +577,11 @@ const mobileProjects: item[] = [
     otherLinks: [
       {
         name: "React Native",
+        image: "/assets/images/techlogo/react.svg",
       },
       {
         name: "Javascript",
+        image: "/assets/images/techlogo/js.svg",
       },
     ],
     image: {
@@ -545,10 +591,25 @@ const mobileProjects: item[] = [
   },
 ];
 
+const featuredProjects: item[] = [
+  webProjects[0],
+  simulationProjects[0],
+  simulationProjects[1],
+  backendProjects[0],
+  roboticsProjects[1],
+  mobileProjects[0],
+  botProjects[0],
+]
+
 
 export const projects: section<item> = {
   caption: "Projects",
   categories: [
+    {
+      name: "Featured",
+      icon: "/categories/featured.png",
+      items: featuredProjects,
+    },
     {
       name: "Web",
       icon: "/categories/web.png",
