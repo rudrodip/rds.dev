@@ -11,7 +11,7 @@ import {
 export const SectionViewLarge = (props: item) => {
   return (
     <section className="w-full">
-      <div className="w-full">
+      <a href={props.links.length > 0 && props.links[0].url || 'https://github.com/rudrodip'} target="_blank" className="w-full">
         <Image
           src={props.image.desktop}
           alt={props.title}
@@ -19,7 +19,7 @@ export const SectionViewLarge = (props: item) => {
           height={1080}
           className="rounded cursor-pointer"
         />
-      </div>
+      </a>
       <div className="my-6 space-y-3">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -55,7 +55,7 @@ export const SectionViewLarge = (props: item) => {
         <div className="flex flex-wrap gap-3">
           {props.otherLinks.map((link, index) => {
             return (
-              <Button key={index} className="mr-2 px-2">
+              <Button key={index} className="mr-2 px-2" variant='outline'>
                 {link?.image && (
                   <Image
                     src={link.image}
