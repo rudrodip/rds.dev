@@ -8,15 +8,13 @@ import { motion } from "framer-motion";
 import DiscordAppearance from "@src/components/Socials/DiscordApperance";
 import LottieAnimation from "./LottieAnimation";
 
-type Props = {};
-
 const motionProps = {
   initial: { x: -100, opacity: 0 },
   animate: { x: 0, opacity: 1 },
   transition: { type: "spring", damping: 10, stiffness: 200, duration: 0.4 },
 };
 
-export default function Header({}: Props) {
+export default function Header() {
   return (
     <div className="flex w-full justify-around">
       <div className="flex flex-col justify-between">
@@ -35,38 +33,18 @@ export default function Header({}: Props) {
             <DiscordAppearance />
           </motion.div>
           <motion.p className="max-w-2xl">
-            I love creating web and mobile apps,{" "}
-            <a
-              href="https://github.com/rudrodip/student-management-api"
-              target="_blank"
-              className="gray_gradient underline_animation"
-            >
-              backend systems
-            </a>
+            I love creating{" "}
+            <LinkText text='web' url='#Web' />
+            {" "}and{" "}
+            <LinkText text='mobile apps' url='#projects' />,{" "}
+            <LinkText text='backend systems' url='#projects' />
             , python scripts for automation, and even getting into{" "}
-            <a
-              href="https://github.com/rudrodip/AquaRover"
-              target="_blank"
-              className="gray_gradient underline_animation"
-            >
-              embedded system programming
-            </a>{" "}
+            <LinkText text="embedded system programming" url="#projects" />{" "}
             with c++ and{" "}
-            <a
-              href="https://youtu.be/uYZytPxzjsk"
-              target="_blank"
-              className="gray_gradient underline_animation"
-            >
-              robotics
-            </a>
+            <LinkText text="robotics" url="https://youtu.be/uYZytPxzjsk" />
             ! Right now, I&apos;m learning about machine learning and AI,
             specifically neural networks. Checkout my{" "}
-            <Link
-              href="/projects"
-              className="gray_gradient underline_animation"
-            >
-              projects.
-            </Link>
+            <LinkText text="projects" url="#projects" />.
           </motion.p>
         </div>
         <div className="text-2xl">
@@ -94,3 +72,14 @@ export default function Header({}: Props) {
     </div>
   );
 }
+
+const LinkText = ({ text, url }: { text: string; url: string }) => {
+  return (
+    <Link
+      href={url}
+      className="blue_gradient underline_animation"
+    >
+      {text}
+    </Link>
+  );
+};
