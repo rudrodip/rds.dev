@@ -32,6 +32,16 @@
     --grad5: 38, 60%, 74%;
     --grad6: 222, 67%, 73%;
     --grad7: 343, 68%, 79%;
+
+    --shine-degree: 120deg;
+    --shine-color: rgba(255, 255, 255, 0.2);
+    --shine-effect: linear-gradient(
+      var(--shine-degree),
+      transparent,
+      hsl(0 0% 96.1%),
+      transparent
+    );
+    --shine-transition: all 0.5s ease-in-out;
   }
 
   .dark {
@@ -222,6 +232,70 @@
   background: hsl(var(--accent));
 }
 
+.line-vertical {
+  background: linear-gradient(
+    hsl(var(--accent-foreground)),
+    hsl(var(--secondary-foreground)),
+    hsl(var(--primary-foreground))
+  );
+}
+
+.line-horizontal {
+  background: linear-gradient(
+    to right,
+    hsl(var(--accent-foreground)),
+    hsl(var(--secondary-foreground)),
+    hsl(var(--primary-foreground))
+  );
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shine-effect);
+  }
+}
+
+.shine-hover {
+  &::before {
+    left: -100%;
+    transition: var(--shine-transition);
+  }
+
+  &:hover {
+    box-shadow: var(--btn-shadow);
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.shine-anim {
+  &::before {
+    animation: shine 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    transition-property: left;
+  }
+  20%,
+  100% {
+    left: 100%;
+    transition-property: left;
+  }
+}
+
 /* Tailwind Styles */
 
 .app {
@@ -241,7 +315,7 @@
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-sky-500 to-teal-500 bg-clip-text text-transparent;
 }
 
 .gray_gradient {
