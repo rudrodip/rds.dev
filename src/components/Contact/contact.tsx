@@ -24,7 +24,7 @@ export default async function ContactPage() {
   return (
     <article
       id="contact"
-      className="container relative max-w-3xl py-6 lg:py-10 rounded-md border-2 border-secondary my-2 lg:my-10"
+      className="container relative max-w-3xl py-6 lg:py-10 rounded-md my-2 lg:my-10"
     >
       <MdxHeaderAnimation 
         title={page.title}
