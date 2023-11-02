@@ -591,7 +591,7 @@ const mobileProjects: item[] = [
   },
 ];
 
-const featuredProjects: item[] = [
+export const featuredProjects: item[] = [
   webProjects[0],
   simulationProjects[0],
   simulationProjects[1],

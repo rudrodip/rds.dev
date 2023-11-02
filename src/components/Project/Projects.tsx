@@ -6,7 +6,6 @@ import { cn } from "@src/lib/utils";
 import { SectionViewLarge } from "./section-view-large";
 import { SectionViewSmall } from "./section-view-small";
 import { ScrollArea } from "@src/components/ui/scroll-area";
-import { Card, CardContent } from "@src/components/ui/card";
 
 export default function Projects() {
   const [activeSection, setActiveSection] = useState(0);
