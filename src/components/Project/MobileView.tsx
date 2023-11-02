@@ -16,7 +16,7 @@ import { Autoplay } from 'swiper/modules'
 
 export default function MobileProjectView() {
   return (
-    <section className="flex-col my-10">
+    <section className="flex-col md:hidden my-10">
       <h1 className="font-heading text-2xl text-center mb-3">Projects</h1>
       <Swiper
         autoplay={{
@@ -26,7 +26,7 @@ export default function MobileProjectView() {
         speed={1000}
         loop={true}
         modules={[Autoplay]}
-        className="project-swiper"
+        className="project-swiper h-full"
       >
         {featuredProjects.map((project, id) => {
           return (
