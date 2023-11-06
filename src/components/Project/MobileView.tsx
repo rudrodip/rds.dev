@@ -36,7 +36,7 @@ export default function MobileProjectView() {
                   src={project.image.desktop}
                   alt={project.title}
                   width={600}
-                  height={900}
+                  height={600}
                 />
                 <div className="my-6 space-y-3">
                   <DropdownMenu>
