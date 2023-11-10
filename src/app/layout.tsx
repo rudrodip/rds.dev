@@ -107,7 +107,7 @@ export const metadata = {
     url: siteConfig.url,
     description: siteConfig.description,
     image: {
-      url: siteConfig.url,
+      url: siteConfig.ogImage,
       width: 1200,
       height: 630,
       alt: siteConfig.name,
