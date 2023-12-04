@@ -32,7 +32,7 @@ export default function Projects() {
               <span
                 key={index}
                 className={cn(
-                  "shine shine-hover group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground cursor-pointer",
+                  "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground cursor-pointer",
                   sections.indexOf(section) === activeSection ? "bg-accent" : ""
                 )}
                 onClick={() => handleSectioncChange(index)}
@@ -52,7 +52,7 @@ export default function Projects() {
                   id={category.name}
                   key={index}
                   className={cn(
-                    "shine shine-hover group flex items-center rounded-md my-1 px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground cursor-pointer",
+                    "group flex items-center rounded-md my-1 px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground cursor-pointer",
                     sections[activeSection].categories.indexOf(category) ===
                       activeCategory
                       ? "bg-accent"

@@ -9,7 +9,7 @@ type SectionViewLargeProps = {
 
 export const SectionViewSmall = ({ id, item, handleActiveItemChange }: SectionViewLargeProps) => {
   return (
-    <section className="shine shine-hover w-full cursor-pointer border rounded p-1" onClick={() => handleActiveItemChange(id)}>
+    <section className="w-full cursor-pointer border rounded p-1" onClick={() => handleActiveItemChange(id)}>
       <Image
         src={item.image.desktop}
         alt={item.title}
