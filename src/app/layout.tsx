@@ -1,11 +1,14 @@
 import "@src/styles/globals.css";
+import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@src/components/theme-provider";
+import { Provider } from "@src/components/wallet/Provider";
 import Navbar from "@src/components/Navbar/DefaultNavbar";
 import Footer from "@src/components/Footer/Footer";
 import { cn } from "@src/lib/utils";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { siteConfig } from "@src/config/site";
+import { MiniNavbar } from "@src/components/Navbar/MiniNavbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,11 +21,17 @@ const fontHeading = localFont({
   variable: "--font-heading",
 });
 
-export const metadata = {
-  metadataBase: siteConfig.url,
-  title: "Rudrodip Sarker",
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.name,
   description: siteConfig.description,
-  url: siteConfig.url,
   keywords: [
     "Rudrodip",
     "Rudrodip Sarker",
@@ -43,31 +52,17 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "rudrodip",
+      name: siteConfig.name,
       url: siteConfig.url,
     },
   ],
-  creator: "rudrodip",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  siteName: siteConfig.name,
+  creator: siteConfig.name,
+
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  images: [
-    {
-      url: siteConfig.ogImage,
-      width: 800,
-      height: 600,
-      alt: siteConfig.name,
-    },
-  ],
-  locale: "bn_BD",
-  type: "website",
   // OpenGraph metadata
   openGraph: {
     title: siteConfig.name,
@@ -83,7 +78,7 @@ export const metadata = {
       },
     ],
     type: "website",
-    locale: "bn_BD",
+    locale: "en_US",
   },
 
   // Twitter metadata
@@ -92,25 +87,11 @@ export const metadata = {
     site: "@rds_agi",
     title: siteConfig.name,
     description: siteConfig.description,
-    image: {
+    images: {
       url: siteConfig.ogImage,
       width: 1200,
       height: 630,
       alt: "Rudrodip Sarker",
-    },
-  },
-
-  // Discord metadata
-  discord: {
-    title: siteConfig.name,
-    type: "website",
-    url: siteConfig.url,
-    description: siteConfig.description,
-    image: {
-      url: siteConfig.ogImage,
-      width: 1200,
-      height: 630,
-      alt: siteConfig.name,
     },
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
@@ -133,16 +114,19 @@ export default function RootLayout({
       </head>
       <body className={cn(inter.variable, fontHeading.variable)}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="flex flex-col min-h-screen">
-            <div className="flex-grow">
-              <div className="main">
-                <div className="gradient" />
+          <Provider>
+            <div className="flex flex-col min-h-screen">
+              <div className="flex-grow">
+                <header className="z-40">
+                  <Navbar />
+                  <div className="sticky top-5 flex justify-center"></div>
+                </header>
+                <MiniNavbar />
+                <div className="app">{children}</div>
               </div>
-              <Navbar />
-              <div className="app">{children}</div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </Provider>
         </ThemeProvider>
       </body>
     </html>
