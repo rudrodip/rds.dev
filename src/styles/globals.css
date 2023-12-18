@@ -77,29 +77,6 @@
   }
 }
 
-.main {
-  z-index: -1000;
-  width: 100vw;
-  min-height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  padding: 120px 24px 160px 24px;
-  pointer-events: none;
-}
-
-.main:after {
-  content: "";
-  background-image: url("/assets/bg/grid.svg");
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  opacity: 0.2;
-  filter: invert(var(--invert-value));
-}
-
 .underline_animation {
   display: inline-block;
   position: relative;
@@ -296,6 +273,24 @@
   }
 }
 
+.icon-glow {
+  background: radial-gradient(
+      at 27% 37%,
+      hsl(var(--primary)) 0px,
+      transparent 100%
+    ),
+    radial-gradient(at 97% 21%, hsl(var(--muted)) 0px, transparent 100%);
+}
+
+.line {
+  background: linear-gradient(
+    hsl(var(--grad1)),
+    hsl(var(--grad2)),
+    hsl(var(--background))
+  );
+  width: 2px;
+}
+
 /* Tailwind Styles */
 
 .app {
@@ -306,8 +301,8 @@
   @apply overflow-x-hidden max-w-5xl mx-3 lg:mx-auto;
 }
 
-.head_text {
-  @apply mt-5 text-5xl font-extrabold font-heading leading-[1.15] sm:text-6xl;
+.head-text {
+  @apply text-4xl font-extrabold font-heading leading-[1.15] sm:text-8xl;
 }
 
 .orange_gradient {
@@ -316,6 +311,10 @@
 
 .blue_gradient {
   @apply bg-gradient-to-r from-sky-500 to-teal-500 bg-clip-text text-transparent;
+}
+
+.primary-gradient {
+  @apply bg-gradient-to-b from-primary to-muted-foreground bg-clip-text text-transparent;
 }
 
 .gray_gradient {
@@ -340,10 +339,6 @@
 
 .flex-between {
   @apply flex justify-between items-center;
-}
-
-.nav-button {
-  @apply bg-transparent;
 }
 
 .wave-emoji {
