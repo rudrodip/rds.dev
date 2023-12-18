@@ -12,20 +12,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@src/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@src/components/ui/sheet";
-import { Menu } from "lucide-react";
 import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
 import { projects } from "@src/config/projects";
-import { Button } from "../ui/button";
-import MobileNav from "./MobileNavbar";
+import { Button } from "@src/components/ui/button";
+
+import { BlogMenu } from "./blog-menu";
+import { aboutConfig } from "@src/config/about";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const DynamicLottieAnimation = dynamic(
   () => import("@src/components/Header/LottieAnimation"),
@@ -36,35 +30,24 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 bg-primary-foreground mb-1 z-50 py-[1px]">
-      <div className="flex justify-between m-3 lg:mx-24">
+    <nav className="z-50">
+      <div className="flex h-14 lg:h-15 items-center justify-between gap-2 lg:justify-evenly py-6">
         <div className="flex">
-          <div className="lg:hidden mr-2 flex items-center">
-            <Sheet>
-              <SheetTrigger>
-                <Menu />
-              </SheetTrigger>
-              <SheetContent className="flex-col">
-                <SheetHeader>
-                  <SheetTitle>explore !!!</SheetTitle>
-                  <SheetDescription></SheetDescription>
-                </SheetHeader>
-                <MobileNav />
-              </SheetContent>
-            </Sheet>
-          </div>
           <Logo />
           <div className="hidden lg:block">
             <NavMenu />
           </div>
         </div>
-        <ThemeToggleDropDown />
+        <div className="flex gap-2 items-center">
+          <ConnectButton showBalance={false} />
+          <ThemeToggleDropDown />
+        </div>
       </div>
     </nav>
   );
 }
 
-const ListItem = React.forwardRef<
+export const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
@@ -95,10 +78,8 @@ const NavMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger
-            className={cn(navigationMenuTriggerStyle(), "nav-button")}
-          >
-            <Link href="/about">/about</Link>
+          <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle())}>
+            <Link href="/about">About</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -110,11 +91,10 @@ const NavMenu = () => {
                   >
                     <DynamicLottieAnimation />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      rds/rudrodip
+                      {aboutConfig.name}
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      self-taught programmer with a passion for learning and
-                      creating
+                      {aboutConfig.bio}
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -123,8 +103,7 @@ const NavMenu = () => {
                 my self taught programming journey starts in 2019
               </ListItem>
               <ListItem href="/#aboutme" title="who am I?">
-                I&apos;m Rudrodip Sarker, currently a student and a self-taught
-                programmer
+                {aboutConfig.description}
               </ListItem>
               <ListItem href="/#contact" title="contact">
                 feel free to contact me...
@@ -133,11 +112,11 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="nav-button">
-            <Link href="/#projects">projects</Link>
+          <NavigationMenuTrigger>
+            <Link href="/#projects">Projects</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {projects.categories.map(
                 (category, id) =>
                   category.name === "Featured" &&
@@ -153,20 +132,17 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "nav-button")}
-            >
-              blog
-            </NavigationMenuLink>
-          </Link>
-          <Link href="/#contact" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "nav-button")}
-            >
-              contact
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuTrigger>
+            <Link href="/blog">Blogs</Link>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <BlogMenu />
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Button asChild variant="ghost" className="hover:bg-transaparent">
+            <Link href="/#contact">Contact</Link>
+          </Button>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -175,7 +151,7 @@ const NavMenu = () => {
 
 const Logo = () => {
   return (
-    <Button asChild variant="link" className="bg-transparent">
+    <Button asChild variant="link">
       <Link href="/">/rudrodip</Link>
     </Button>
   );
