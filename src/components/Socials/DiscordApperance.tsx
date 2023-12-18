@@ -65,9 +65,7 @@ function DiscordApperance() {
               }
             </span>
             <div>
-              {custom_state ? (
-                <h1>{custom_state}</h1>
-              ) : status.listening_to_spotify ? (
+              {status.listening_to_spotify ? (
                 <div>
                   <h1>
                     listening to{" "}
@@ -80,6 +78,8 @@ function DiscordApperance() {
                     </a>
                   </h1>
                 </div>
+              ) : custom_state ? (
+                <h1>{custom_state}</h1>
               ) : status.activities.length >= 1 ? (
                 <h1>{status.activities[1]?.details}</h1>
               ) : (
