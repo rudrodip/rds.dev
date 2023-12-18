@@ -6,6 +6,12 @@ import Link from "next/link";
 import { cn } from "@src/lib/utils";
 import { useScroll } from "@src/hooks/use-scoll";
 import { Button } from "../ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@src/components/ui/tooltip";
 
 export const MiniNavbar = () => {
   const scrolledEnough = useScroll(300);
@@ -22,19 +28,27 @@ export const MiniNavbar = () => {
       <div className="border border-primary/10 rounded-full bg-secondary/50 backdrop-blur-lg">
         <div className="flex justify-between gap-5 items-center px-1 py-1">
           {navbarConfig.miniNav.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href}
-              className="transition-all transform-gpu hover:scale-110 duration-75"
-            >
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-transparent border-none"
-              >
-                <item.icon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-              </Button>
-            </Link>
+            <TooltipProvider key={index} delayDuration={200}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={item.href}
+                    className="transition-all transform-gpu hover:scale-110 duration-75"
+                  >
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full bg-transparent border-none"
+                    >
+                      <item.icon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+                    </Button>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{item.href}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ))}
           <ThemeToggleDropDown />
         </div>

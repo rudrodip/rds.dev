@@ -1,4 +1,3 @@
-import Header from "@src/components/Header/Header";
 import CodeQuote from "@src/components/Typographics/CodeQuote";
 import dynamic from "next/dynamic";
 import LoadSpinner from "@src/components/loadspinner";
