@@ -28,7 +28,7 @@ export default function Home() {
       <div id="aboutme" className="mt-10 mb-6 lg:mb-32">
         <CodeQuote />
       </div>
-      {/* <TechStack /> */}
+      <TechStack />
       <div className="lg:mb-32">
         <DynamicTerminalUI />
       </div>

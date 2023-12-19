@@ -276,6 +276,15 @@
 .icon-glow {
   background: radial-gradient(
       at 27% 37%,
+      hsl(var(--grad2)) 0px,
+      transparent 100%
+    ),
+    radial-gradient(at 97% 21%, hsl(var(--grad4)) 0px, transparent 100%);
+}
+
+.icon-glow-muted {
+  background: radial-gradient(
+      at 27% 37%,
       hsl(var(--primary)) 0px,
       transparent 100%
     ),
@@ -289,6 +298,37 @@
     hsl(var(--background))
   );
   width: 2px;
+}
+
+.border-gradient {
+  border: 0.2px solid;
+  border-image-slice: 1;
+  border-width: 0.2px;
+}
+
+.border-gradient {
+  border: 0.2px solid;
+  border-image-slice: 1;
+  border-width: 0.2px;
+}
+
+.only-bottom {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.only-top {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.nothing {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 /* Tailwind Styles */

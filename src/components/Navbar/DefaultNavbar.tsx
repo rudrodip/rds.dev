@@ -16,7 +16,7 @@ import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
 import { projects } from "@src/config/projects";
 import { Button } from "@src/components/ui/button";
-
+import { motion } from "framer-motion";
 import { BlogMenu } from "./blog-menu";
 import { aboutConfig } from "@src/config/about";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -149,10 +149,55 @@ const NavMenu = () => {
   );
 };
 
+const svgVariants = {
+  hidden: {
+    rotate: -100,
+  },
+  visible: {
+    rotate: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Logo = () => {
   return (
-    <Button asChild variant="link">
-      <Link href="/">/rudrodip</Link>
-    </Button>
+    <Link href="/" className="mr-5 flex items-center justify-center">
+      <motion.svg
+        width="20"
+        height="30"
+        viewBox="0 0 425 502"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        variants={svgVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.path
+          id="rds"
+          d="M39 307.884H222.5C242 307.884 245 306.384 255.5 302.384C268.691 297.358 366.5 260.883 356.5 165.883C346.5 70.8834 275.5 41.8834 255 39.8834C238.6 38.2834 104.333 39.2168 39 39.8835M39 39.8835V462.884H349L39 39.8835Z"
+          stroke="#04C3F9"
+          stroke-width="77"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          initial={{
+            pathLength: 0,
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            strokeWidth: 0,
+          }}
+          animate={{ pathLength: 1, strokeWidth: 50 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+            repeatDelay: 0,
+          }}
+        />
+      </motion.svg>
+    </Link>
   );
 };

@@ -21,7 +21,7 @@ function DiscordApperance() {
 
   if (!status) {
     return (
-      <span className="ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full icon-glow"></span>
+      <span className="ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full icon-glow-muted cursor-progress"></span>
     );
   }
 
@@ -36,16 +36,17 @@ function DiscordApperance() {
         <TooltipTrigger asChild>
           <span
             className={cn(
-              "ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full icon-glow",
-              (status.active_on_discord_desktop ||
+              "ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full cursor-crosshair",
+              status.active_on_discord_desktop ||
                 status.active_on_discord_mobile ||
-                status.active_on_discord_web) &&
-                "bg-green-500"
+                status.active_on_discord_web
+                ? "icon-glow"
+                : "icon-glow-muted"
             )}
           ></span>
         </TooltipTrigger>
         <TooltipContent className="">
-          <Card className="shine shine-anim text-sm font-mono flex">
+          <Card className="text-sm font-mono flex border-none">
             <div className="flex gap-3 p-3 items-start">
               <div>
                 <a

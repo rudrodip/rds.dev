@@ -19,7 +19,7 @@ export const ExperienceSection = () => {
 const Experience = ({ experience }: { experience: Experience }) => {
   return (
     <div className="flex gap-2 items-start text-md full">
-      <span className="mt-2 w-3 h-3 animate-pulse rounded-full icon-glow"></span>
+      <span className="mt-2 w-3 h-3 animate-pulse rounded-full icon-glow-muted"></span>
       <div>
         <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
         <div className="">
