@@ -41,7 +41,10 @@ const TechBox: React.FC<TechBoxProps> = (props) => {
         "relative w-36 h-36 p-2 flex justify-center items-center border rounded-xl bg-secondary/20 backdrop-blur-md z-20 border-gradient",
         borderMap[direction] || ""
       )}
-      style={{ borderImageSource: gradientColors }}
+      style={{
+        borderImageSource: gradientColors,
+        WebkitBorderImageSlice: gradientColors,
+      }}
     >
       <Image
         src={props.image}
