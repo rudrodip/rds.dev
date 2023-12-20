@@ -13,8 +13,8 @@ export const HeroSection = () => {
         <DiscordApperance />
       </div>
       <p className="desc">{aboutConfig.bio}</p>
-      <div className="flex space-x-4 align-middle flex-wrap my-5">
-        <Button asChild variant="outline" className="lg:inline-block">
+      <div className="flex gap-4 align-middle flex-wrap my-5">
+        <Button asChild variant="outline" size="sm">
           <Link href="/#contact">Get in touch</Link>
         </Button>
         <SocialIcons />
