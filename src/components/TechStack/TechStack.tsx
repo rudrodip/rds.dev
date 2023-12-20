@@ -52,7 +52,6 @@ const TechBox: React.FC<TechBoxProps> = (props) => {
         height={300}
         alt={props.title}
         className="rounded-xl animate-pulse"
-        objectFit="contain"
       />
       <p className="absolute bottom-0 text-lg text-center font-semibold bg-secondary/40 backdrop-blur-md rounded-b-md w-full">
         {props.title}
