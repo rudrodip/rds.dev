@@ -22,7 +22,7 @@ const CodeQuote = () => {
       <QuoteIcon className={cn("-mt-1 h-10", "md:-mt-3 md:h-16 lg:h-24")} />
       <span className={cn("flex flex-col")}>
         <span className={cn("leading-[1.15] primary-gradient")}>
-          <em>Coding</em>{" "}
+          <em>talk is</em>{" "}
         </span>
         <span
           className={cn("flex items-center gap-2 leading-[1.15]", "lg:gap-4")}
@@ -36,11 +36,12 @@ const CodeQuote = () => {
           />
           <span>
             <strong className={cn("font-extrabold primary-gradient")}>
-              is the
-            </strong>{" "}
-            poetry{" "}
-            <strong className={cn("font-extrabold primary-gradient")}>
-              of{" "}
+              cheap
+            </strong>
+            {", "}
+            show{" "}
+            <strong className={cn("font-semibold primary-gradient")}>
+              me{" "}
             </strong>
           </span>
           <span
@@ -52,7 +53,7 @@ const CodeQuote = () => {
           />
         </span>
         <span className={cn("leading-[1.15] primary-gradient")}>
-          logic's{" "}
+          the{" "}
           <strong className={cn("relative font-extrabold primary-gradient")}>
             <span
               className={cn(
@@ -60,8 +61,11 @@ const CodeQuote = () => {
                 "lg:-left-1.5 lg:-right-0.5 lg:top-2 lg:bottom-0"
               )}
             />
-            symphony.
+            code.
           </strong>
+        </span>
+        <span className="text-right font-heading text-lg primary-gradient">
+          - Linus Torvald
         </span>
       </span>
     </blockquote>
