@@ -28,7 +28,7 @@
     --grad1: 215, 98%, 61%;
     --grad2: 125, 98%, 72%;
     --grad3: 354, 98%, 61%;
-    --grad4: 256, 96%, 67%;
+    --grad4: 256, 40%, 94%;
     --grad5: 38, 60%, 74%;
     --grad6: 222, 67%, 73%;
     --grad7: 343, 68%, 79%;
@@ -42,6 +42,8 @@
       transparent
     );
     --shine-transition: all 0.5s ease-in-out;
+    --media-brand: 245 245 245;
+    --media-focus: 78 156 246;
   }
 
   .dark {
@@ -64,6 +66,7 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+    --grad4: 256, 96%, 67%;
   }
 }
 
@@ -74,6 +77,7 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    height: 100%;
   }
 }
 
@@ -291,6 +295,19 @@
     radial-gradient(at 97% 21%, hsl(var(--muted)) 0px, transparent 100%);
 }
 
+.icon-glow-muted-light {
+  background: radial-gradient(
+      at 97% 21%,
+      hsl(var(--muted-foreground)) 0px,
+      transparent 100%
+    ),
+    radial-gradient(
+      at 27% 37%,
+      hsl(var(--secondary-foreground)) 0px,
+      transparent 100%
+    );
+}
+
 .line {
   background: linear-gradient(
     hsl(var(--grad1)),
@@ -300,10 +317,14 @@
   width: 2px;
 }
 
-.border-gradient {
-  border: 0.2px solid;
-  border-image-slice: 1;
-  border-width: 0.2px;
+.btn-gradient {
+  background-image: radial-gradient(
+    ellipse at center,
+    hsl(var(--background)) 10%,
+    hsl(var(--grad1)) 500%
+  );
+  background-size: 100% 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .border-gradient {
@@ -334,7 +355,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative flex justify-center items-center flex-col overflow-x-hidden max-w-7xl mx-3 lg:mx-auto;
+  @apply relative flex flex-col overflow-x-hidden max-w-7xl mx-3 md:mx-2 lg:mx-auto;
 }
 
 .blogs-container {
@@ -342,7 +363,7 @@
 }
 
 .head-text {
-  @apply text-4xl font-extrabold font-heading leading-[1.15] sm:text-8xl;
+  @apply text-4xl font-extrabold font-heading leading-[1.15] sm:text-7xl;
 }
 
 .orange_gradient {
