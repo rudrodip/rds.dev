@@ -24,26 +24,9 @@ export default function Projects() {
   };
 
   return (
-    <div className="hidden md:flex h-[90vh] flex-col w-full">
-      <div className="container flex-col mt-5 mb-3 items-center justify-between translate-x-[110px]">
-        <nav className="gap-6 flex pb-1 border-b">
-          {sections.map((section, index) => {
-            return (
-              <span
-                key={index}
-                className={cn(
-                  "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground cursor-pointer",
-                  sections.indexOf(section) === activeSection ? "bg-accent" : ""
-                )}
-                onClick={() => handleSectioncChange(index)}
-              >
-                <span>{section.caption}</span>
-              </span>
-            );
-          })}
-        </nav>
-      </div>
-      <div className="container h-[90%] grid gap-2 md:grid-cols-[100px_1fr]">
+    <div className="hidden md:flex flex-col w-full">
+      <h1 className="head-text primary-gradient text-center mb-4">Projects</h1>
+      <div className="grid gap-2 md:grid-cols-[100px_1fr]  border rounded-lg pt-5 px-1">
         <div className="flex justify-between">
           <aside className="w-[100px] flex-col flex pr-1 border-r">
             {sections[activeSection].categories.map((category, index) => {
