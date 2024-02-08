@@ -3,12 +3,25 @@ import { Experience } from "@src/types";
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="mt-10">
-      <h1 className="text-4xl primary-gradient font-bold tracking-tighter mb-3">
+    <section
+      id="experience"
+      className="relative mt-10 overflow-hidden
+      after:content['']
+      after:to-transparent
+      after:from-background
+      after:bg-gradient-to-t
+      after:right-0
+      after:bottom-[-30px]
+      after:w-full
+      after:h-20
+      after:z-10
+      after:absolute"
+    >
+      <h1 className="text-4xl primary-gradient font-bold tracking-tighter mb-3 z-50">
         Experiences
       </h1>
-      <div className="flex flex-col gap-5 justify-between">
-        {experiencesConfig.slice(0, 2).map((experience, index) => (
+      <div className="relative flex flex-col gap-5 justify-between h-[350px] overflow-y-scroll">
+        {experiencesConfig.map((experience, index) => (
           <Experience key={index} experience={experience} />
         ))}
       </div>
@@ -23,7 +36,11 @@ const Experience = ({ experience }: { experience: Experience }) => {
       <div>
         <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
         <div className="">
-          <a href={experience.company.url} target="_blank">
+          <a
+            href={experience.company.url}
+            target="_blank"
+            className="hover:underline font-semibold primary-gradient"
+          >
             {experience.company.name}
           </a>
           {" | "}
