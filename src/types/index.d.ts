@@ -97,3 +97,10 @@ export type SocialIconProps = {
   link: string;
   pfpLink?: string;
 };
+
+export type Tech = {
+  name: string;
+  icon: string;
+  color: string;
+  experience: number;
+};
