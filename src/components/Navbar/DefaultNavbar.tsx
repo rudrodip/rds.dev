@@ -19,7 +19,7 @@ import { Button } from "@src/components/ui/button";
 import { motion } from "framer-motion";
 import { BlogMenu } from "./blog-menu";
 import { aboutConfig } from "@src/config/about";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const DynamicLottieAnimation = dynamic(
   () => import("@src/components/Header/LottieAnimation"),
@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className="flex gap-2 items-center">
-          <ConnectButton showBalance={false} />
+          {/* <ConnectButton showBalance={false} /> */}
           <ThemeToggleDropDown />
         </div>
       </div>
