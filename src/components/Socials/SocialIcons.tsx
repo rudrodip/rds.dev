@@ -34,7 +34,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
   pfpLink,
 }) => {
   return (
-    <HoverCard openDelay={20} closeDelay={5}>
+    <HoverCard openDelay={50} closeDelay={5}>
       <HoverCardTrigger asChild>
         <div className="flex w-8 h-8 rounded-full items-center">
           <a href={link} target="_blank">
@@ -45,8 +45,8 @@ const SocialIcon: React.FC<SocialIconProps> = ({
           </a>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80">
-        <div className="flex justify-between space-x-4">
+      <HoverCardContent className="w-72">
+        <div className="flex justify-between gap-6">
           <Avatar>
             <AvatarImage src={pfpLink} />
             <AvatarFallback>RDS</AvatarFallback>
