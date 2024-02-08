@@ -2,7 +2,7 @@ import { AboutConfig } from "@src/types";
 
 export const aboutConfig: AboutConfig = {
   name: "Rudrodip Sarker",
-  bio: "Full Stack Developer | I build real world applications",
+  bio: "Fullstack Dev | I turn ideas into MVP & MVPs to production",
   description:
     "I am Rudrodip Sarker, an enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
   image: "https://rudrodip.tech/android-chrome-512x512.png",
