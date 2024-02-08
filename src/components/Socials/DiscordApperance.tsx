@@ -41,7 +41,7 @@ function DiscordApperance() {
                 status.active_on_discord_mobile ||
                 status.active_on_discord_web
                 ? "icon-glow"
-                : "icon-glow-muted"
+                : "icon-glow-muted-light dark:icon-glow-muted"
             )}
           ></span>
         </TooltipTrigger>
