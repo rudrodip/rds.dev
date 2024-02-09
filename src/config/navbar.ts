@@ -1,4 +1,4 @@
-import { NavbarConfig } from "@src/types";
+import { NavbarConfig } from "@/types";
 import { HomeIcon, PersonStanding, Text, Cable, Contact } from "lucide-react";
 
 export const navbarConfig: NavbarConfig = {
