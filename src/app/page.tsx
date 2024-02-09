@@ -1,18 +1,18 @@
-import CodeQuote from "@src/components/Typographics/CodeQuote";
+import CodeQuote from "@/components/Typographics/CodeQuote";
 import dynamic from "next/dynamic";
-import LoadSpinner from "@src/components/loadspinner";
-import { HeroSection } from "@src/components/Header/Hero";
+import LoadSpinner from "@/components/loadspinner";
+import { HeroSection } from "@/components/Header/Hero";
+import Project1 from "@/components/Projects/project1";
 
-const DynamicProject = dynamic(
-  () => import("@src/components/Project/Projects"),
-  { loading: () => <LoadSpinner /> }
-);
+const DynamicProject = dynamic(() => import("@/components/Project/Projects"), {
+  loading: () => <LoadSpinner />,
+});
 const DynamicMobileProject = dynamic(
-  () => import("@src/components/Project/MobileView"),
+  () => import("@/components/Project/MobileView"),
   { loading: () => <LoadSpinner /> }
 );
 const DynamicContactPage = dynamic(
-  () => import("@src/components/Contact/contact"),
+  () => import("@/components/Contact/contact"),
   { loading: () => <LoadSpinner /> }
 );
 
@@ -28,6 +28,7 @@ export default function Home() {
       <div id="projects" className="w-full lg:mb-32">
         <DynamicProject />
         <DynamicMobileProject />
+        {/* <Project1 /> */}
       </div>
       <div className="w-full lg:mb-32">
         <DynamicContactPage />
