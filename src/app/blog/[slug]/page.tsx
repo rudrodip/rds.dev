@@ -10,16 +10,16 @@ import { notFound } from "next/navigation";
 import { allAuthors, allPosts } from "contentlayer/generated";
 
 import { env } from "@env.mjs";
-import { Mdx } from "@src/components/mdxComponent";
-import BlogHeaderAnimation from "@src/components/blog-header-animation";
-import { getTableOfContents } from "@src/lib/toc";
-import { DashboardTableOfContents } from "@src/components/toc";
-import "@src/styles/mdx.css";
+import { Mdx } from "@/components/mdxComponent";
+import BlogHeaderAnimation from "@/components/blog-header-animation";
+import { getTableOfContents } from "@/lib/toc";
+import { DashboardTableOfContents } from "@/components/toc";
+import "@/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { cn, absoluteUrl } from "@src/lib/utils";
-import { buttonVariants } from "@src/components/ui/button";
+import { cn, absoluteUrl } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 
 type PostPageProps = {
@@ -82,7 +82,6 @@ export async function generateMetadata({
     },
   };
 }
-
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
