@@ -1,14 +1,15 @@
-import "@src/styles/globals.css";
+import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { ThemeProvider } from "@src/components/theme-provider";
-import { Provider } from "@src/components/wallet/Provider";
-import Navbar from "@src/components/Navbar/DefaultNavbar";
-import Footer from "@src/components/Footer/Footer";
-import { cn } from "@src/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Provider } from "@/components/wallet/Provider";
+import Navbar from "@/components/Navbar/DefaultNavbar";
+import Footer from "@/components/Footer/Footer";
+import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import { siteConfig } from "@src/config/site";
-import { MiniNavbar } from "@src/components/Navbar/MiniNavbar";
+import { siteConfig } from "@/config/site";
+import { MiniNavbar } from "@/components/Navbar/MiniNavbar";
+import { RootCanvas } from "@/components/Canvas/root-canvas";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -121,6 +122,7 @@ export default function RootLayout({
                   <Navbar />
                 </header>
                 <MiniNavbar />
+                <RootCanvas />
                 <div className="app">{children}</div>
               </div>
               <Footer />
