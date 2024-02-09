@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import { allPages } from "contentlayer/generated";
-import { Mdx } from "@src/components/mdxComponent";
+import { Mdx } from "@/components/mdxComponent";
 import MdxHeaderAnimation from "../mdx-header-animation";
-import { Card } from "@src/components/ui/card";
-import "@src/styles/mdx.css";
+import { Card } from "@/components/ui/card";
+import "@/styles/mdx.css";
 
 async function getpageFromParams(params: { slug: string }) {
   const slug = params.slug;
