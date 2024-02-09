@@ -1,4 +1,4 @@
-import { item, section } from "@src/types";
+import { item, section } from "@/types";
 
 const webProjects: item[] = [
   {
@@ -204,7 +204,7 @@ const simulationProjects: item[] = [
     links: [
       {
         name: "Blog",
-        url: "https://rudrodip.vercel.app/blog/harmonic-oscillation-analyzer"
+        url: "https://rudrodip.vercel.app/blog/harmonic-oscillation-analyzer",
       },
       {
         name: "Github",
@@ -599,8 +599,7 @@ export const featuredProjects: item[] = [
   roboticsProjects[1],
   mobileProjects[0],
   botProjects[0],
-]
-
+];
 
 export const projects: section<item> = {
   caption: "Projects",
