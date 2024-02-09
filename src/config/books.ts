@@ -1,26 +1,26 @@
-import { item, section } from "@src/types";
+import { item, section } from "@/types";
 
-const physicsBooks: item[] = []
-const mathBooks: item[] = []
-const csBooks: item[] = []
+const physicsBooks: item[] = [];
+const mathBooks: item[] = [];
+const csBooks: item[] = [];
 
 export const books: section<item> = {
-  caption: 'Books',
+  caption: "Books",
   categories: [
     {
-      name: 'Physics',
+      name: "Physics",
       icon: "/categories/featured.png",
       items: physicsBooks,
     },
     {
-      name: 'Math',
+      name: "Math",
       icon: "/categories/featured.png",
-      items: mathBooks
+      items: mathBooks,
     },
     {
-      name: 'Computer Science',
+      name: "Computer Science",
       icon: "/categories/featured.png",
-      items: csBooks
-    }
-  ]
-}
+      items: csBooks,
+    },
+  ],
+};
