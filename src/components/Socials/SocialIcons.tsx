@@ -2,8 +2,8 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@src/components/ui/hover-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@src/components/ui/avatar";
+} from "@/components/ui/hover-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Github,
   Twitter,
@@ -12,8 +12,8 @@ import {
   Linkedin,
   LucideIcon,
 } from "lucide-react";
-import { SocialIconProps } from "@src/types";
-import { socialIconsData } from "@src/config/socials";
+import { SocialIconProps } from "@/types";
+import { socialIconsData } from "@/config/socials";
 
 const SocialIcons = () => {
   return (
