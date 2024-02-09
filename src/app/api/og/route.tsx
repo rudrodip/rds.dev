@@ -1,5 +1,5 @@
 import { ImageResponse } from "@vercel/og";
-import { ogImageSchema } from "@src/lib/validations/og";
+import { ogImageSchema } from "@/lib/validations/og";
 
 export const runtime = "edge";
 
