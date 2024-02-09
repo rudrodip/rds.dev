@@ -1,4 +1,4 @@
-import { SiteConfig } from "@src/types";
+import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Rudrodip Sarker",
