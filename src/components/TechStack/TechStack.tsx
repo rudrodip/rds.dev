@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import ConnectionLine from "./ConnectionLine";
-import { cn } from "@src/lib/utils";
+import { cn } from "@/lib/utils";
 
 type TechBoxProps = {
   pinId: string;
