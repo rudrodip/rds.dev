@@ -1,4 +1,4 @@
-import { SocialIconProps } from "@src/types";
+import { SocialIconProps } from "@/types";
 import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 
 export const socialIconsData: SocialIconProps[] = [
