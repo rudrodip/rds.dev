@@ -1,17 +1,17 @@
 "use client";
 
-import { navbarConfig } from "@src/config/navbar";
-import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
+import { navbarConfig } from "@/config/navbar";
+import ThemeToggleDropDown from "@/components/ThemeToggleDropDown";
 import Link from "next/link";
-import { cn } from "@src/lib/utils";
-import { useScroll } from "@src/hooks/use-scoll";
+import { cn } from "@/lib/utils";
+import { useScroll } from "@/hooks/use-scoll";
 import { Button } from "../ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@src/components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 export const MiniNavbar = () => {
   const scrolledEnough = useScroll(300);
