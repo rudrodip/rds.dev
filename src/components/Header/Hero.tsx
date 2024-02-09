@@ -1,16 +1,16 @@
 "use client";
 
-import { aboutConfig } from "@src/config/about";
+import { aboutConfig } from "@/config/about";
 import { ExperienceSection } from "./Experience";
-import SocialIcons from "@src/components/Socials/SocialIcons";
-import { Button } from "@src/components/ui/button";
+import SocialIcons from "@/components/Socials/SocialIcons";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DiscordApperance from "../Socials/DiscordApperance";
-import { techStack } from "@src/config/techstack";
+import { techStack } from "@/config/techstack";
 import { ParallaxText } from "./Parallax";
 import Image from "next/image";
-import { Tech } from "@src/types";
-import { hexToRGBA } from "@src/lib/utils";
+import { Tech } from "@/types";
+import { hexToRGBA } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 export const HeroSection = () => {
@@ -31,7 +31,7 @@ export const HeroSection = () => {
               <a
                 href={aboutConfig.links.twitter}
                 target="_blank"
-                className="text-blue-400"
+                className="text-blue-400 underline"
               >
                 @rds_agi
               </a>
@@ -39,7 +39,7 @@ export const HeroSection = () => {
           </div>
           <DiscordApperance />
         </div>
-        <p className="desc">{aboutConfig.bio}</p>
+        <p className="desc primary-gradient font-semibold">{aboutConfig.bio}</p>
         <div className="flex gap-4 align-middle flex-wrap my-5">
           <Button asChild variant="outline" size="sm">
             <Link href="/#contact">Get in touch</Link>
@@ -74,7 +74,7 @@ export const HeroSection = () => {
           before:absolute"
         >
           <div>
-            <ParallaxText baseVelocity={-2}>
+            <ParallaxText baseVelocity={-1}>
               <div className="flex flex-col gap-2">
                 {techStack1.map((tech) => (
                   <TechLogo key={tech.name} tech={tech} />
@@ -83,7 +83,7 @@ export const HeroSection = () => {
             </ParallaxText>
           </div>
           <div>
-            <ParallaxText baseVelocity={2}>
+            <ParallaxText baseVelocity={1}>
               <div className="flex flex-col gap-2">
                 {techStack2.map((tech) => (
                   <TechLogo key={tech.name} tech={tech} />
@@ -92,7 +92,7 @@ export const HeroSection = () => {
             </ParallaxText>
           </div>
           <div>
-            <ParallaxText baseVelocity={-2}>
+            <ParallaxText baseVelocity={-1}>
               <div className="flex flex-col gap-2">
                 {techStack3.map((tech) => (
                   <TechLogo key={tech.name} tech={tech} />
@@ -101,7 +101,7 @@ export const HeroSection = () => {
             </ParallaxText>
           </div>
           <div>
-            <ParallaxText baseVelocity={2}>
+            <ParallaxText baseVelocity={1}>
               <div className="flex flex-col gap-2">
                 {techStack4.map((tech) => (
                   <TechLogo key={tech.name} tech={tech} />
