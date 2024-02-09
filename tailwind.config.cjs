@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-    '/src/content/**/*.{md,mdx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "/src/content/**/*.{md,mdx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -25,6 +25,8 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "media-brand": "rgb(var(--media-brand) / <alpha-value>)",
+        "media-focus": "rgb(var(--media-focus) / <alpha-value>)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -79,5 +81,21 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("@vidstack/react/tailwind.cjs")({
+      prefix: "media",
+    }),
+    require("@xpd/tailwind-3dtransforms"),
+    customVariants,
+  ],
+};
+
+function customVariants({ addVariant, matchVariant }) {
+  // Strict version of `.group` to help with nesting.
+  matchVariant("parent-data", (value) => `.parent[data-${value}] > &`);
+
+  addVariant("hocus", ["&:hover", "&:focus-visible"]);
+  addVariant("group-hocus", [".group:hover &", ".group:focus-visible &"]);
 }

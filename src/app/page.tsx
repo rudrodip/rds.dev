@@ -1,28 +1,34 @@
-import Header from "@src/components/Header/Header";
-import CodeQuote from "@src/components/Typographics/CodeQuote";
+import CodeQuote from "@/components/Typographics/CodeQuote";
 import dynamic from "next/dynamic";
-import LoadSpinner from "@src/components/loadspinner";
+import LoadSpinner from "@/components/loadspinner";
+import { HeroSection } from "@/components/Header/Hero";
+import Project1 from "@/components/Projects/project1";
 
-const DynamicTerminalUI = dynamic(() => import("@src/components/TerminalUI/TerminalUI"), { loading: () => <LoadSpinner /> });
-const DynamicProject = dynamic(() => import("@src/components/Project/Projects"), { loading: () => <LoadSpinner /> });
-const DynamicMobileProject = dynamic(() => import("@src/components/Project/MobileView"), { loading: () => <LoadSpinner /> });
-const DynamicContactPage = dynamic(() => import("@src/components/Contact/contact"), { loading: () => <LoadSpinner /> });
+const DynamicProject = dynamic(() => import("@/components/Project/Projects"), {
+  loading: () => <LoadSpinner />,
+});
+const DynamicMobileProject = dynamic(
+  () => import("@/components/Project/MobileView"),
+  { loading: () => <LoadSpinner /> }
+);
+const DynamicContactPage = dynamic(
+  () => import("@/components/Contact/contact"),
+  { loading: () => <LoadSpinner /> }
+);
 
 export default function Home() {
   return (
     <>
-      <div className="flex items-center md:min-h-screen my-6 md:mt-0 lg:-translate-y-10">
-        <Header />
+      <div className="w-full lg:min-h-screen flex justify-center items-center">
+        <HeroSection />
       </div>
-      <div id="aboutme" className=" mb-6 lg:mb-32">
+      <div id="aboutme" className="mt-10 mb-6 lg:mb-32 mx-auto">
         <CodeQuote />
-      </div>
-      <div className="lg:mb-32">
-        <DynamicTerminalUI />
       </div>
       <div id="projects" className="w-full lg:mb-32">
         <DynamicProject />
         <DynamicMobileProject />
+        {/* <Project1 /> */}
       </div>
       <div className="w-full lg:mb-32">
         <DynamicContactPage />

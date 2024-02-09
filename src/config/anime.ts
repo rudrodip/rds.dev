@@ -1,63 +1,62 @@
-import { item, section } from "@src/types";
+import { item, section } from "@/types";
 
-const animeMovies: item[] = []
-const actionGenre: item[] = []
-const comedyGenre: item[] = []
-const horrorGenre: item[] = []
-const romanceGenre: item[] = []
-const thrillerGenre: item[] = []
-const dramaGenre: item[] = []
-const fantasyGenre: item[] = []
-const scifiGenre: item[] = []
-
+const animeMovies: item[] = [];
+const actionGenre: item[] = [];
+const comedyGenre: item[] = [];
+const horrorGenre: item[] = [];
+const romanceGenre: item[] = [];
+const thrillerGenre: item[] = [];
+const dramaGenre: item[] = [];
+const fantasyGenre: item[] = [];
+const scifiGenre: item[] = [];
 
 export const animes: section<item> = {
-  caption: 'Anime',
+  caption: "Anime",
   categories: [
     {
-      name: 'Anime Movie',
+      name: "Anime Movie",
       icon: "/categories/featured.png",
       items: animeMovies,
     },
     {
-      name: 'Action',
+      name: "Action",
       icon: "/categories/featured.png",
-      items: actionGenre
+      items: actionGenre,
     },
     {
-      name: 'Comedy',
+      name: "Comedy",
       icon: "/categories/featured.png",
-      items: comedyGenre
+      items: comedyGenre,
     },
     {
-      name: 'Horror',
+      name: "Horror",
       icon: "/categories/featured.png",
-      items: horrorGenre
+      items: horrorGenre,
     },
     {
-      name: 'Romance',
+      name: "Romance",
       icon: "/categories/featured.png",
-      items: romanceGenre
+      items: romanceGenre,
     },
     {
-      name: 'Thriller',
+      name: "Thriller",
       icon: "/categories/featured.png",
-      items: thrillerGenre
+      items: thrillerGenre,
     },
     {
-      name: 'Drama',
+      name: "Drama",
       icon: "/categories/featured.png",
-      items: dramaGenre
+      items: dramaGenre,
     },
     {
-      name: 'Fantasy',
+      name: "Fantasy",
       icon: "/categories/featured.png",
-      items: fantasyGenre
+      items: fantasyGenre,
     },
     {
-      name: 'Sci-Fi',
+      name: "Sci-Fi",
       icon: "/categories/featured.png",
-      items: scifiGenre
-    }
-  ]
-}
+      items: scifiGenre,
+    },
+  ],
+};

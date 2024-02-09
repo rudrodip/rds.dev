@@ -1,8 +1,9 @@
-import { SiteConfig } from "@src/types"
+import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Rudrodip Sarker",
-  description: "I am Rudrodip Sarker, a student at Rajshahi College and enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
+  description:
+    "I am Rudrodip Sarker, an enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
   url: "https://rudrodip.tech",
   ogImage: "https://rudrodip.tech/og.png",
   links: {
@@ -13,4 +14,4 @@ export const siteConfig: SiteConfig = {
     discord: "https://discordapp.com/users/841126921886498817",
     youtube: "https://www.youtube.com/@rudrodipsarker",
   },
-}
+};

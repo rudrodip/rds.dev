@@ -1,17 +1,24 @@
-import type { item } from "@src/types";
+import type { item } from "@/types";
 import Image from "next/image";
-import { Button } from "@src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@src/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 export const SectionViewLarge = (props: item) => {
   return (
     <section className="w-full">
-      <a href={props.links.length > 0 && props.links[0].url || 'https://github.com/rudrodip'} target="_blank" className="w-full">
+      <a
+        href={
+          (props.links.length > 0 && props.links[0].url) ||
+          "https://github.com/rudrodip"
+        }
+        target="_blank"
+        className="w-full"
+      >
         <Image
           src={props.image.desktop}
           alt={props.title}
@@ -30,11 +37,7 @@ export const SectionViewLarge = (props: item) => {
           <DropdownMenuContent align="end">
             {props.links.map((link, index) => {
               return (
-                <a
-                  key={index}
-                  href={link?.url}
-                  target="_blank"
-                >
+                <a key={index} href={link?.url} target="_blank">
                   <DropdownMenuItem className="curson-pointer">
                     {link?.image && (
                       <Image
@@ -55,7 +58,7 @@ export const SectionViewLarge = (props: item) => {
         <div className="flex flex-wrap gap-3">
           {props.otherLinks.map((link, index) => {
             return (
-              <Button key={index} className="mr-2 px-2" variant='outline'>
+              <Button key={index} className="mr-2 px-2" variant="outline">
                 {link?.image && (
                   <Image
                     src={link.image}

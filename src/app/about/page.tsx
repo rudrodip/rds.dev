@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { allPages } from "contentlayer/generated";
 
-import { Mdx } from "@src/components/mdxComponent";
-import MdxHeaderAnimation from "@src/components/mdx-header-animation";
-import { getTableOfContents } from "@src/lib/toc";
-import { DashboardTableOfContents } from "@src/components/toc";
-import "@src/styles/mdx.css";
+import { Mdx } from "@/components/mdxComponent";
+import MdxHeaderAnimation from "@/components/mdx-header-animation";
+import { getTableOfContents } from "@/lib/toc";
+import { DashboardTableOfContents } from "@/components/toc";
+import "@/styles/mdx.css";
 import { Metadata } from "next";
-import { siteConfig } from "@src/config/site";
+import { siteConfig } from "@/config/site";
 
 type AboutPageProps = {
   params: {
@@ -28,7 +28,7 @@ async function getpageFromParams(params: { slug: string }) {
 export async function generateMetadata({
   params,
 }: AboutPageProps): Promise<Metadata> {
-  const page = await getpageFromParams({ slug: 'about' });
+  const page = await getpageFromParams({ slug: "about" });
 
   if (!page) {
     return {};
@@ -44,9 +44,11 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
-    authors: [{
-      name: siteConfig.name
-    }],
+    authors: [
+      {
+        name: siteConfig.name,
+      },
+    ],
     openGraph: {
       title: page.title,
       description: page.description,
@@ -71,7 +73,7 @@ export async function generateMetadata({
 }
 
 export default async function AboutPage() {
-  const page = await getpageFromParams({ slug: 'about' });
+  const page = await getpageFromParams({ slug: "about" });
 
   if (!page) {
     notFound();
@@ -87,10 +89,7 @@ export default async function AboutPage() {
         </div>
       </div>
       <div className="mx-auto w-full min-w-0">
-        <MdxHeaderAnimation 
-          title={page.title}
-          description={page.description}
-        />
+        <MdxHeaderAnimation title={page.title} description={page.description} />
         <Mdx code={page.body.code} />
         <hr className="my-4 md:my-6" />
       </div>

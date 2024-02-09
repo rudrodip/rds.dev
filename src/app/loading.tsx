@@ -1,11 +1,11 @@
-import LoadSpinner from "@src/components/loadspinner"
+import LoadSpinner from "@/components/loadspinner";
 
 const loading = () => {
   return (
     <div className="w-full min-h-screen flex-center">
       <LoadSpinner />
     </div>
-  )
-}
+  );
+};
 
-export default loading
+export default loading;

@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { featuredProjects } from "@src/config/projects";
+import { featuredProjects } from "@/config/projects";
 import Image from "next/image";
-import { Button } from "@src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@src/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay } from 'swiper/modules'
+import { Autoplay } from "swiper/modules";
 
 export default function MobileProjectView() {
   return (
@@ -21,7 +21,7 @@ export default function MobileProjectView() {
       <Swiper
         autoplay={{
           delay: 2000,
-          disableOnInteraction: false
+          disableOnInteraction: false,
         }}
         speed={1000}
         loop={true}
@@ -36,7 +36,7 @@ export default function MobileProjectView() {
                   src={project.image.desktop}
                   alt={project.title}
                   width={600}
-                  height={600}
+                  height={400}
                 />
                 <div className="my-6 space-y-3">
                   <DropdownMenu>

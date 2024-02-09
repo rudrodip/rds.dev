@@ -2,8 +2,8 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@src/components/ui/hover-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@src/components/ui/avatar";
+} from "@/components/ui/hover-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Github,
   Twitter,
@@ -12,49 +12,15 @@ import {
   Linkedin,
   LucideIcon,
 } from "lucide-react";
-
-type SocialIconProps = {
-  Icon: LucideIcon;
-  accountName: string;
-  link: string;
-  pfpLink?: string;
-};
+import { SocialIconProps } from "@/types";
+import { socialIconsData } from "@/config/socials";
 
 const SocialIcons = () => {
   return (
-    <div
-      className="flex justify-start items-center space-x-3 flex-wrap"
-    >
-      <SocialIcon
-        Icon={Github}
-        accountName="rudrodip"
-        link="https://github.com/rudrodip"
-        pfpLink="https://avatars.githubusercontent.com/u/77154365"
-      />
-      <SocialIcon
-        Icon={Twitter}
-        accountName="@rds_agi"
-        link="https://twitter.com/rds_agi"
-        pfpLink="https://unavatar.io/twitter/rds_agi"
-      />
-      <SocialIcon
-        Icon={Linkedin}
-        accountName="Rudrodip Sarker"
-        link="https://www.linkedin.com/in/rudrodip"
-        pfpLink="https://avatars.githubusercontent.com/u/77154365"
-      />
-      <SocialIcon
-        Icon={Facebook}
-        accountName="Rudrodip Sarker"
-        link="https://facebook.com/enthusiast.math"
-        pfpLink="https://avatars.githubusercontent.com/u/77154365"
-      />
-      <SocialIcon
-        Icon={Instagram}
-        accountName="@martian_agi"
-        link="https://www.instagram.com/rds_agi"
-        pfpLink="https://avatars.githubusercontent.com/u/77154365"
-      />
+    <div className="flex justify-start items-center space-x-3 flex-wrap">
+      {socialIconsData.map((socialIcon, index) => (
+        <SocialIcon key={index} {...socialIcon} />
+      ))}
     </div>
   );
 };
@@ -68,18 +34,19 @@ const SocialIcon: React.FC<SocialIconProps> = ({
   pfpLink,
 }) => {
   return (
-    <HoverCard openDelay={20} closeDelay={5}>
+    <HoverCard openDelay={50} closeDelay={5}>
       <HoverCardTrigger asChild>
-        <div
-          className="flex w-8 h-8 rounded-full items-center"
-        >
+        <div className="flex w-8 h-8 rounded-full items-center">
           <a href={link} target="_blank">
-            <Icon className="hover:scale-105 transition-all ease-in-out" strokeWidth={1.25} />
+            <Icon
+              className="hover:scale-105 transition-all ease-in-out"
+              strokeWidth={1.25}
+            />
           </a>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent className="w-80">
-        <div className="flex justify-between space-x-4">
+      <HoverCardContent className="w-72">
+        <div className="flex justify-between gap-6">
           <Avatar>
             <AvatarImage src={pfpLink} />
             <AvatarFallback>RDS</AvatarFallback>

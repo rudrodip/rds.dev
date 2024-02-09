@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { cn } from "@src/lib/utils";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,24 +11,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@src/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@src/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
-import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
-import { projects } from "@src/config/projects";
-import { Button } from "../ui/button";
-import MobileNav from "./MobileNavbar";
+} from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import ThemeToggleDropDown from "@/components/ThemeToggleDropDown";
+import { projects } from "@/config/projects";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { BlogMenu } from "./blog-menu";
+import { aboutConfig } from "@/config/about";
+import { SearchBar } from "./search-bar";
 
 const DynamicLottieAnimation = dynamic(
-  () => import("@src/components/Header/LottieAnimation"),
+  () => import("@/components/Header/LottieAnimation"),
   {
     loading: () => <p>...</p>,
   }
@@ -36,35 +30,24 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 bg-primary-foreground mb-1 z-50 py-[1px]">
-      <div className="flex justify-between m-3 lg:mx-24">
+    <nav className="z-50">
+      <div className="mx-auto max-w-7xl flex h-14 lg:h-15 items-center justify-between gap-2 lg:justify-start py-6">
         <div className="flex">
-          <div className="lg:hidden mr-2 flex items-center">
-            <Sheet>
-              <SheetTrigger>
-                <Menu />
-              </SheetTrigger>
-              <SheetContent className="flex-col">
-                <SheetHeader>
-                  <SheetTitle>explore !!!</SheetTitle>
-                  <SheetDescription></SheetDescription>
-                </SheetHeader>
-                <MobileNav />
-              </SheetContent>
-            </Sheet>
-          </div>
           <Logo />
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex gap-6">
             <NavMenu />
           </div>
         </div>
-        <ThemeToggleDropDown />
+        <SearchBar />
+        <div className="flex gap-2 items-center">
+          <ThemeToggleDropDown />
+        </div>
       </div>
     </nav>
   );
 }
 
-const ListItem = React.forwardRef<
+export const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
@@ -95,10 +78,8 @@ const NavMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger
-            className={cn(navigationMenuTriggerStyle(), "nav-button")}
-          >
-            <Link href="/about">/about</Link>
+          <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle())}>
+            <Link href="/about">About</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -110,11 +91,10 @@ const NavMenu = () => {
                   >
                     <DynamicLottieAnimation />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      rds/rudrodip
+                      {aboutConfig.name}
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      self-taught programmer with a passion for learning and
-                      creating
+                      {aboutConfig.bio}
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -123,8 +103,7 @@ const NavMenu = () => {
                 my self taught programming journey starts in 2019
               </ListItem>
               <ListItem href="/#aboutme" title="who am I?">
-                I&apos;m Rudrodip Sarker, currently a student and a self-taught
-                programmer
+                {aboutConfig.description}
               </ListItem>
               <ListItem href="/#contact" title="contact">
                 feel free to contact me...
@@ -133,11 +112,11 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="nav-button">
-            <Link href="/#projects">projects</Link>
+          <NavigationMenuTrigger>
+            <Link href="/#projects">Projects</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {projects.categories.map(
                 (category, id) =>
                   category.name === "Featured" &&
@@ -153,30 +132,69 @@ const NavMenu = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "nav-button")}
-            >
-              blog
-            </NavigationMenuLink>
-          </Link>
-          <Link href="/#contact" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "nav-button")}
-            >
-              contact
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuTrigger>
+            <Link href="/blog">Blogs</Link>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <BlogMenu />
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Button asChild variant="ghost" className="hover:bg-transaparent">
+            <Link href="/#contact">Contact</Link>
+          </Button>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
 };
 
+const svgVariants = {
+  hidden: {
+    rotate: -100,
+  },
+  visible: {
+    rotate: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Logo = () => {
   return (
-    <Button asChild variant="link" className="bg-transparent">
-      <Link href="/">/rudrodip</Link>
-    </Button>
+    <Link href="/" className="mr-5 flex items-center justify-center">
+      <motion.svg
+        width="20"
+        height="30"
+        viewBox="0 0 425 502"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        variants={svgVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.path
+          id="rds"
+          d="M39 307.884H222.5C242 307.884 245 306.384 255.5 302.384C268.691 297.358 366.5 260.883 356.5 165.883C346.5 70.8834 275.5 41.8834 255 39.8834C238.6 38.2834 104.333 39.2168 39 39.8835M39 39.8835V462.884H349L39 39.8835Z"
+          stroke="#04C3F9"
+          stroke-width="77"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          initial={{
+            pathLength: 0,
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            strokeWidth: 0,
+          }}
+          animate={{ pathLength: 1, strokeWidth: 50 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+        />
+      </motion.svg>
+    </Link>
   );
 };

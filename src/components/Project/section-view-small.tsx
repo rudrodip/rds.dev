@@ -1,15 +1,22 @@
-import type { item } from "@src/types";
+import type { item } from "@/types";
 import Image from "next/image";
 
 type SectionViewLargeProps = {
   id: number;
   item: item;
   handleActiveItemChange: (index: number) => void;
-}
+};
 
-export const SectionViewSmall = ({ id, item, handleActiveItemChange }: SectionViewLargeProps) => {
+export const SectionViewSmall = ({
+  id,
+  item,
+  handleActiveItemChange,
+}: SectionViewLargeProps) => {
   return (
-    <section className="w-full cursor-pointer border rounded p-1" onClick={() => handleActiveItemChange(id)}>
+    <section
+      className="w-full cursor-pointer border rounded p-1"
+      onClick={() => handleActiveItemChange(id)}
+    >
       <Image
         src={item.image.desktop}
         alt={item.title}
