@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { formatDate } from "@src/lib/utils";
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { Author } from "@.contentlayer/generated";
