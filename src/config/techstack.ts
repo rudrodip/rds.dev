@@ -1,4 +1,4 @@
-import type { Tech } from "@src/types";
+import type { Tech } from "@/types";
 
 export const techStack: Tech[] = [
   {
