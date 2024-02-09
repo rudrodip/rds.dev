@@ -1,5 +1,5 @@
-import { experiencesConfig } from "@src/config/experience";
-import { Experience } from "@src/types";
+import { experiencesConfig } from "@/config/experience";
+import { Experience } from "@/types";
 
 export const ExperienceSection = () => {
   return (
@@ -20,10 +20,14 @@ export const ExperienceSection = () => {
       <h1 className="text-4xl primary-gradient font-bold tracking-tighter mb-3 z-50">
         Experiences
       </h1>
-      <div className="relative flex flex-col gap-5 justify-between h-[350px] overflow-y-scroll">
+      <div className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">
         {experiencesConfig.map((experience, index) => (
           <Experience key={index} experience={experience} />
         ))}
+        <div className="relative flex items-center">
+          <span className="mt-3 w-3 h-3 rounded-full icon-glow-muted"></span>
+          <p className="mt-3 mx-1">👋</p>
+        </div>
       </div>
     </section>
   );
@@ -31,8 +35,21 @@ export const ExperienceSection = () => {
 
 const Experience = ({ experience }: { experience: Experience }) => {
   return (
-    <div className="flex gap-2 items-start text-md full">
-      <span className="mt-2 w-3 h-3 animate-pulse rounded-full icon-glow-muted"></span>
+    <div className="relative flex gap-2 items-start text-md pb-4">
+      <span
+        className="
+                  mt-2 w-3 h-3 rounded-full icon-glow-muted
+                  before:content['']
+                  before:to-primary/40
+                  before:from-primary/40
+                  before:bg-gradient-to-t
+                  before:left-[5px]
+                  before:top-5
+                  before:w-[1px]
+                  before:h-full
+                  before:absolute
+                  "
+      ></span>
       <div>
         <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
         <div className="">
