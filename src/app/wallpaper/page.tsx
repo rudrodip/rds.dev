@@ -1,8 +1,8 @@
 "use client";
 
-import { ParallaxText } from "@src/components/Header/Parallax";
-import { techStack } from "@src/config/techstack";
-import { TechLogo } from "@src/components/Header/Hero";
+import { ParallaxText } from "@/components/Header/Parallax";
+import { techStack } from "@/config/techstack";
+import { TechLogo } from "@/components/Header/Hero";
 
 export default function Wallpaper() {
   const length = techStack.length;
