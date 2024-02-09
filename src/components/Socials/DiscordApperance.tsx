@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { Card } from "@src/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@src/components/ui/avatar";
-import { Skeleton } from "@src/components/ui/skeleton";
+import { Card } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useLanyard } from "react-use-lanyard";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@src/components/ui/tooltip";
-import { cn } from "@src/lib/utils";
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 function DiscordApperance() {
   const { status } = useLanyard({
