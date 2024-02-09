@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card } from "@src/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 const variants = {
   hidden: { opacity: 0 },
