@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { cn } from "@src/lib/utils";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,18 +11,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@src/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle } from "@src/components/ui/navigation-menu";
-import ThemeToggleDropDown from "@src/components/ThemeToggleDropDown";
-import { projects } from "@src/config/projects";
-import { Button } from "@src/components/ui/button";
+} from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import ThemeToggleDropDown from "@/components/ThemeToggleDropDown";
+import { projects } from "@/config/projects";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { BlogMenu } from "./blog-menu";
-import { aboutConfig } from "@src/config/about";
-// import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { aboutConfig } from "@/config/about";
+import { SearchBar } from "./search-bar";
 
 const DynamicLottieAnimation = dynamic(
-  () => import("@src/components/Header/LottieAnimation"),
+  () => import("@/components/Header/LottieAnimation"),
   {
     loading: () => <p>...</p>,
   }
@@ -31,15 +31,15 @@ const DynamicLottieAnimation = dynamic(
 export default function Navbar() {
   return (
     <nav className="z-50">
-      <div className="flex h-14 lg:h-15 items-center justify-between gap-2 lg:justify-evenly py-6">
+      <div className="mx-auto max-w-7xl flex h-14 lg:h-15 items-center justify-between gap-2 lg:justify-start py-6">
         <div className="flex">
           <Logo />
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex gap-6">
             <NavMenu />
           </div>
         </div>
+        <SearchBar />
         <div className="flex gap-2 items-center">
-          {/* <ConnectButton showBalance={false} /> */}
           <ThemeToggleDropDown />
         </div>
       </div>
@@ -192,9 +192,6 @@ const Logo = () => {
           transition={{
             duration: 2,
             ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "reverse",
-            repeatDelay: 0,
           }}
         />
       </motion.svg>
