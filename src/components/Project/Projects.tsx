@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { sections } from "@src/config/sections";
-import { cn } from "@src/lib/utils";
+import { sections } from "@/config/sections";
+import { cn } from "@/lib/utils";
 import { SectionViewLarge } from "./section-view-large";
 import { SectionViewSmall } from "./section-view-small";
-import { ScrollArea } from "@src/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Projects() {
   const [activeSection, setActiveSection] = useState(0);
