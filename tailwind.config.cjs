@@ -87,6 +87,7 @@ module.exports = {
     require("@vidstack/react/tailwind.cjs")({
       prefix: "media",
     }),
+    require("@xpd/tailwind-3dtransforms"),
     customVariants,
   ],
 };
