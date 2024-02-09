@@ -1,4 +1,4 @@
-import "@src/styles/loader.css";
+import "@/styles/loader.css";
 
 const LoadSpinner = () => {
   return (
