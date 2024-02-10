@@ -14,13 +14,11 @@ import {
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { navbarConfig } from "@src/config/navbar";
-import { featuredProjects } from "@src/config/projects";
 import { socialIconsData } from "@src/config/socials";
 import Link from "next/link";
 
 export function SearchBar() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -29,7 +27,7 @@ export function SearchBar() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[250px] md:w-[300px] justify-between h-[35px]"
+          className="w-[250px] md:w-[300px] justify-between h-[35px] bg-transparent border-muted-foreground/30"
           accessKey="k"
         >
           Quick search
@@ -47,14 +45,7 @@ export function SearchBar() {
             <CommandGroup className="px-4">
               <h1 className="text-lg primary-gradient">Pages</h1>
               {navbarConfig.mainNav.map((item) => (
-                <CommandItem
-                  key={item.href}
-                  value={item.href}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
-                  }}
-                >
+                <CommandItem key={item.href} value={item.href}>
                   <Link href={item.href} className="w-full">
                     {item.title}
                   </Link>
@@ -65,14 +56,7 @@ export function SearchBar() {
             <CommandGroup className="px-4">
               <h1 className="text-lg primary-gradient">Socials</h1>
               {socialIconsData.map((item) => (
-                <CommandItem
-                  key={item.link}
-                  value={item.link}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
-                  }}
-                >
+                <CommandItem key={item.link} value={item.link}>
                   <a
                     href={item.link}
                     target="_blank"
@@ -88,28 +72,73 @@ export function SearchBar() {
             </CommandGroup>
             <Separator />
             <CommandGroup className="px-4">
-              <h1 className="text-lg primary-gradient">Projects</h1>
-              {featuredProjects.map((item) => (
-                <CommandItem
-                  key={item.title}
-                  value={item.title}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
-                  }}
-                >
-                  <a
-                    href={item.links[0]?.url || "https://github.com/rudrodip"}
-                    target="_blank"
-                    className="w-full"
-                  >
-                    <p>{item.title}</p>
-                    <p className="text-xs text-muted-foreground truncate">
-                      {item.desc}
-                    </p>
-                  </a>
-                </CommandItem>
-              ))}
+              <h1 className="text-lg primary-gradient">Featured projects</h1>
+              <CommandItem value="nexusos">
+                <Link href="#nexusos" className="w-full">
+                  <p>NexusOS</p>
+                  <p className="text-xs text-muted-foreground truncate">
+                    NexusOS is a platform that empowers researchers, scientists,
+                    and innovators to come together and collaborate on impactful
+                    scientific projects. It let's you create, collaborate and
+                    share your own projects, help you understand research papers
+                    and repositories
+                  </p>
+                </Link>
+              </CommandItem>
+              <CommandItem value="hmanalyzer">
+                <Link href="#hmanalyzer" className="w-full">
+                  <p>Harmonic Oscillation Analyzer</p>
+                  <p className="text-xs text-muted-foreground truncate">
+                    The project detects and tracks an object in a video feed,
+                    extracts its motion data, fits it to a damped oscillation
+                    function, and calculates physical parameters such as
+                    pendulum length and pivot point location.
+                  </p>
+                </Link>
+              </CommandItem>
+              <CommandItem value="durbar">
+                <Link href="#durbar" className="w-full">
+                  <p>Durbar Robot</p>
+                  <p className="text-xs text-muted-foreground truncate">
+                    It's built using Esp32 and Arduino Nano. The controller is
+                    built using React Native. It has multiple sensors, like
+                    sonar sensor, temperature and humidity sensor, and one of
+                    the unique features is that it has a 5DOF robotic arm. The
+                    robot can be controlled using a mobile app
+                  </p>
+                </Link>
+              </CommandItem>
+            </CommandGroup>
+            <CommandGroup className="px-4">
+              <h1 className="text-lg primary-gradient">Startup experience</h1>
+              <CommandItem value="bi">
+                <Link href="#bi" className="w-full">
+                  <p>Bettre Institute</p>
+                </Link>
+              </CommandItem>
+              <CommandItem value="lunco">
+                <Link href="#lunco" className="w-full">
+                  <p>LunCo</p>
+                </Link>
+              </CommandItem>
+            </CommandGroup>
+            <CommandGroup className="px-4">
+              <h1 className="text-lg primary-gradient">GenAI</h1>
+              <CommandItem value="nexbie">
+                <Link href="#nexbie" className="w-full">
+                  <p>NexusOS</p>
+                </Link>
+              </CommandItem>
+              <CommandItem value="greenlander">
+                <Link href="#greenlander" className="w-full">
+                  <p>Greenlander</p>
+                </Link>
+              </CommandItem>
+              <CommandItem value="thefirm">
+                <Link href="#thefirm" className="w-full">
+                  <p>The Firm</p>
+                </Link>
+              </CommandItem>
             </CommandGroup>
           </ScrollArea>
         </Command>
