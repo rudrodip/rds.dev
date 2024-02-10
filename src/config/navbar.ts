@@ -1,5 +1,11 @@
 import { NavbarConfig } from "@/types";
-import { HomeIcon, PersonStanding, Text, Cable, Contact } from "lucide-react";
+import {
+  HomeIcon,
+  UserCircle2Icon,
+  LayoutPanelTopIcon,
+  FileTextIcon,
+  Contact,
+} from "lucide-react";
 
 export const navbarConfig: NavbarConfig = {
   mainNav: [
@@ -16,7 +22,7 @@ export const navbarConfig: NavbarConfig = {
       href: "/blog",
     },
     {
-      title: "contact",
+      title: "Contact",
       href: "/#contact",
     },
   ],
@@ -27,15 +33,15 @@ export const navbarConfig: NavbarConfig = {
     },
     {
       href: "/about",
-      icon: PersonStanding,
+      icon: UserCircle2Icon,
     },
     {
       href: "/#projects",
-      icon: Cable,
+      icon: LayoutPanelTopIcon,
     },
     {
       href: "/blog",
-      icon: Text,
+      icon: FileTextIcon,
     },
     {
       href: "/#contact",
