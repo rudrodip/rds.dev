@@ -12,11 +12,6 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeItem, setActiveItem] = useState(0);
 
-  const handleSectioncChange = (index: number) => {
-    setActiveSection(index);
-    setActiveCategory(0);
-  };
-
   const handleCategoryChange = (index: number) => {
     setActiveCategory(index);
     sections[activeSection].categories[index].items.length > 0 &&
@@ -24,8 +19,10 @@ export default function Projects() {
   };
 
   return (
-    <div className="hidden md:flex flex-col w-full">
-      <h1 className="head-text primary-gradient text-center mb-4">Projects</h1>
+    <div className="hidden md:flex flex-col w-full max-w-7xl mx-auto mt-12 md:mt-24 lg:mt-32">
+      <h1 className="head-text-md primary-gradient text-center mb-4">
+        More...
+      </h1>
       <div className="grid gap-2 md:grid-cols-[100px_1fr]  border rounded-lg pt-5 px-1">
         <div className="flex justify-between">
           <aside className="w-[100px] flex-col flex pr-1 border-r">
