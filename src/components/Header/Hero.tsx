@@ -21,7 +21,7 @@ export const HeroSection = () => {
   const techStack4 = techStack.slice((length / 4) * 3, length);
 
   return (
-    <section className="w-full flex justify-center items-center my-7 lg:my-24">
+    <section className="w-full flex justify-center items-center my-12 lg:my-24">
       <div className="w-full md:w-1/2 xl:w-full flex flex-col justify-center">
         <div className="flex items-center">
           <div>
@@ -39,7 +39,14 @@ export const HeroSection = () => {
           </div>
           <DiscordApperance />
         </div>
-        <p className="desc primary-gradient font-semibold">{aboutConfig.bio}</p>
+        <p className="desc primary-gradient font-semibold">
+          {aboutConfig.bio.substring(0, aboutConfig.bio.lastIndexOf(" "))}{" "}
+          <span className="before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-blue-400 before:dark:bg-blue-500 relative inline-block">
+            <span className="relative text-white">
+              {aboutConfig.bio.slice(aboutConfig.bio.lastIndexOf(" ") + 1)}
+            </span>
+          </span>
+        </p>
         <div className="flex gap-4 align-middle flex-wrap my-5">
           <Button asChild variant="outline" size="sm">
             <Link href="/#contact">Get in touch</Link>
