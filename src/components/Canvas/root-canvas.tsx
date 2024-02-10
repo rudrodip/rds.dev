@@ -1,11 +1,11 @@
 "use client";
 
-import useMediaQuery from "@/hooks/use-media-query";
+import useDimensions from "@src/hooks/use-dimensions";
 import { useRef, useEffect, useState } from "react";
 
 export const RootCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { height, width } = useMediaQuery();
+  const { height, width } = useDimensions();
 
   useEffect(() => {
     const canvas = canvasRef.current;
