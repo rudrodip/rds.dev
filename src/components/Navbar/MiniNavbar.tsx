@@ -12,9 +12,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { SearchBar } from "./search-bar";
+import useMediaQuery from "@src/hooks/use-media-query";
 
 export const MiniNavbar = () => {
   const scrolledEnough = useScroll(300);
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
     <section
@@ -50,6 +53,7 @@ export const MiniNavbar = () => {
               </Tooltip>
             </TooltipProvider>
           ))}
+          {isMobile ? null : <SearchBar />}
           <ThemeToggleDropDown />
         </div>
       </div>

@@ -25,7 +25,7 @@ export const experiencesConfig: Experience[] = [
     },
     location: { name: "Remote" },
     start: "January, 2023",
-    end: "Februrary, 2023",
+    end: "Present",
     description: [
       "Currently developing distributed stateless NFT art engine",
       "Developed the core product of Pandasticals",
@@ -71,7 +71,7 @@ export const experiencesConfig: Experience[] = [
       url: "https://rc.edu.bd",
     },
     start: "November, 2022",
-    end: "October, 2023",
+    end: "December, 2023",
     description: [
       "Managed the IT department of the club",
       "Built the official website of the club",
