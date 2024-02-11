@@ -86,7 +86,7 @@ export default function Featured3() {
             </span>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-wrap items-center">
           <Button size="sm" variant="link" asChild>
             <a
               href="https://github.com/rudrodip/DurbarDriverProgram"
