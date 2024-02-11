@@ -21,7 +21,7 @@ function DiscordApperance() {
 
   if (!status) {
     return (
-      <span className="ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full icon-glow-muted cursor-progress"></span>
+      <span className="ml-2 md:ml-3 w-3 h-3 md:w-5 md:h-5 animate-pulse rounded-full icon-glow-muted cursor-progress"></span>
     );
   }
 
@@ -36,7 +36,7 @@ function DiscordApperance() {
         <TooltipTrigger asChild>
           <span
             className={cn(
-              "ml-4 md:ml-5 w-3 h-3 md:w-6 md:h-6 animate-pulse rounded-full cursor-crosshair",
+              "ml-2 md:ml-3 w-3 h-3 md:w-5 md:h-5 animate-pulse rounded-full cursor-crosshair",
               status.active_on_discord_desktop ||
                 status.active_on_discord_mobile ||
                 status.active_on_discord_web
