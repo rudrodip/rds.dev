@@ -42,7 +42,7 @@ export async function generateMetadata({
   ogUrl.searchParams.set("mode", "dark");
 
   return {
-    title: page.title,
+    title: `${page.title} | ${siteConfig.name} | ${siteConfig.description}`,
     description: page.description,
     authors: [
       {
@@ -50,7 +50,7 @@ export async function generateMetadata({
       },
     ],
     openGraph: {
-      title: page.title,
+      title: `${page.title} | ${siteConfig.name} | ${siteConfig.description}`,
       description: page.description,
       type: "website",
       url: `${url}/about`,
