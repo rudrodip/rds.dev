@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { VideoJs } from "@/components/video-component/videojs";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -46,18 +46,18 @@ export default function Startup1() {
       </h1>
       <motion.div className="w-full relative">
         <a href="https://www.bettreinstitute.com/" target="_blank">
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/b.mp4?alt=media&token=dfcb26b3-9988-4d86-aed1-dcf6cbbd3a5b"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/b.mp4?alt=media&token=dfcb26b3-9988-4d86-aed1-dcf6cbbd3a5b",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/startup1/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
