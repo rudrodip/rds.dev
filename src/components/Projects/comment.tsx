@@ -23,7 +23,11 @@ export default function Comment({
           <AvatarFallback>{commentor[0]}</AvatarFallback>
         </Avatar>
         <div className="flex flex-col">
-          <a href={commentorUrl} className="text-sm hover:underline">
+          <a
+            href={commentorUrl}
+            target="_blank"
+            className="text-sm hover:underline"
+          >
             {commentor}
           </a>
           <p className="text-sm text-muted-foreground">
