@@ -72,7 +72,7 @@ export default function Featured3() {
             comment="Wow, Rudro! This robot is amazing! Truly, these types of projects are an inspiration for me and for the entire developer community!"
             commentor="Cristian Marcelo de Picciotto"
             commentorDesignation="Systems Analyst | Magento Certified Professional Developer"
-            commentorImage="https://media.licdn.com/dms/image/C4D03AQFWLSAVWeT_Jw/profile-displayphoto-shrink_800_800/0/1621978498838?e=1712793600&v=beta&t=CpPA3mWSOvtDqnYhrbmQPo5yDlQoLqFd2ntQZJs-fQo"
+            commentorImage="/commentor/marcelo.jpg"
             commentorUrl="https://www.linkedin.com/in/cristian-marcelo-de-picciotto/"
           />
         </motion.div>
