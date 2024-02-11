@@ -7,7 +7,9 @@ import useMediaQuery from "@/hooks/use-media-query";
 import { RecentProject, type ProjectProps } from "./recent-project";
 
 export default function RecentProjects() {
-  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isMobile = useMediaQuery("(max-width: 1200px)");
+  const isTablet = useMediaQuery("(max-width: 1610px)");
+
   return (
     <section id="recent" className="w-full lg:px-4 mt-12 md:mt-24 lg:mt-48">
       <h1 className="head-text mt-24 max-w-7xl mx-auto">
@@ -17,7 +19,7 @@ export default function RecentProjects() {
         projects
       </h1>
       <Swiper
-        slidesPerView={isMobile ? 1 : 3}
+        slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
         spaceBetween={30}
         autoplay={{
           delay: 4000,
@@ -72,7 +74,7 @@ const projects: ProjectProps[] = [
   },
   {
     index: 4,
-    title: "AquaRover-controller",
+    title: "AquaRover",
     desc: "AquaRover-controller is a custom application to control AquaRover robot via bluetooth",
     img: "/projects/aquarover-desktop.png",
     urls: {
