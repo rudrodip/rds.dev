@@ -56,7 +56,7 @@ export default function Featured2() {
             className="w-full aspect-video rounded"
           >
             <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/h.mp4?alt=media&token=ac1d3234-531d-4bf5-9025-41c48bca3881"
+              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/h.mp4?alt=media&token=7d401557-583d-4872-9b95-a79230288d4d"
               type="video/mp4"
             />
           </video>
