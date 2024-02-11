@@ -13,7 +13,7 @@ export const experiencesConfig: Experience[] = [
     end: "Present",
     description: [
       "Currently developing AI solutions for empowering L.M.S in our platform",
-      "Developed the officiail website for Bettre Institute",
+      "Developed the official website for Bettre Institute",
     ],
   },
   {

@@ -164,7 +164,7 @@ const svgVariants = {
 
 const Logo = () => {
   return (
-    <Link href="/" className="mr-5 flex items-center justify-center">
+    <Link href="/" className="lg:mr-5 flex items-center justify-center">
       <motion.svg
         width="20"
         height="30"

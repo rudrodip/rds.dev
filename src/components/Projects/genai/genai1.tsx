@@ -116,7 +116,7 @@ export default function GenAI1() {
             </span>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-wrap items-center">
           <Button size="sm" variant="link" asChild>
             <a href="https://nexusos.vercel.app" target="_blank">
               Website

@@ -86,7 +86,7 @@ export default function Startup1() {
             </span>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-wrap items-center">
           <Button size="sm" variant="link" asChild>
             <a href="https://www.bettreinstitute.com/" target="_blank">
               Website
