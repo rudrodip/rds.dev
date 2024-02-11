@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { VideoJs } from "@/components/video-component/videojs";
 import { motion, useInView } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -50,18 +50,18 @@ export default function Featured2() {
           href="https://www.youtube.com/watch?v=dalsCsHtreU&t=1220s"
           target="_blank"
         >
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/h.mp4?alt=media&token=7d401557-583d-4872-9b95-a79230288d4d"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/h.mp4?alt=media&token=7d401557-583d-4872-9b95-a79230288d4d",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/featured2/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
@@ -87,14 +87,14 @@ export default function Featured2() {
             comment="You really created an impressive project :-) Congratulations again!"
             commentor="Radu Mariescu-Istodor"
             commentorDesignation="Lecturer in Computer Science at Karelia University of Applied Sciences"
-            commentorImage="https://media.licdn.com/dms/image/C4D03AQG3juhRDGu9rw/profile-displayphoto-shrink_800_800/0/1603035387043?e=1712793600&v=beta&t=c8tEryup6sJdJPDXS7ZwCWVQMUDEvTjK7Gx_FSMr_nM"
+            commentorImage="/commentor/radu.jpg"
             commentorUrl="https://www.linkedin.com/in/radu-mariescu-istodor-4629301b8/"
           />
           <Comment
             comment="Congratulations on getting the highest score in the Radu competition! What a great job! Then, I'll take a look at the blog and source code of the project since I feel like I'll be able to learn a lot from it! Keep it up! The future is bright for you! ;)"
             commentor="Cristian Marcelo de Picciotto"
             commentorDesignation="Systems Analyst | Magento Certified Professional Developer"
-            commentorImage="https://media.licdn.com/dms/image/C4D03AQFWLSAVWeT_Jw/profile-displayphoto-shrink_800_800/0/1621978498838?e=1712793600&v=beta&t=CpPA3mWSOvtDqnYhrbmQPo5yDlQoLqFd2ntQZJs-fQo"
+            commentorImage="/commentor/marcelo.jpg"
             commentorUrl="https://www.linkedin.com/in/cristian-marcelo-de-picciotto/"
           />
         </motion.div>

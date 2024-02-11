@@ -1,5 +1,6 @@
 "use client";
 
+import { VideoJs } from "@/components/video-component/videojs";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
@@ -47,18 +48,18 @@ export default function GenAI1() {
       </h1>
       <motion.div className="w-full relative">
         <a href="https://nexusos.vercel.app" target="_blank">
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/n.mp4?alt=media&token=bbd5ffed-cb00-4a54-98a4-f989887644bd"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/n.mp4?alt=media&token=bbd5ffed-cb00-4a54-98a4-f989887644bd",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/genai1/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
@@ -95,7 +96,7 @@ export default function GenAI1() {
             comment="That’s cool! Just in two days you did so much! Love hackathons for it!"
             commentor="Rod Mamin"
             commentorDesignation="Founder of lunco.space"
-            commentorImage="https://media.licdn.com/dms/image/C5603AQHoG8QDfr-G-w/profile-displayphoto-shrink_800_800/0/1536845520694?e=1712793600&v=beta&t=1coeungCrszwL7Olk0TqYAFe9gnG-Koe0LVqRYmkl4o"
+            commentorImage="/commentor/mamin.jpg"
             commentorUrl="https://www.linkedin.com/in/rod-mamin-2a48a12b/"
           />
           {/* <Comment

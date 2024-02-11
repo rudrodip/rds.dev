@@ -39,9 +39,7 @@ export default function Navbar() {
           </div>
         </div>
         <SearchBar />
-        <div className="flex gap-2 items-center">
-          <ThemeToggleDropDown />
-        </div>
+        <ThemeToggleDropDown />
       </div>
     </nav>
   );
@@ -164,7 +162,10 @@ const svgVariants = {
 
 const Logo = () => {
   return (
-    <Link href="/" className="lg:mr-5 flex items-center justify-center">
+    <Link
+      href="/"
+      className="w-10 h-10 lg:mr-5 flex items-center justify-center"
+    >
       <motion.svg
         width="20"
         height="30"

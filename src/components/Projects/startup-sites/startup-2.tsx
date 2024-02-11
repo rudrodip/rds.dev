@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { VideoJs } from "@/components/video-component/videojs";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -45,18 +45,18 @@ export default function Startup2() {
       </h1>
       <motion.div className="w-full relative">
         <a href="https://www.lunco.space/" target="_blank">
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/l.mp4?alt=media&token=97dd3289-3fb6-430d-ac79-f2e63de3b070"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/l.mp4?alt=media&token=97dd3289-3fb6-430d-ac79-f2e63de3b070",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/startup2/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
