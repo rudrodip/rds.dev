@@ -87,7 +87,7 @@ export default function GenAI2() {
             </span>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-wrap items-center">
           <Button size="sm" variant="link" asChild>
             <a href="https://greenlander.vercel.app/" target="_blank">
               Website
