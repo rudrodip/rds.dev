@@ -386,7 +386,7 @@
 }
 
 .head-text {
-  @apply text-4xl font-extrabold font-heading leading-[1.15] sm:text-7xl;
+  @apply text-4xl font-extrabold font-heading leading-[1.15] md:text-6xl sm:text-7xl;
 }
 
 .head-text-md {
