@@ -72,8 +72,10 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@types/video.js": "7.3.3",
     "@xpd/tailwind-3dtransforms": "^1.0.3",
     "postcss-import": "^15.1.0",
-    "postcss-nesting": "^12.0.1"
+    "postcss-nesting": "^12.0.1",
+    "video.js": "7.6.5"
   }
 }
