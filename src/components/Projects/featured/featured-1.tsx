@@ -96,7 +96,7 @@ export default function Featured1() {
             comment="That’s cool! Just in two days you did so much! Love hackathons for it!"
             commentor="Rod Mamin"
             commentorDesignation="Founder of lunco.space"
-            commentorImage="https://media.licdn.com/dms/image/C5603AQHoG8QDfr-G-w/profile-displayphoto-shrink_800_800/0/1536845520694?e=1712793600&v=beta&t=1coeungCrszwL7Olk0TqYAFe9gnG-Koe0LVqRYmkl4o"
+            commentorImage="/commentor/mamin.jpg"
             commentorUrl="https://www.linkedin.com/in/rod-mamin-2a48a12b/"
           />
           {/* <Comment
