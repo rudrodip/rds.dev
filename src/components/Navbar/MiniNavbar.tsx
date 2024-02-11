@@ -22,7 +22,7 @@ export const MiniNavbar = () => {
   return (
     <section
       className={cn(
-        "flex justify-center sticky top-5 z-[1000] transition-all transform-gpu duration-200",
+        "flex justify-center sticky top-2 z-[1000] transition-all transform-gpu duration-200",
         scrolledEnough
           ? "opacity-100 transalte-y-0 scale-100"
           : "opacity-0 -translate-y-24 scale-0"
