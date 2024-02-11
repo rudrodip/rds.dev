@@ -23,21 +23,21 @@ export const HeroSection = () => {
   return (
     <section className="w-full flex justify-center items-center my-12 lg:my-24">
       <div className="w-full md:w-1/2 xl:w-full flex flex-col justify-center">
-        <div className="flex items-center">
-          <div>
+        <div className="flex flex-col justify-center">
+          <div className="flex items-baseline">
             <h1 className="head-text primary-gradient">{aboutConfig.name}</h1>
-            <span className="text-xs primary-gradient">
-              aka{" "}
-              <a
-                href={aboutConfig.links.twitter}
-                target="_blank"
-                className="text-blue-400 underline"
-              >
-                @rds_agi
-              </a>
-            </span>
+            <DiscordApperance />
           </div>
-          <DiscordApperance />
+          <span className="text-xs primary-gradient">
+            aka{" "}
+            <a
+              href={aboutConfig.links.twitter}
+              target="_blank"
+              className="text-blue-400 underline"
+            >
+              @rds_agi
+            </a>
+          </span>
         </div>
         <p className="desc primary-gradient font-semibold">
           {aboutConfig.bio.substring(0, aboutConfig.bio.lastIndexOf(" "))}{" "}

@@ -16,7 +16,9 @@ const motionConfig = {
 };
 
 export default function Featured2() {
-  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isMobile = useMediaQuery("(max-width: 1000px)");
+  const isTablet = useMediaQuery("(max-width: 1610px)");
+
   const techStack = [
     "Python",
     "OpenCV-headless",
@@ -64,7 +66,8 @@ export default function Featured2() {
         <motion.div
           className={cn(
             "absolute flex flex-col gap-3",
-            isMobile ? "hidden" : "top-20 -left-40"
+            isTablet ? "top-40 -left-2" : "top-40 -left-40",
+            isMobile && "hidden"
           )}
           {...motionConfig}
           transition={{ duration: 0.25 }}
@@ -74,7 +77,8 @@ export default function Featured2() {
         <motion.div
           className={cn(
             "absolute flex flex-col gap-3",
-            isMobile ? "hidden" : "-top-16 -right-40"
+            isTablet ? "-top-16 -right-2" : "-top-16 -right-40",
+            isMobile && "hidden"
           )}
           {...motionConfig}
           transition={{ duration: 0.25 }}
@@ -171,7 +175,7 @@ const AutoIncrementor = ({ num }: { num: number }) => {
   return (
     <span
       ref={ref}
-      className="head-text text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-secondary relative"
+      className="head-text-md text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-secondary relative"
     >
       <span className="relative head-text primary-gradient">
         {value.toFixed(2)}% Accuracy

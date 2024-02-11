@@ -15,7 +15,9 @@ const motionConfig = {
 };
 
 export default function GenAI1() {
-  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isMobile = useMediaQuery("(max-width: 1000px)");
+  const isTablet = useMediaQuery("(max-width: 1610px)");
+
   const techStack = [
     "Next.js",
     "Next-Auth",
@@ -83,7 +85,8 @@ export default function GenAI1() {
         <motion.div
           className={cn(
             "absolute flex flex-col gap-3",
-            isMobile ? "hidden" : "top-40 -left-40"
+            isTablet ? "top-40 -left-2" : "top-40 -left-40",
+            isMobile && "hidden"
           )}
           {...motionConfig}
           transition={{ duration: 0.25 }}

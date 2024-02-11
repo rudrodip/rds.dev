@@ -9,10 +9,12 @@ import type { CommentProps } from "./Projects/comment";
 
 export default function RecentProjects() {
   const isMobile = useMediaQuery("(max-width: 640px)");
+  const isTablet = useMediaQuery("(max-width: 1200px)");
+
   return (
     <section className="w-full max-w-7xl mx-auto px-4 lg:px-4 my-48 md:my-52 lg:my-60">
       <Swiper
-        slidesPerView={isMobile ? 1 : 3}
+        slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
         spaceBetween={10}
         autoplay={{
           delay: 4000,
@@ -22,7 +24,7 @@ export default function RecentProjects() {
         loop={true}
         modules={[Autoplay, FreeMode]}
         freeMode={true}
-        className="h-full mySwiper
+        className="h-full flex justify-center items-center mySwiper
           after:content['']
           after:to-transparent
           after:from-background
