@@ -66,13 +66,13 @@ export default function GenAI3() {
           {...motionConfig}
           transition={{ duration: 0.25 }}
         >
-          {/* <Comment
-            comment="Some random comment by a random commentor"
-            commentor="Commentor"
-            commentorDesignation="Random text"
-            commentorImage="https://github.com/rudrodip.png"
-            commentorUrl="https://github.com/"
-          /> */}
+          <Comment
+            comment="The UI is clean and fast, and I can tell there's a lot of thought behind the theme. I've always known you to be detail-oriented and committed to quality, which clearly reflects in the work you've done on this project so far."
+            commentor="Malhar Ujawane"
+            commentorDesignation="Software Engineer | PhD GenAI LLM Researcher"
+            commentorImage="/commentor/malhar.jpg"
+            commentorUrl="https://www.linkedin.com/in/justmalhar/"
+          />
         </motion.div>
       </motion.div>
       <div className="flex flex-wrap items-center justify-between mt-2">
