@@ -1,5 +1,6 @@
 "use client";
 
+import { VideoJs } from "@/components/video-component/videojs";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
@@ -47,18 +48,18 @@ export default function GenAI1() {
       </h1>
       <motion.div className="w-full relative">
         <a href="https://nexusos.vercel.app" target="_blank">
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/n.mp4?alt=media&token=bbd5ffed-cb00-4a54-98a4-f989887644bd"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/n.mp4?alt=media&token=bbd5ffed-cb00-4a54-98a4-f989887644bd",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/genai1/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
