@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { VideoJs } from "@/components/video-component/videojs";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -46,18 +46,18 @@ export default function Featured3() {
       </h1>
       <motion.div className="w-full relative">
         <a href="https://www.youtube.com/watch?v=uYZytPxzjsk" target="_blank">
-          <video
-            autoPlay
-            muted
-            loop
-            controls={false}
-            className="w-full aspect-video rounded"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/r.mp4?alt=media&token=701da548-d9e2-4d74-bbef-1a912a6b0558"
-              type="video/mp4"
-            />
-          </video>
+          <VideoJs
+            options={{
+              muted: true,
+              sources: [
+                {
+                  src: "https://firebasestorage.googleapis.com/v0/b/hmmmhmmmhh.appspot.com/o/r.mp4?alt=media&token=701da548-d9e2-4d74-bbef-1a912a6b0558",
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            fallbackImageUrl="/projects/featured3/thumbnail.png"
+          />
         </a>
         <motion.div
           className={cn(
