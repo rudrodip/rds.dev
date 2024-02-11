@@ -19,7 +19,6 @@ const initialOptions: videojs.PlayerOptions = {
 };
 
 export const VideoJs = ({ options, fallbackImageUrl }: IVideoPlayerProps) => {
-  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
   const videoNode = React.useRef<HTMLVideoElement | null>(null);
   const player = React.useRef<videojs.Player>();
 
@@ -27,11 +26,7 @@ export const VideoJs = ({ options, fallbackImageUrl }: IVideoPlayerProps) => {
     player.current = videojs(videoNode.current, {
       ...initialOptions,
       ...options,
-    }).ready(function () {
-      this.on("loadedmetadata", () => {
-        setIsVideoLoaded(true);
-      });
-    });
+    }).ready(function () {});
     return () => {
       if (player.current) {
         player.current.dispose();
@@ -42,10 +37,6 @@ export const VideoJs = ({ options, fallbackImageUrl }: IVideoPlayerProps) => {
   return (
     <div className="w-full aspect-video flex justify-center items-center">
       <video
-        style={{
-          width: "100%",
-          aspectRatio: "16 / 9",
-        }}
         ref={videoNode}
         className="video-js w-full aspect-video"
         poster={fallbackImageUrl}
