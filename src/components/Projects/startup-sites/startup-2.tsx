@@ -85,7 +85,7 @@ export default function Startup2() {
             </span>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-wrap items-center">
           <Button size="sm" variant="link" asChild>
             <a href="https://www.lunco.space/" target="_blank">
               Website
