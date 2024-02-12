@@ -15,7 +15,7 @@ const CodeQuote = () => {
   return (
     <blockquote
       className={cn(
-        "flex gap-2 pt-2 text-3xl",
+        "flex gap-2 pt-2 text-2xl",
         "md:text-4xl lg:pt-0 lg:text-5xl"
       )}
     >
