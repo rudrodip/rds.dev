@@ -1,7 +1,6 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { Autoplay, FreeMode } from "swiper/modules";
 import useMediaQuery from "@/hooks/use-media-query";
 import Comment from "./Projects/comment";
@@ -12,7 +11,7 @@ export default function RecentProjects() {
   const isTablet = useMediaQuery("(max-width: 1200px)");
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 lg:px-4 my-48 md:my-52 lg:my-60">
+    <section className="w-full max-w-7xl mx-auto px-4 lg:px-4 my-24 md:my-52 lg:my-60">
       <Swiper
         slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
         spaceBetween={10}
@@ -49,7 +48,12 @@ export default function RecentProjects() {
         "
       >
         {comments.map((comment, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide
+            key={idx}
+            style={{
+              height: "auto",
+            }}
+          >
             <Comment {...comment} />
           </SwiperSlide>
         ))}
@@ -60,38 +64,27 @@ export default function RecentProjects() {
 
 const comments: CommentProps[] = [
   {
-    commentor: "Random",
+    commentor: "Mehul Sharma",
     commentorDesignation: "Software developer",
-    commentorImage: "https://github.com/rudrodip.png",
-    commentorUrl: "https://github.com",
-    comment: "Some random comment by a random person",
+    commentorImage: "/commentor/mehul.jpg",
+    commentorUrl: "https://twitter.com/mehulsharmamat",
+    comment: "the website looks really good actually",
   },
   {
-    commentor: "Random",
-    commentorDesignation: "Software developer",
-    commentorImage: "https://github.com/rudrodip.png",
-    commentorUrl: "https://github.com",
-    comment: "Some random comment by a random person",
+    comment:
+      "I've always known you to be detail-oriented and committed to quality, which clearly reflects in the work.",
+    commentor: "Malhar Ujawane",
+    commentorDesignation: "Software Engineer | PhD GenAI LLM Researcher",
+    commentorImage: "/commentor/malhar.jpg",
+    commentorUrl: "https://www.linkedin.com/in/justmalhar/",
   },
   {
-    commentor: "Random",
-    commentorDesignation: "Software developer",
-    commentorImage: "https://github.com/rudrodip.png",
-    commentorUrl: "https://github.com",
-    comment: "Some random comment by a random person",
-  },
-  {
-    commentor: "Random",
-    commentorDesignation: "Software developer",
-    commentorImage: "https://github.com/rudrodip.png",
-    commentorUrl: "https://github.com",
-    comment: "Some random comment by a random person",
-  },
-  {
-    commentor: "Random",
-    commentorDesignation: "Software developer",
-    commentorImage: "https://github.com/rudrodip.png",
-    commentorUrl: "https://github.com",
-    comment: "Some random comment by a random person",
+    comment:
+      "Wow, Rudro! This robot is amazing! Truly, these types of projects are an inspiration for me and for the entire developer community!",
+    commentor: "Cristian Marcelo de Picciotto",
+    commentorDesignation:
+      "Systems Analyst | Magento Certified Professional Developer",
+    commentorImage: "/commentor/marcelo.jpg",
+    commentorUrl: "https://www.linkedin.com/in/cristian-marcelo-de-picciotto/",
   },
 ];

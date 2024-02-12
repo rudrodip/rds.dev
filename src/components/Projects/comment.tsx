@@ -16,7 +16,7 @@ export default function Comment({
   comment,
 }: CommentProps) {
   return (
-    <div className="flex flex-col bg-popover/80 dark:bg-popover/50 backdrop-blur-lg p-3 rounded border max-w-sm">
+    <div className="flex flex-col bg-popover/80 dark:bg-popover/50 backdrop-blur-lg p-3 rounded border max-w-sm h-full">
       <div className="flex items-start gap-2">
         <Avatar>
           <AvatarImage src={commentorImage} alt="@shadcn" />

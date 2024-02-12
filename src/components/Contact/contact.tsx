@@ -26,12 +26,11 @@ export default async function ContactPage() {
     <Card className="w-full max-w-3xl mx-auto">
       <article
         id="contact"
-        className="container relative max-w-3xl rounded-md my-10"
+        className="relative max-w-3xl rounded-md p-3 lg:p-5"
       >
         <MdxHeaderAnimation title={page.title} description={page.description} />
         <div className="mx-auto w-full min-w-0">
           <Mdx code={page.body.code} />
-          <hr className="my-4 md:my-6" />
         </div>
       </article>
     </Card>
