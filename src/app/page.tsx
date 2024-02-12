@@ -48,7 +48,7 @@ export default function Home() {
         <DynamicRecentProjects />
         {/* <DynamicTestimonial /> */}
       </div>
-      <div className="w-full max-w-7xl mx-auto mt-16 lg:mt-32 lg:mb-32">
+      <div className="w-full max-w-7xl mx-auto my-16 lg:my-40">
         <DynamicContactPage />
       </div>
     </>
