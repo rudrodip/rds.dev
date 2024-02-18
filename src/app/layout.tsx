@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next/types";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Provider } from "@/components/wallet/Provider";
 import Navbar from "@/components/Navbar/DefaultNavbar";
