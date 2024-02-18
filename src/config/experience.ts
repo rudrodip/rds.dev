@@ -18,22 +18,6 @@ export const experiencesConfig: Experience[] = [
   },
   {
     title: "Fullstack developer",
-    employmentType: "Core Team member",
-    company: {
-      name: "Pandasticals",
-      url: "https://twitter.com/Pandasticals",
-    },
-    location: { name: "Remote" },
-    start: "January, 2023",
-    end: "Present",
-    description: [
-      "Currently developing distributed stateless NFT art engine",
-      "Developed the core product of Pandasticals",
-      "Built automation tools",
-    ],
-  },
-  {
-    title: "Fullstack developer",
     employmentType: "Open Source contributor",
     company: {
       name: "LunCo",
