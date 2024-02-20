@@ -46,9 +46,9 @@ export default function Home() {
         <DynamicStartupSection />
         <DynamicGenAISection />
         <DynamicRecentProjects />
-        {/* <DynamicTestimonial /> */}
+        <DynamicTestimonial />
       </div>
-      <div className="w-full max-w-7xl mx-auto my-16 lg:my-40">
+      <div className="w-full max-w-7xl mx-auto">
         <DynamicContactPage />
       </div>
     </>
