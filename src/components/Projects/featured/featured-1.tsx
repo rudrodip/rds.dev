@@ -99,13 +99,13 @@ export default function Featured1() {
             commentorImage="/commentor/mamin.jpg"
             commentorUrl="https://www.linkedin.com/in/rod-mamin-2a48a12b/"
           />
-          {/* <Comment
-            comment="Some random comment by a random commentor"
-            commentor="Commentor"
-            commentorDesignation="Random text"
-            commentorImage="https://github.com/rudrodip.png"
-            commentorUrl="https://github.com/"
-          /> */}
+          <Comment
+            commentor="Ben Holmes"
+            commentorDesignation="President of Whiteboards @astrodotbuild"
+            commentorImage="/commentor/ben.jpg"
+            commentorUrl="https://twitter.com/BHolmesDev"
+            comment="NexusOS looks sweet"
+          />
         </motion.div>
       </motion.div>
       <div className="flex flex-wrap items-center justify-between mt-2">
