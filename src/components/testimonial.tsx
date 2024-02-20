@@ -64,19 +64,19 @@ export default function RecentProjects() {
 
 const comments: CommentProps[] = [
   {
-    commentor: "Mehul Sharma",
-    commentorDesignation: "Software developer",
-    commentorImage: "/commentor/mehul.jpg",
-    commentorUrl: "https://twitter.com/mehulsharmamat",
-    comment: "the website looks really good actually",
-  },
-  {
     comment:
       "I've always known you to be detail-oriented and committed to quality, which clearly reflects in the work.",
     commentor: "Malhar Ujawane",
     commentorDesignation: "Software Engineer | PhD GenAI LLM Researcher",
     commentorImage: "/commentor/malhar.jpg",
     commentorUrl: "https://www.linkedin.com/in/justmalhar/",
+  },
+  {
+    commentor: "Ben Holmes",
+    commentorDesignation: "President of Whiteboards @astrodotbuild",
+    commentorImage: "/commentor/ben.jpg",
+    commentorUrl: "https://twitter.com/BHolmesDev",
+    comment: "Nice portfolio! The tweet overlays on your projects are really effective",
   },
   {
     comment:
