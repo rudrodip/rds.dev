@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import type { Metadata, Viewport } from "next/types";
+import { Metadata } from "next/types";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Provider } from "@/components/wallet/Provider";
 import Navbar from "@/components/Navbar/DefaultNavbar";
@@ -21,13 +21,6 @@ const fontHeading = localFont({
   src: "../../public/assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 });
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
