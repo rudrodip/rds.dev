@@ -32,7 +32,7 @@ export default function Featured2() {
   return (
     <section className="w-full mt-8 lg:mt-24 max-w-7xl mx-auto">
       <h1 className="head-text-md primary-gradient mb-4">
-        <span className="primary-gradient tshadow"># 2.</span>
+        <span className="primary-gradient tshadow"># 3.</span>
         <a
           href="https://github.com/rudrodip/Harmonic-Oscillator-CV"
           target="_blank"

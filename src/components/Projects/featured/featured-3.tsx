@@ -29,7 +29,7 @@ export default function Featured3() {
   return (
     <section className="w-full mt-8 lg:mt-24 max-w-7xl mx-auto">
       <h1 className="head-text-md primary-gradient mb-4">
-        <span className="primary-gradient tshadow"># 3.</span>
+        <span className="primary-gradient tshadow"># 4.</span>
         <a
           href="https://www.youtube.com/watch?v=uYZytPxzjsk"
           target="_blank"

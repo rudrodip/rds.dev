@@ -1,6 +1,7 @@
 import Featured2 from "./featured/featured-2";
 import Featured1 from "./featured/featured-1";
 import Featured3 from "./featured/featured-3";
+import Featured4 from "./featured/featured-4";
 
 export default function FeaturedSection() {
   return (
@@ -11,6 +12,7 @@ export default function FeaturedSection() {
         </span>{" "}
         Projects
       </h1>
+      <Featured4 />
       <Featured1 />
       <Featured2 />
       <Featured3 />
