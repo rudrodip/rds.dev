@@ -59,6 +59,23 @@ export default function Featured4() {
             fallbackImageUrl="https://sonicrypt.vercel.app/og.png"
           />
         </a>
+        <motion.div
+          className={cn(
+            "absolute flex flex-col gap-3",
+            isTablet ? "top-40 -left-2" : "top-40 -left-40",
+            isMobile && "hidden"
+          )}
+          {...motionConfig}
+          transition={{ duration: 0.25 }}
+        >
+          <Comment
+            comment="so clean so good love it 💯"
+            commentor="Manu Arora"
+            commentorDesignation="Author of Aceternity UI"
+            commentorImage="/commentor/manu.jpg"
+            commentorUrl="https://twitter.com/mannupaaji"
+          />
+        </motion.div>
       </motion.div>
       <div className="flex flex-wrap items-center justify-between mt-2">
         <div className="flex items-center flex-wrap gap-2">
