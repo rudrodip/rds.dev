@@ -1,5 +1,5 @@
 import { experiencesConfig } from "@/config/experience";
-import { Experience } from "@/types";
+import { Experience as ExperienceType } from "@/types";
 
 export const ExperienceSection = () => {
   return (
@@ -33,7 +33,7 @@ export const ExperienceSection = () => {
   );
 };
 
-const Experience = ({ experience }: { experience: Experience }) => {
+const Experience = ({ experience }: { experience: ExperienceType }) => {
   return (
     <div className="relative flex gap-2 items-start text-md pb-4">
       <span

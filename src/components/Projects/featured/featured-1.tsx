@@ -33,7 +33,7 @@ export default function Featured1() {
   return (
     <section className="w-full mt-8 lg:mt-24 max-w-7xl mx-auto">
       <h1 className="head-text-md primary-gradient mb-4">
-        <span className="primary-gradient tshadow"># 1.</span>
+        <span className="primary-gradient tshadow"># 2.</span>
         <a
           href="https://nexusos.vercel.app"
           target="_blank"
