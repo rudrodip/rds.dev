@@ -130,7 +130,7 @@ export const TechLogo = ({ tech }: { tech: Tech }) => {
   )} ${experiencePercentage}%, rgba(211, 211, 211, 0.5) ${experiencePercentage}%)`;
   return (
     <motion.div
-      className="w-full aspect-square p-3 border rounded backdrop-blur-md items-center justify-center flex btn-gradient"
+      className="w-full aspect-square p-3 border rounded items-center justify-center flex btn-gradient"
       whileHover={{ background: background }}
     >
       <Image src={tech.icon} alt={tech.name} width={50} height={50} />
