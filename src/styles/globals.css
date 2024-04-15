@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root  {
+:root {
   --background: 42 100% 95%;
   --foreground: 42 5% 0%;
   --card: 42 50% 90%;
@@ -24,7 +24,7 @@
   --ring: 42 19.6% 80%;
   --radius: 0rem;
 }
-.dark  {
+.dark {
   --background: 42 50% 5%;
   --foreground: 42 5% 90%;
   --card: 42 50% 0%;
@@ -160,8 +160,8 @@
   background: hsl(var(--accent));
 }
 
-
 .navbar-clip {
+  position: relative;
   clip-path: polygon(
     0 0,
     100% 0,
@@ -172,6 +172,32 @@
     0 calc(100% - 20px),
     0 20px
   );
+  background: hsl(var(--accent));
+}
+
+.navbar-clip-border {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 18px,
+    100% calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    18px 100%,
+    0 calc(100% - 18px),
+    0 18px
+  );
+  background: hsl(var(--card));
+  z-index: -1;
+}
+
+.navbar-clip-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* Tailwind Styles */
