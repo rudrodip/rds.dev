@@ -112,6 +112,7 @@ export default function RootLayout({
                 <header className="z-40 flex justify-center items-center">
                   <Navbar />
                 </header>
+                <MiniNavbar />
                 <RootCanvas />
                 <div className="app">{children}</div>
               </div>
