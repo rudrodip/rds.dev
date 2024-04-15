@@ -6,6 +6,7 @@ export const ExperienceSection = () => {
     <section
       id="experience"
       className="relative mt-10 overflow-hidden
+      w-full max-w-lg
       after:content['']
       after:to-transparent
       after:from-background
@@ -15,9 +16,21 @@ export const ExperienceSection = () => {
       after:w-full
       after:h-20
       after:z-10
-      after:absolute"
+      after:absolute
+      
+      before:content['']
+      before:to-transparent
+      before:from-background/30
+      before:bg-gradient-to-b
+      before:right-0
+      before:top-[40px]
+      before:w-full
+      before:h-20
+      before:z-10
+      before:absolute
+      "
     >
-      <h1 className="text-4xl primary-gradient font-bold tracking-tighter mb-3 z-50">
+      <h1 className="text-4xl font-bold tracking-tight mb-3 z-50">
         Experiences
       </h1>
       <div className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">

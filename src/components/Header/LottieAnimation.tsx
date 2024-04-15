@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import developerAnimation from "@public/assets/developer_animation.json";
+import developerAnimation from "@public/developer_animation.json";
 
 export default function LottieAnimation(){
   return (

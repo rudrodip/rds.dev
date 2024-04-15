@@ -4,20 +4,14 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Github,
-  Twitter,
-  Facebook,
-  Instagram,
-  Linkedin,
-  LucideIcon,
-} from "lucide-react";
 import { SocialIconProps } from "@/types";
 import { socialIconsData } from "@/config/socials";
+import DiscordApperance from "./DiscordApperance";
 
 const SocialIcons = () => {
   return (
     <div className="flex justify-start items-center space-x-3 flex-wrap">
+      <DiscordApperance />
       {socialIconsData.map((socialIcon, index) => (
         <SocialIcon key={index} {...socialIcon} />
       ))}

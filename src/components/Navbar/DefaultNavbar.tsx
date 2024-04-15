@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import {
@@ -16,10 +17,8 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@/components/ThemeToggleDropDown";
 import { projects } from "@/config/projects";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import { BlogMenu } from "./blog-menu";
 import { aboutConfig } from "@/config/about";
-import { SearchBar } from "./search-bar";
 
 const DynamicLottieAnimation = dynamic(
   () => import("@/components/Header/LottieAnimation"),
@@ -30,18 +29,10 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <nav className="z-50">
-      <div className="mx-auto max-w-7xl flex h-14 lg:h-15 items-center justify-between gap-2 lg:justify-start py-6">
-        <div className="flex">
-          <Logo />
-          <div className="hidden lg:flex gap-6">
-            <NavMenu />
-          </div>
-        </div>
-        <SearchBar />
-        <ThemeToggleDropDown />
-      </div>
-    </nav>
+    <div className="flex h-14 lg:h-15 w-full max-w-7xl items-center justify-start gap-2 py-6">
+      <Logo />
+      <NavMenu />
+    </div>
   );
 }
 
@@ -147,55 +138,10 @@ const NavMenu = () => {
   );
 };
 
-const svgVariants = {
-  hidden: {
-    rotate: -100,
-  },
-  visible: {
-    rotate: 0,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const Logo = () => {
+export const Logo = () => {
   return (
-    <Link
-      href="/"
-      className="w-10 h-10 lg:mr-5 flex items-center justify-center"
-    >
-      <motion.svg
-        width="20"
-        height="30"
-        viewBox="0 0 425 502"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        variants={svgVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.path
-          id="rds"
-          d="M39 307.884H222.5C242 307.884 245 306.384 255.5 302.384C268.691 297.358 366.5 260.883 356.5 165.883C346.5 70.8834 275.5 41.8834 255 39.8834C238.6 38.2834 104.333 39.2168 39 39.8835M39 39.8835V462.884H349L39 39.8835Z"
-          stroke="#04C3F9"
-          stroke-width="77"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          initial={{
-            pathLength: 0,
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            strokeWidth: 0,
-          }}
-          animate={{ pathLength: 1, strokeWidth: 50 }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-          }}
-        />
-      </motion.svg>
+    <Link href="/" className="w-8 h-8 mr-4 flex items-center justify-center">
+      <Image src="/icon.png" alt="Rudrodip Sarker" width={30} height={30} />
     </Link>
   );
 };

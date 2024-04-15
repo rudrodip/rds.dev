@@ -3,7 +3,7 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Skeleton } from "@/components/ui/skeleton";
+import Image from "next/image";
 import { useLanyard } from "react-use-lanyard";
 import {
   Tooltip,
@@ -11,7 +11,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
 
 function DiscordApperance() {
   const { status } = useLanyard({
@@ -34,19 +33,16 @@ function DiscordApperance() {
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <span
-            className={cn(
-              "ml-2 md:ml-3 w-3 h-3 md:w-5 md:h-5 animate-pulse rounded-full cursor-crosshair",
-              status.active_on_discord_desktop ||
-                status.active_on_discord_mobile ||
-                status.active_on_discord_web
-                ? "icon-glow"
-                : "icon-glow-muted-light dark:icon-glow-muted"
-            )}
-          ></span>
+          <Image 
+            src="/icon.png"
+            alt="rds_agi"
+            width={25}
+            height={25}
+            className="mr-1"
+          />
         </TooltipTrigger>
         <TooltipContent className="">
-          <Card className="text-sm font-mono flex border-none">
+          <Card className="text-sm font-mono flex border-none shadow-none bg-transparent">
             <div className="flex gap-3 p-3 items-start">
               <div>
                 <a
@@ -68,7 +64,7 @@ function DiscordApperance() {
                     {
                       status.activities.find(
                         (elem) => elem.name == "Custom Status"
-                      )?.emoji?.name
+                      )?.emoji?.name ?? "👀"
                     }
                   </span>
                   <div>
@@ -77,7 +73,7 @@ function DiscordApperance() {
                         <h1>
                           listening to{" "}
                           <a
-                            className="blue_gradient underline_animation"
+                            className=""
                             href={`https://open.spotify.com/track/${status.spotify?.track_id}`}
                             target="_blank"
                           >
@@ -90,7 +86,7 @@ function DiscordApperance() {
                     ) : status.activities.length >= 1 ? (
                       <h1>{status.activities[1]?.details}</h1>
                     ) : (
-                      "not too much"
+                      "wanna chat?"
                     )}
                   </div>
                 </div>

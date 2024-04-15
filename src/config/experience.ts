@@ -2,8 +2,8 @@ import type { Experience } from "@/types";
 
 export const experiencesConfig: Experience[] = [
   {
-    title: "Developer",
-    employmentType: "Founder",
+    title: "Founder",
+    employmentType: "Founder & CTO",
     company: {
       name: "Sonicrypt",
       url: "https://sonicrypt.vercel.app"

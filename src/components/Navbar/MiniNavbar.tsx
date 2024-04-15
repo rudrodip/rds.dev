@@ -28,7 +28,7 @@ export const MiniNavbar = () => {
           : "opacity-0 -translate-y-24 scale-0"
       )}
     >
-      <div className="border border-primary/10 rounded-full bg-secondary/50 backdrop-blur-lg">
+      <div className="border border-primary/10 bg-secondary/50 backdrop-blur-lg">
         <div className="flex justify-between gap-5 items-center px-1 py-1">
           {navbarConfig.miniNav.map((item, index) => (
             <TooltipProvider key={index} delayDuration={200}>
@@ -41,7 +41,7 @@ export const MiniNavbar = () => {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="rounded-full bg-transparent border-none"
+                      className="bg-transparent border-none"
                     >
                       <item.icon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
                     </Button>

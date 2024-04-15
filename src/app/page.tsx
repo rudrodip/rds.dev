@@ -41,7 +41,7 @@ export default function Home() {
       <div id="aboutme" className="max-w-7xl mt-10 mb-6 lg:mb-32 mx-auto">
         <CodeQuote />
       </div>
-      <div id="projects" className="w-full">
+      {/* <div id="projects" className="w-full">
         <DynamicFeaturedSection />
         <DynamicStartupSection />
         <DynamicGenAISection />
@@ -50,7 +50,7 @@ export default function Home() {
       </div>
       <div className="w-full max-w-7xl mx-auto">
         <DynamicContactPage />
-      </div>
+      </div> */}
     </>
   );
 }
