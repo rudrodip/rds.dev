@@ -5,20 +5,18 @@ import { Provider } from "@/components/wallet/Provider";
 import Navbar from "@/components/Navbar/DefaultNavbar";
 import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
 import { MiniNavbar } from "@/components/Navbar/MiniNavbar";
 import { RootCanvas } from "@/components/Canvas/root-canvas";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "../../assets/fonts/pp_agrandir_regular.woff2",
   variable: "--font-sans",
 });
 
-// Font files can be colocated inside of `pages`
 const fontHeading = localFont({
-  src: "../../public/assets/fonts/CalSans-SemiBold.woff2",
+  src: "../../assets/fonts/pp_agrandir_regular.woff2",
   variable: "--font-heading",
 });
 
@@ -111,10 +109,9 @@ export default function RootLayout({
           <Provider>
             <div className="flex flex-col min-h-screen">
               <div className="flex-grow">
-                <header className="absolute top-0 left-0 right-0 z-40 mx-2">
+                <header className="z-40 flex justify-center items-center">
                   <Navbar />
                 </header>
-                <MiniNavbar />
                 <RootCanvas />
                 <div className="app">{children}</div>
               </div>
