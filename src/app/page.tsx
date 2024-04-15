@@ -35,7 +35,7 @@ const DynamicTestimonial = dynamic(() => import("@/components/testimonial"), {
 export default function Home() {
   return (
     <>
-      <div className="w-full max-w-7xl mx-auto lg:min-h-screen flex justify-center items-center">
+      <div className="w-full max-w-7xl mx-auto flex justify-center items-center">
         <HeroSection />
       </div>
       <div id="aboutme" className="max-w-7xl mt-10 mb-6 lg:mb-32 mx-auto">
@@ -47,10 +47,10 @@ export default function Home() {
         <DynamicGenAISection />
         <DynamicRecentProjects />
         <DynamicTestimonial />
-      </div>
+      </div> */}
       <div className="w-full max-w-7xl mx-auto">
         <DynamicContactPage />
-      </div> */}
+      </div>
     </>
   );
 }
