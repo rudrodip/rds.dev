@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   const url = siteConfig.url;
 
-  const ogUrl = new URL(`${url}/assets/bg/aboutme.png`);
+  const ogUrl = new URL(`${url}/bg/aboutme.png`);
   ogUrl.searchParams.set("heading", page.title);
   ogUrl.searchParams.set("type", "website");
   ogUrl.searchParams.set("mode", "dark");
