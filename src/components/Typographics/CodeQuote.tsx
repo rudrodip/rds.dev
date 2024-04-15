@@ -21,7 +21,7 @@ const CodeQuote = () => {
     >
       <QuoteIcon className={cn("-mt-1 h-10", "md:-mt-3 md:h-16 lg:h-24")} />
       <span className={cn("flex flex-col")}>
-        <span className={cn("leading-[1.15] primary-gradient")}>
+        <span className={cn("leading-[1.15]")}>
           <em>talk is</em>{" "}
         </span>
         <span
@@ -29,32 +29,30 @@ const CodeQuote = () => {
         >
           <span
             className={cn(
-              "mt-1 h-0.5 w-8 rounded-full bg-slate-400",
+              "mt-1 h-0.5 w-8 rounded-full bg-accent",
               "lg:h-1 lg:w-24",
-              "dark:bg-slate-600"
             )}
           />
           <span>
-            <strong className={cn("font-extrabold primary-gradient")}>
+            <strong className={cn("font-extrabold")}>
               cheap
             </strong>
             {", "}
             show{" "}
-            <strong className={cn("font-semibold primary-gradient")}>
+            <strong className={cn("font-semibold")}>
               me{" "}
             </strong>
           </span>
           <span
             className={cn(
-              "mt-1 h-0.5 w-8 rounded-full bg-slate-400",
+              "mt-1 h-0.5 w-8 rounded-full bg-accent",
               "lg:h-1 lg:w-24",
-              "dark:bg-slate-600"
             )}
           />
         </span>
-        <span className={cn("leading-[1.15] primary-gradient")}>
+        <span className={cn("leading-[1.15]")}>
           the{" "}
-          <strong className={cn("relative font-extrabold primary-gradient")}>
+          <strong className={cn("relative font-extrabold")}>
             <span
               className={cn(
                 "absolute -left-0.5 right-0 top-1 bottom-0 z-[-1] rounded-md px-1",
@@ -64,7 +62,7 @@ const CodeQuote = () => {
             code.
           </strong>
         </span>
-        <span className="text-right font-heading text-lg primary-gradient">
+        <span className="text-right text-xl tracking-wider">
           - Linus Torvald
         </span>
       </span>
