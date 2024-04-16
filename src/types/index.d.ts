@@ -16,22 +16,6 @@ export type SiteConfig = {
   };
 };
 
-type section<T> = {
-  caption: string;
-  categories: category<T>[];
-};
-
-type category<T> = {
-  name: string;
-  icon: string;
-  items: T[];
-};
-
-type image = {
-  mobile: string;
-  desktop: string;
-};
-
 type defaultProfile = {
   name: string;
   url?: string;
