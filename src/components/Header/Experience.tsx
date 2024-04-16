@@ -4,7 +4,6 @@ import { Experience as ExperienceType } from "@/types";
 export const ExperienceSection = () => {
   return (
     <section
-      id="experience"
       className="relative mt-10 overflow-hidden
       w-full max-w-xl
       after:content['']
@@ -33,7 +32,7 @@ export const ExperienceSection = () => {
       <h1 className="text-4xl font-bold mb-3 z-50">
         Experiences
       </h1>
-      <div className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">
+      <div id="experience" className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">
         {experiencesConfig.map((experience, index) => (
           <Experience key={index} experience={experience} />
         ))}
