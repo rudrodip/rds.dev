@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export const HeroSection = () => {
   return (
-    <section className="w-full flex justify-center items-center my-12">
+    <section className="w-full max-w-7xl mx-auto flex justify-center items-center my-6 md:my-12">
       <div className="w-full md:w-1/2 xl:w-full flex flex-col justify-center">
         <div className="flex flex-col justify-center">
           <h1 className="head-text">{aboutConfig.name}</h1>
@@ -34,14 +34,14 @@ export const HeroSection = () => {
         </p>
         <p className="text-sm tracking-wide">stack agnostic developer &gt; Jack of all trades, master of some</p>
         <div className="flex gap-4 align-middle flex-wrap my-5">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="outline" size="sm" className="btn-press hover:bg-background">
             <Link href="/#contact">Get in touch</Link>
           </Button>
           <SocialIcons />
         </div>
         <ExperienceSection />
       </div>
-      <div className="w-full flex justify-center items-center scale-x-[-1]">
+      <div className="w-full hidden md:flex justify-center items-center scale-x-[-1]">
         <Image 
           src="/icon.png"
           alt="rds_agi"
