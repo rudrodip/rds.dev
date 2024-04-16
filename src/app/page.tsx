@@ -2,6 +2,10 @@ import CodeQuote from "@/components/Typographics/CodeQuote";
 import dynamic from "next/dynamic";
 import LoadSpinner from "@/components/loadspinner";
 import { HeroSection } from "@/components/Header/Hero";
+import ProjectSection from "@src/components/Project/project-section";
+import GithubSection from "@src/components/Github/github-section";
+import MobileProjectView from "@src/components/Project/MobileView";
+import FeaturedSection from "@/components/Projects/featured-section";
 
 const DynamicContactPage = dynamic(
   () => import("@/components/Contact/contact"),
@@ -34,23 +38,13 @@ const DynamicTestimonial = dynamic(() => import("@/components/testimonial"), {
 
 export default function Home() {
   return (
-    <>
-      <div className="w-full max-w-7xl mx-auto flex justify-center items-center">
+    <div  className="w-full h-full flex flex-col justify-center items-center gap-12 md:gap-16 lg:gap-24">
         <HeroSection />
-      </div>
-      <div id="aboutme" className="max-w-7xl mt-10 mb-6 lg:mb-32 mx-auto">
         <CodeQuote />
-      </div>
-      {/* <div id="projects" className="w-full">
-        <DynamicFeaturedSection />
-        <DynamicStartupSection />
-        <DynamicGenAISection />
-        <DynamicRecentProjects />
-        <DynamicTestimonial />
-      </div> */}
-      <div className="w-full max-w-7xl mx-auto">
+        <ProjectSection />
+        {/* <FeaturedSection /> */}
+        <GithubSection />
         <DynamicContactPage />
-      </div>
-    </>
+    </div>
   );
 }
