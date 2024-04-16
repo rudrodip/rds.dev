@@ -12,7 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-// import { SearchBar } from "./search-bar";
+import { motion } from "framer-motion";
 import useMediaQuery from "@src/hooks/use-media-query";
 
 export const MiniNavbar = () => {
@@ -20,12 +20,13 @@ export const MiniNavbar = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: scrolledEnough ? 1 : 0,
+      }}
       className={cn(
-        "flex justify-center sticky top-2 z-[1000] transition-all transform-gpu duration-200",
-        scrolledEnough
-          ? "opacity-100 transalte-y-0"
-          : "opacity-0 -translate-y-24"
+        "flex justify-center sticky top-2 z-[1000] transition-transform transform-gpu duration-200",
       )}
     >
       <div className="bg-transparent navbar-clip">
@@ -59,6 +60,6 @@ export const MiniNavbar = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
