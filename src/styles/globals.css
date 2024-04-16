@@ -136,28 +136,45 @@
 }
 
 *::-webkit-scrollbar {
+  width: 0rem;
+}
+
+#experience::-webkit-scrollbar {
   width: 0.25rem;
 }
 
-*::-webkit-scrollbar-track {
+#experience::-webkit-scrollbar-track {
   background: transparent;
   margin-block: 0.5rem;
   border-radius: 100vw;
 }
 
-*::-webkit-scrollbar-thumb {
+#experience::-webkit-scrollbar-thumb {
   background: hsl(var(--accent));
   border-radius: 25vw;
 }
 
 ::-moz-selection {
-  color: hsl(var(--secondary));
-  background: hsl(var(--accent));
+  color: hsl(var(--accent));
+  background: hsl(var(--secondary));
 }
 
 ::selection {
-  color: hsl(var(--secondary));
-  background: hsl(var(--accent));
+  color: hsl(var(--accent));
+  background: hsl(var(--secondary));
+}
+
+.btn-press {
+  transition: 200ms all ease-in-out;
+}
+
+.btn-press:hover {
+  box-shadow: 4px 4px 0 hsl(var(--accent));
+}
+
+.btn-press:active {
+  transform: translateX(2px) translateY(2px);
+  box-shadow: 0px 0px 0 hsl(var(--accent));
 }
 
 .navbar-clip {
@@ -172,7 +189,7 @@
     0 calc(100% - 20px),
     0 20px
   );
-  background: hsl(var(--accent));
+  background: hsl(var(--border));
 }
 
 .navbar-clip-border {
