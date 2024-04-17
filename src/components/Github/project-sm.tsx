@@ -10,7 +10,7 @@ export default function ProjectSm({
   forkCount,
 }: Repository) {
   return (
-    <div className="group w-full max-w-lg mx-auto p-2 bg-secondary border hover:bg-accent transform-gpu transition-colors duration-200">
+    <div className="group w-full max-w-lg mx-auto p-2 bg-secondary/20 border hover:bg-accent/50 transform-gpu transition-colors duration-200">
       <a className="text-lg font-bold underline" href={url} target="_blank">
         {name}
       </a>
