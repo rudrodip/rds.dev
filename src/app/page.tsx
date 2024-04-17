@@ -4,7 +4,6 @@ import LoadSpinner from "@/components/loadspinner";
 import { HeroSection } from "@/components/Header/Hero";
 import ProjectSection from "@src/components/Project/project-section";
 import GithubSection from "@src/components/Github/github-section";
-import MobileProjectView from "@src/components/Project/MobileView";
 import FeaturedSection from "@/components/Projects/featured-section";
 
 const DynamicContactPage = dynamic(
@@ -42,8 +41,8 @@ export default function Home() {
         <HeroSection />
         <CodeQuote />
         <ProjectSection />
-        {/* <FeaturedSection /> */}
         <GithubSection />
+        <DynamicTestimonial />
         <DynamicContactPage />
     </div>
   );
