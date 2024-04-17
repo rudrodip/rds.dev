@@ -5,7 +5,7 @@ import { ExperienceSection } from "./Experience";
 import SocialIcons from "@/components/Socials/SocialIcons";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import Console from "@src/components/console";
 
 export const HeroSection = () => {
   return (
@@ -41,13 +41,8 @@ export const HeroSection = () => {
         </div>
         <ExperienceSection />
       </div>
-      <div className="w-full hidden md:flex justify-center items-center scale-x-[-1]">
-        <Image 
-          src="/icon.png"
-          alt="rds_agi"
-          width={1024}
-          height={1024}
-        />
+      <div className="w-full h-full hidden md:flex justify-center items-center">
+        <Console />
       </div>
     </section>
   );
