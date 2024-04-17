@@ -88,3 +88,17 @@ export type Tech = {
   color: string;
   experience: number;
 };
+
+export type Project = {
+  name: string;
+  slogan: string;
+  description: string;
+  relatedRepos: string[];
+  media: {
+    video: string;
+    images: string[];
+  };
+  tech: string[];
+  links: Record<string, string>;
+  achievements: string[];
+}
