@@ -5,7 +5,7 @@ import Featured4 from "./featured/featured-4";
 
 export default function FeaturedSection() {
   return (
-    <section id="featured" className="w-full">
+    <section id="featured" className="w-full block md:hidden">
       <h1 className="head-text mt-24 max-w-7xl mx-auto">
         <span className="before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-blue-400 before:dark:bg-blue-500 relative inline-block">
           <span className="relative head-text text-white">Featured</span>{" "}
