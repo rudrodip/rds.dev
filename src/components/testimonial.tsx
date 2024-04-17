@@ -11,7 +11,7 @@ export default function RecentProjects() {
   const isTablet = useMediaQuery("(max-width: 1200px)");
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 lg:px-4 my-24 md:my-52 lg:my-60">
+    <section className="w-full min-h-[50vh] max-w-7xl mx-auto px-4 lg:px-4 flex items-center">
       <Swiper
         slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
         spaceBetween={10}
@@ -23,29 +23,7 @@ export default function RecentProjects() {
         loop={true}
         modules={[Autoplay, FreeMode]}
         freeMode={true}
-        className="h-full flex justify-center items-center mySwiper
-          after:content['']
-          after:to-transparent
-          after:from-background
-          after:bg-gradient-to-l
-          after:-right-3
-          after:top-0
-          after:w-20
-          after:h-full
-          after:z-10
-          after:absolute
-
-          before:content['']
-          before:to-transparent
-          before:from-background
-          before:bg-gradient-to-r
-          before:top-0
-          before:-left-3
-          before:w-20
-          before:h-full
-          before:z-10
-          before:absolute
-        "
+        className="h-full flex justify-center items-center mySwiper"
       >
         {comments.map((comment, idx) => (
           <SwiperSlide
