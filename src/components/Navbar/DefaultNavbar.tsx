@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import ThemeToggleDropDown from "@/components/ThemeToggleDropDown";
-import { projects } from "@/config/projects";
 import { Button } from "@/components/ui/button";
 import { BlogMenu } from "./blog-menu";
 import { aboutConfig } from "@/config/about";
@@ -106,7 +105,7 @@ const NavMenu = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {projects.categories.map(
+              {/* {projects.categories.map(
                 (category, id) =>
                   category.name === "Featured" &&
                   projects.categories[id].items.map((project, id) => {
@@ -116,7 +115,7 @@ const NavMenu = () => {
                       </ListItem>
                     );
                   })
-              )}
+              )} */}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
