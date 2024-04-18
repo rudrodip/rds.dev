@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { projects } from "@src/config/projects";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Info,
   Share,
@@ -13,10 +17,12 @@ import {
   MoveUp,
   MoveDown,
 } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function ProjectSection() {
   const [currentProject, setCurrentProject] = useState(0);
   const [currentMedia, setCurrentMedia] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const handleIncrement = () => {
     if (currentProject < projects.length - 1) {
@@ -51,14 +57,18 @@ export default function ProjectSection() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentProject((currentProject + 1) % projects.length);
-    }, 7000);
+    if (!paused) {
+      const interval = setInterval(() => {
+        if (currentProject < projects.length - 1) {
+          setCurrentProject(currentProject + 1);
+        } else {
+          setCurrentProject(0);
+        }
+      }, 6000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentProject]);
+      return () => clearInterval(interval);
+    }
+  }, [currentProject, paused]);
 
   return (
     <motion.div
@@ -102,9 +112,19 @@ export default function ProjectSection() {
         </motion.div>
         <div className="h-full w-[15%] rounded-tr-[7rem] rounded-br-[7rem] bg-[#E3DDC5] flex-cc">
           <div className="w-12 h-[7rem] rotate-30 flex-col flex-cb text-zinc-300">
-            <div className="console-btn-sm">
-              <Info size={17} className="rotate-[-30deg]" />
-            </div>
+            <Dialog open={paused} onOpenChange={() => setPaused(!paused)}>
+              <DialogTrigger onClick={() => setPaused(true)}>
+                <div className="console-btn-sm">
+                  <Info size={17} className="rotate-[-30deg]" />
+                </div>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[80vw]">
+                <ProjectDetails
+                  currentProject={currentProject}
+                  resume={() => setPaused(false)}
+                />
+              </DialogContent>
+            </Dialog>
             <div className="console-btn-sm">
               <Share size={17} className="rotate-[-30deg]" />
             </div>
@@ -119,7 +139,7 @@ const Project = ({ currentProject }: { currentProject: number }) => {
   return (
     <motion.div
       key={currentProject}
-      className="w-full h-full rounded-[3px] bg-secondary flex flex-col p-2"
+      className="w-full h-full rounded-[3px] bg-[#D6D0C1] flex flex-col p-2"
     >
       <motion.div
         initial={{ opacity: 0.7, x: 10 }}
@@ -158,5 +178,51 @@ const Project = ({ currentProject }: { currentProject: number }) => {
         </motion.p>
       </div>
     </motion.div>
+  );
+};
+
+const ProjectDetails = ({
+  currentProject,
+  resume,
+}: {
+  currentProject: number;
+  resume: () => void;
+}) => {
+  return (
+    <section className="w-full h-full flex-cb p-2">
+      <div className="w-[40%] h-full flex flex-col gap-2">
+        <h1 className="text-3xl font-bold">{projects[currentProject].name}</h1>
+        <h2 className="text-xl font-semibold">
+          {projects[currentProject].slogan}
+        </h2>
+        <p className="max-w-sm">{projects[currentProject].description}</p>
+        <h1 className="mt-5 text-xl">Related repositories</h1>
+        {projects[currentProject].relatedRepos.map((repo, index) => (
+          <a key={index} href={repo}>
+            <p className="text-sm underline">
+              {repo.substring("https://github.com/".length)}
+            </p>
+          </a>
+        ))}
+
+        <h1 className="mt-5 text-xl">Related links</h1>
+        <div className="w-full flex gap-2">
+          {Object.keys(projects[currentProject].links).map((key, _) => (
+            <a key={key} href={projects[currentProject].links[key]}>
+              <p className="text-sm underline">{key}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="w-[60%] h-full flex flex-col items-center">
+        <Image
+          src={projects[currentProject].media.images[0]}
+          alt={projects[currentProject].name}
+          width={600}
+          height={300}
+          className="w-full h-auto rounded-[3px]"
+        />
+      </div>
+    </section>
   );
 };
