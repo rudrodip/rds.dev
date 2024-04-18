@@ -23,7 +23,7 @@ export default function RecentProjects() {
         loop={true}
         modules={[Autoplay, FreeMode]}
         freeMode={true}
-        className="h-full flex justify-center items-center mySwiper"
+        className="h-full flex-cc mySwiper"
       >
         {comments.map((comment, idx) => (
           <SwiperSlide
