@@ -9,7 +9,7 @@ import Console from "@src/components/console";
 
 export const HeroSection = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto flex justify-center items-center my-6 md:my-12">
+    <section className="w-full max-w-7xl mx-auto flex-cc my-6 md:my-12">
       <div className="w-full md:w-1/2 xl:w-full flex flex-col justify-center">
         <div className="flex flex-col justify-center">
           <h1 className="head-text">{aboutConfig.name}</h1>
@@ -41,7 +41,7 @@ export const HeroSection = () => {
         </div>
         <ExperienceSection />
       </div>
-      <div className="w-full h-full hidden md:flex justify-center items-center">
+      <div className="w-full h-full hidden md:flex flex-cc">
         <Console />
       </div>
     </section>
