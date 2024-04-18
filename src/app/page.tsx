@@ -37,13 +37,13 @@ const DynamicTestimonial = dynamic(() => import("@/components/testimonial"), {
 
 export default function Home() {
   return (
-    <div  className="w-full h-full flex flex-col justify-center items-center gap-12 md:gap-16 lg:gap-24">
-        <HeroSection />
-        <CodeQuote />
-        <ProjectSection />
-        <GithubSection />
-        <DynamicTestimonial />
-        <DynamicContactPage />
+    <div className="w-full h-full flex-cc-col gap-12 md:gap-16 lg:gap-24">
+      <HeroSection />
+      <CodeQuote />
+      <ProjectSection />
+      <GithubSection />
+      <DynamicTestimonial />
+      <DynamicContactPage />
     </div>
   );
 }
