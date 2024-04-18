@@ -12,7 +12,7 @@ export default function Wallpaper() {
   const techStack4 = techStack.slice((length / 4) * 3, length);
 
   return (
-    <section className="w-full min-h-screen flex justify-center items-center my-32">
+    <section className="w-full min-h-screen flex-cc my-32">
       <div
         className="overflow-hidden w-auto h-[600px] flex gap-10 justify-end items-center  
           after:content['']
