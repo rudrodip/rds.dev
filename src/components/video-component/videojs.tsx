@@ -35,7 +35,7 @@ export const VideoJs = ({ options, fallbackImageUrl }: IVideoPlayerProps) => {
   }, [options]);
 
   return (
-    <div className="w-full aspect-video flex justify-center items-center">
+    <div className="w-full aspect-video flex-cc">
       <video
         ref={videoNode}
         className="video-js w-full aspect-video"
