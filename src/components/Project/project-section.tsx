@@ -17,7 +17,6 @@ import {
   MoveUp,
   MoveDown,
 } from "lucide-react";
-import { Button } from "../ui/button";
 
 export default function ProjectSection() {
   const [currentProject, setCurrentProject] = useState(0);
@@ -71,15 +70,15 @@ export default function ProjectSection() {
   }, [currentProject, paused]);
 
   return (
-    <motion.div
+    <div
       id="projects"
-      className="hidden md:flex flex-cc w-full max-w-7xl mx-auto h-[97vh]"
+      className="hidden md:flex flex-cc w-full max-w-7xl mx-auto h-[97vh] text-zinc-800"
     >
       <div
         id="nintendo_container"
         className="flex-cc w-full h-4/5 rounded-[7rem] border br-console"
       >
-        <div className="h-full w-[15%] rounded-tl-[7rem] rounded-bl-[7rem] bg-[#E3DDC5] flex-cc">
+        <div className="h-full w-[12%] rounded-tl-[7rem] rounded-bl-[7rem] bg-[#E3DDC5] flex-cc">
           <div className="relative w-[7.5rem] h-[7.5rem] text-zinc-300">
             <div
               onClick={handleMediaIncrement}
@@ -107,10 +106,10 @@ export default function ProjectSection() {
             </div>
           </div>
         </div>
-        <motion.div className="h-full w-[70%] flex-cc p-2 pb-4 bg-[#5F6A79]">
+        <div className="h-full w-[76%] flex-cc p-2 bg-[#5F6A79]">
           <Project currentProject={currentProject} />
-        </motion.div>
-        <div className="h-full w-[15%] rounded-tr-[7rem] rounded-br-[7rem] bg-[#E3DDC5] flex-cc">
+        </div>
+        <div className="h-full w-[12%] rounded-tr-[7rem] rounded-br-[7rem] bg-[#E3DDC5] flex-cc">
           <div className="w-12 h-[7rem] rotate-30 flex-col flex-cb text-zinc-300">
             <Dialog open={paused} onOpenChange={() => setPaused(!paused)}>
               <DialogTrigger onClick={() => setPaused(true)}>
@@ -131,7 +130,7 @@ export default function ProjectSection() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -144,17 +143,17 @@ const Project = ({ currentProject }: { currentProject: number }) => {
       <motion.div
         initial={{ opacity: 0.7, x: 10 }}
         animate={{ opacity: 1, x: 0 }}
-        className="w-full h-[85%] flex-cc overflow-hidden"
+        className="w-full h-[85%] flex-cc overflow-hidden rounded-[5px]"
       >
         <Image
           src={projects[currentProject].media.images[0]}
           alt={projects[currentProject].name}
           width={600}
           height={300}
-          className="w-full h-auto rounded-[3px]"
+          className="w-full h-auto"
         />
       </motion.div>
-      <div className="w-[80%]">
+      <div className="w-full">
         <motion.h1
           initial={{ opacity: 0.8, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
