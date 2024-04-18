@@ -4,7 +4,6 @@ import { aboutConfig } from "@/config/about";
 import { ExperienceSection } from "./Experience";
 import SocialIcons from "@/components/Socials/SocialIcons";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Console from "@src/components/console";
 
 export const HeroSection = () => {
@@ -35,7 +34,7 @@ export const HeroSection = () => {
         <p className="text-sm tracking-wide">stack agnostic developer &gt; Jack of all trades, master of some</p>
         <div className="flex gap-4 align-middle flex-wrap my-5">
           <Button asChild variant="outline" size="sm" className="btn-press hover:bg-background">
-            <Link href="/#contact">Get in touch</Link>
+            <a href="https://cal.com/rds-agi" target="_blank" referrerPolicy="no-referrer">Get in touch</a>
           </Button>
           <SocialIcons />
         </div>
