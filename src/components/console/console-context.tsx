@@ -2,10 +2,16 @@
 
 import { createContext, useContext, useState } from "react";
 
-type GameStateType = {
+type ConsoleStateType = {
   on: boolean;
   sound: boolean;
   music: boolean;
 }
 
-export const ConsoleContext = createContext({})
+
+
+export const ConsoleContext = createContext<ConsoleStateType>({
+  on: false,
+  sound: true,
+  music: true,
+});
