@@ -181,6 +181,10 @@
   box-shadow: 0px 0px 0 hsl(var(--accent));
 }
 
+.console-btn-sm {
+  @apply w-10 h-10 rounded-full bg-zinc-600 flex-cc cursor-pointer hover:scale-105 transform-gpu transition-transform duration-150;
+}
+
 .navbar-clip {
   position: relative;
   clip-path: polygon(
