@@ -38,7 +38,7 @@ const TechBox: React.FC<TechBoxProps> = (props) => {
       id={props.pinId.replace("pin", "div")}
       ref={props.boxRef}
       className={cn(
-        "relative w-36 h-36 p-2 flex justify-center items-center border rounded-xl bg-secondary/20 backdrop-blur-md z-20 border-gradient",
+        "relative w-36 h-36 p-2 flex-cc border rounded-xl bg-secondary/20 backdrop-blur-md z-20 border-gradient",
         borderMap[direction] || ""
       )}
       style={{
@@ -134,7 +134,7 @@ export const TechStack = () => {
       {renderTechBoxes(techs.stage4, "stage4", refs.stage4.techbox)}
       <div
         id="cpu"
-        className="absolute w-40 h-20 rounded-2xl border flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20"
+        className="absolute w-40 h-20 rounded-2xl border flex-cc top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20"
       >
         {renderPins(5, "stage1", refs.stage1.pins)}
         {renderPins(2, "stage2", refs.stage2.pins)}
@@ -143,7 +143,7 @@ export const TechStack = () => {
 
         <div
           id="placeholder"
-          className="absolute w-40 h-20 rounded-2xl border flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20"
+          className="absolute w-40 h-20 rounded-2xl border flex-cc top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20"
         >
           <h1 className="font-heading text-2xl primary-gradient">TechStack</h1>
         </div>
