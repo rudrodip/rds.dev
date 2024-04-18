@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --background: 42 100% 95%;
@@ -140,7 +140,11 @@
 }
 
 #experience::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0rem;
+}
+
+#experience:hover::-webkit-scrollbar {
+  width: 0.2rem;
 }
 
 #experience::-webkit-scrollbar-track {
@@ -182,14 +186,14 @@
   clip-path: polygon(
     0 0,
     100% 0,
-    100% 20px,
-    100% calc(100% - 20px),
-    calc(100% - 20px) 100%,
-    20px 100%,
-    0 calc(100% - 20px),
-    0 20px
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px),
+    0 10px
   );
-  background: hsl(var(--border));
+  background: hsl(var(--card));
 }
 
 .navbar-clip-border {
@@ -201,20 +205,24 @@
   clip-path: polygon(
     0 0,
     100% 0,
-    100% 18px,
-    100% calc(100% - 18px),
-    calc(100% - 18px) 100%,
-    18px 100%,
-    0 calc(100% - 18px),
-    0 18px
+    100% 11px,
+    100% calc(100% - 11px),
+    calc(100% - 11px) 100%,
+    11px 100%,
+    0 calc(100% - 11px),
+    0 11px
   );
-  background: hsl(var(--card));
+  background: hsl(var(--secondary));
   z-index: -1;
 }
 
 .navbar-clip-content {
   position: relative;
   z-index: 2;
+}
+
+.br-console {
+  @apply border-[#908683]
 }
 
 /* Tailwind Styles */
@@ -253,4 +261,16 @@
 
 .sticky-center-horizontal {
   @apply sticky;
+}
+
+.flex-cc {
+  @apply flex items-center justify-center;
+}
+
+.flex-cc-col {
+  @apply flex flex-col items-center justify-center;
+}
+
+.flex-cb {
+  @apply flex items-center justify-between;
 }
