@@ -109,7 +109,7 @@ export default function RootLayout({
           <Provider>
             <div className="flex flex-col min-h-screen">
               <div className="flex-grow">
-                <header className="z-40 flex justify-center items-center">
+                <header className="z-40 flex-cc">
                   <Navbar />
                 </header>
                 <MiniNavbar />
