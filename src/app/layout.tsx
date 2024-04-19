@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Metadata } from "next/types";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Provider } from "@/components/wallet/Provider";
+import { CanvasProvider } from "@src/components/console/console-context";
 import Navbar from "@/components/Navbar/DefaultNavbar";
 import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
@@ -107,17 +108,19 @@ export default function RootLayout({
       <body className={cn(inter.variable, fontHeading.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Provider>
-            <div className="flex flex-col min-h-screen">
-              <div className="flex-grow">
-                <header className="z-40 flex-cc">
-                  <Navbar />
-                </header>
-                <MiniNavbar />
-                <RootCanvas />
-                <div className="app">{children}</div>
+            <CanvasProvider>
+              <div className="flex flex-col min-h-screen">
+                <div className="flex-grow">
+                  <header className="z-40 flex-cc">
+                    <Navbar />
+                  </header>
+                  <MiniNavbar />
+                  <RootCanvas />
+                  <div className="app">{children}</div>
+                </div>
+                <Footer />
               </div>
-              <Footer />
-            </div>
+            </CanvasProvider>
           </Provider>
         </ThemeProvider>
       </body>
