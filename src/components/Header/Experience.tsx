@@ -16,23 +16,13 @@ export const ExperienceSection = () => {
       after:h-20
       after:z-10
       after:absolute
-      
-      before:content['']
-      before:to-transparent
-      before:from-background/30
-      before:bg-gradient-to-b
-      before:right-0
-      before:top-[40px]
-      before:w-full
-      before:h-20
-      before:z-10
-      before:absolute
       "
     >
-      <h1 className="text-4xl font-bold mb-3 z-50">
-        Experiences
-      </h1>
-      <div id="experience" className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">
+      <h1 className="text-4xl font-bold mb-3 z-50">Experiences</h1>
+      <div
+        id="experience"
+        className="relative flex flex-col justify-between h-[350px] overflow-y-scroll"
+      >
         {experiencesConfig.map((experience, index) => (
           <Experience key={index} experience={experience} />
         ))}
@@ -50,17 +40,17 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
     <div className="relative flex gap-2 items-start text-md pb-4">
       <span
         className="
-                  mt-2 w-3 h-3 rounded-full icon-glow-muted
-                  before:content['']
-                  before:to-primary/40
-                  before:from-primary/40
-                  before:bg-gradient-to-t
-                  before:left-[5px]
-                  before:top-5
-                  before:w-[1px]
-                  before:h-full
-                  before:absolute
-                  "
+          mt-2 w-3 h-3 rounded-full icon-glow-muted
+          before:content['']
+          before:to-primary/40
+          before:from-primary/40
+          before:bg-gradient-to-t
+          before:left-[5px]
+          before:top-5
+          before:w-[1px]
+          before:h-full
+          before:absolute
+        "
       ></span>
       <div>
         <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
