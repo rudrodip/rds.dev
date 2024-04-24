@@ -2,14 +2,11 @@ import "@/styles/globals.css";
 import { Metadata } from "next/types";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Provider } from "@/components/wallet/Provider";
-import { CanvasProvider } from "@src/components/console/console-context";
 import Navbar from "@/components/Navbar/DefaultNavbar";
 import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
-import { MiniNavbar } from "@/components/Navbar/MiniNavbar";
-import { RootCanvas } from "@/components/Canvas/root-canvas";
 
 const inter = localFont({
   src: "../../assets/fonts/pp_agrandir_regular.woff2",
@@ -17,7 +14,7 @@ const inter = localFont({
 });
 
 const fontHeading = localFont({
-  src: "../../assets/fonts/pp_agrandir_regular.woff2",
+  src: "../../assets/fonts/CalSans-semibold.woff2",
   variable: "--font-heading",
 });
 
@@ -108,19 +105,15 @@ export default function RootLayout({
       <body className={cn(inter.variable, fontHeading.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Provider>
-            <CanvasProvider>
               <div className="flex flex-col min-h-screen">
                 <div className="flex-grow">
-                  <header className="z-40 flex-cc">
+                  <header className="z-40 flex-cc sticky top-2">
                     <Navbar />
                   </header>
-                  <MiniNavbar />
-                  <RootCanvas />
                   <div className="app">{children}</div>
                 </div>
                 <Footer />
               </div>
-            </CanvasProvider>
           </Provider>
         </ThemeProvider>
       </body>
