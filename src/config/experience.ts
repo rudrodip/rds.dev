@@ -2,36 +2,41 @@ import type { Experience } from "@/types";
 
 export const experiencesConfig: Experience[] = [
   {
-    title: "Founder",
-    employmentType: "Founder & CTO",
-    company: {
-      name: "Sonicrypt",
-      url: "https://sonicrypt.vercel.app"
+    "title": "Founder & Chief Technology Officer",
+    "employmentType": "Founder & CTO",
+    "company": {
+      "name": "Sonicrypt",
+      "url": "https://sonicrypt.vercel.app"
     },
-    location: { name: "Remote" },
-    start: "April, 2024",
-    end: "Present",
-    description: [
-      "Developed Sonicrypt base model",
-      "Developed Sonicrypt app for configuring it",
-      "Developed Sonicrypt website",
+    "location": {
+      "name": "Remote"
+    },
+    "start": "April 2024",
+    "end": "Present",
+    "description": [
+      "Founded Sonicrypt to improve crypto transaction experience.",
+      "Developed the Sonicrypt device with audio/visual payment confirmations.",
+      "Integrated low-latency blockchain tech for real-time updates.",
+      "Supported multiple wallets and customizable audio/visuals.",
+      "Built React Native app for device configuration and management.", 
+      "Created Next.js website for product showcase and community."
     ]
-  },
-  {
-    title: "Head of IT",
-    employmentType: "Core Team member",
-    company: {
-      name: "Bettre Institute",
-      url: "https://bettreinstitute.com",
-    },
-    location: { name: "Remote" },
-    start: "November, 2023",
-    end: "Present",
-    description: [
-      "Currently developing AI solutions for empowering L.M.S in our platform",
-      "Developed the official website for Bettre Institute",
-    ],
-  },
+   },
+  // {
+  //   title: "Head of IT",
+  //   employmentType: "Core Team member",
+  //   company: {
+  //     name: "Bettre Institute",
+  //     url: "https://bettreinstitute.com",
+  //   },
+  //   location: { name: "Remote" },
+  //   start: "November, 2023",
+  //   end: "Present",
+  //   description: [
+  //     "Currently developing AI solutions for empowering L.M.S in our platform",
+  //     "Developed the official website for Bettre Institute",
+  //   ],
+  // },
   {
     title: "Fullstack developer",
     employmentType: "Open Source contributor",
