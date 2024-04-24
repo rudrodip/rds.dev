@@ -4,8 +4,8 @@ export const aboutConfig: AboutConfig = {
   name: "Rudrodip Sarker",
   bio: "Fullstack developer",
   description:
-    "I am Rudrodip Sarker, an enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
-  image: "https://rudrodip.tech/logo.png",
+    "Fullstack developer | built different? no, build different",
+  image: "https://mini.rudrodip.tech/logo.png",
   address: "Rajshahi, Bangladesh",
   phone: "+8801778881194",
   links: {
