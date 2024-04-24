@@ -4,7 +4,7 @@ import { Experience as ExperienceType } from "@/types";
 export const ExperienceSection = () => {
   return (
     <section
-      className="relative mt-10 overflow-hidden
+      className="relative mt-5 overflow-hidden
       w-full max-w-xl
       after:content['']
       after:to-transparent
@@ -18,7 +18,7 @@ export const ExperienceSection = () => {
       after:absolute
       "
     >
-      <h1 className="text-4xl font-bold mb-3 z-50">Experiences</h1>
+      <h1 className="text-2xl font-bold mb-3 z-50">Experiences</h1>
       <div
         id="experience"
         className="relative flex flex-col justify-between h-[350px] overflow-y-scroll"
