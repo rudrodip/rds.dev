@@ -17,7 +17,7 @@ export default function ProjectSm({
       <p className="text-sm truncate">{description}</p>
       <div className="flex gap-2 mt-2 items-center">
         <p className="text-sm bg-accent/50 group-hover:bg-secondary/50 p-1">
-          {primaryLanguage.name}
+          {primaryLanguage?.name}
         </p>
         {forkCount > 0 && (
           <p className="text-sm bg-accent/50 group-hover:bg-secondary/50 p-1">
