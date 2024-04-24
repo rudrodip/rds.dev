@@ -4,12 +4,12 @@ import { ogImageSchema } from "@/lib/validations/og";
 export const runtime = "edge";
 
 const interRegular = fetch(
-  new URL("../../../../assets/fonts/Inter-Regular.ttf", import.meta.url)
+  new URL("../../../../assets/fonts/pp_agrandir_regular.woff2", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 const interBold = fetch(
   new URL(
-    "../../../../assets/fonts/CalSans-SemiBold.ttf",
+    "../../../../assets/fonts/CalSans-SemiBold.woff2",
     import.meta.url
   )
 ).then((res) => res.arrayBuffer());
@@ -43,7 +43,7 @@ export async function GET(req: Request) {
           }}
         >
           <img
-            src="https://rudrodip.vercel.app/android-chrome-512x512.png"
+            src="https://rudrodip.vercel.app/icon.png"
             alt="rds_agi"
             width={120}
             height={120}
