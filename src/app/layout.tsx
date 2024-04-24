@@ -11,7 +11,7 @@ const inter = localFont({
 });
 
 const fontHeading = localFont({
-  src: "../../assets/fonts/CalSans-semibold.woff2",
+  src: "../../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 });
 

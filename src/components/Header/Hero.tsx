@@ -33,7 +33,7 @@ export const HeroSection = () => {
             <a href="https://cal.com/rds-agi" target="_blank" referrerPolicy="no-referrer">Get in touch</a>
           </Button>
           <Button asChild variant="outline" size="sm" className="relative btn-press hover:bg-background">
-            <a href="https://cal.com/rds-agi" target="_blank" referrerPolicy="no-referrer">
+            <a href="https://raw.githubusercontent.com/rudrodip/rudrodip/main/resume.pdf" target="_blank" referrerPolicy="no-referrer">
               Resume
               <span className="w-[8px] h-[8px] rounded-full absolute top-[-3px] right-[-3px] animate-ping bg-accent"></span>
             </a>
