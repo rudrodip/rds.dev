@@ -28,9 +28,10 @@ const DynamicLottieAnimation = dynamic(
 
 export default function Navbar() {
   return (
-    <div className="flex h-14 lg:h-15 w-full max-w-7xl items-center justify-start gap-2 py-6">
+    <div className="flex h-14 lg:h-15 max-w-3xl items-center justify-start gap-2 py-6 bg-secondary/60 backdrop-blur border border-accent/50 px-6 rounded-[10px]">
       <Logo />
       <NavMenu />
+      <ThemeToggleDropDown />
     </div>
   );
 }
