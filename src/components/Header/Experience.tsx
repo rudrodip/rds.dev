@@ -4,7 +4,7 @@ import { Experience as ExperienceType } from "@/types";
 export const ExperienceSection = () => {
   return (
     <section
-      className="relative mt-5 overflow-hidden
+      className="relative mt-7 overflow-hidden
       w-full max-w-xl
       after:content['']
       after:to-transparent
