@@ -23,7 +23,7 @@ export const navbarConfig: NavbarConfig = {
     },
     {
       title: "Contact",
-      href: "/#contact",
+      href: "/#footer",
     },
   ],
   miniNav: [

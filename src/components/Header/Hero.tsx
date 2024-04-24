@@ -5,10 +5,11 @@ import { ExperienceSection } from "./Experience";
 import SocialIcons from "@/components/Socials/SocialIcons";
 import { Button } from "@/components/ui/button";
 import TechStack from "./tech-stack";
+import ProjectSection from "../Project/project-section";
 
 export const HeroSection = () => {
   return (
-    <section className="max-w-2xl mx-auto flex-cc my-6 md:my-10">
+    <section className="max-w-xl mx-auto flex-cc my-12 md:my-10">
       <div className="w-full flex flex-col justify-center">
         <div className="flex flex-col justify-center">
           <h1 className="head-text-md">{aboutConfig.name}</h1>
@@ -31,7 +32,7 @@ export const HeroSection = () => {
           <Button asChild variant="outline" size="sm" className="btn-press hover:bg-background">
             <a href="https://cal.com/rds-agi" target="_blank" referrerPolicy="no-referrer">Get in touch</a>
           </Button>
-          <Button asChild variant="outline" size="sm" className="relative btn-press hover:bg-background rounded-tr-[5px]">
+          <Button asChild variant="outline" size="sm" className="relative btn-press hover:bg-background">
             <a href="https://cal.com/rds-agi" target="_blank" referrerPolicy="no-referrer">
               Resume
               <span className="w-[8px] h-[8px] rounded-full absolute top-[-3px] right-[-3px] animate-ping bg-accent"></span>
@@ -41,6 +42,7 @@ export const HeroSection = () => {
         </div>
         <ExperienceSection />
         <TechStack />
+        <ProjectSection />
       </div>
     </section>
   );

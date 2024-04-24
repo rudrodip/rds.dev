@@ -13,9 +13,9 @@ export default function TechStack() {
 
 const KVRenderer = ({ category, value }: Record<string, string>) => {
   return (
-    <li className="list-disc flex gap-2 font-light">
+    <li className="list-disc flex gap-2 font-thin">
       <span className="font-semibold">{category}: </span>
-      <span>{value}</span>
+      <span className="text-muted-foreground">{value}</span>
     </li>
   )
 }

@@ -85,7 +85,7 @@ export const projects: Project[] = [
       "SciPy",
     ],
     links: {
-      "Blog": "https://rudrodip.tech/blog/harmonic-oscillation-analyzer",
+      "Website": "https://rudrodip.tech/blog/harmonic-oscillation-analyzer",
       "Demo": "https://www.youtube.com/watch?v=dalsCsHtreU&t=1220s",
     }
   },

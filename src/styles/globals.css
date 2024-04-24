@@ -2,50 +2,54 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-  --background: 42 100% 95%;
-  --foreground: 42 5% 0%;
-  --card: 42 50% 90%;
-  --card-foreground: 42 5% 10%;
-  --popover: 42 100% 95%;
-  --popover-foreground: 42 100% 0%;
-  --primary: 42 19.6% 80%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 53 70% 90%;
-  --secondary-foreground: 0 0% 0%;
-  --muted: 4 30% 85%;
-  --muted-foreground: 42 5% 35%;
-  --accent: 4 30% 80%;
-  --accent-foreground: 42 5% 10%;
-  --destructive: 0 100% 30%;
-  --destructive-foreground: 42 5% 90%;
-  --border: 42 30% 50%;
-  --input: 42 30% 18%;
-  --ring: 42 19.6% 80%;
-  --radius: 0rem;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
 }
-.dark {
-  --background: 42 50% 5%;
-  --foreground: 42 5% 90%;
-  --card: 42 50% 0%;
-  --card-foreground: 42 5% 90%;
-  --popover: 42 50% 5%;
-  --popover-foreground: 42 5% 90%;
-  --primary: 42 19.6% 80%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 42 30% 10%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 4 30% 15%;
-  --muted-foreground: 42 5% 60%;
-  --accent: 4 30% 15%;
-  --accent-foreground: 42 5% 90%;
-  --destructive: 0 100% 30%;
-  --destructive-foreground: 42 5% 90%;
-  --border: 42 30% 18%;
-  --input: 42 30% 18%;
-  --ring: 42 19.6% 80%;
-  --radius: 0rem;
-}
+
 
 @layer base {
   * {
@@ -63,31 +67,6 @@
   height: 10px;
   background-color: hsl(var(--accent));
   border-radius: 50%;
-}
-
-.underline_animation {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.underline_animation::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-  background-color: hsl(var(--primary));
-  transform: scaleX(0);
-  transform-origin: bottom left;
-  transition: transform 0.3s ease;
-}
-
-.underline_animation:hover::after {
-  transform: scaleX(1);
 }
 
 .mdx-heading {
@@ -179,54 +158,6 @@
 .btn-press:active {
   transform: translateX(2px) translateY(2px);
   box-shadow: 0px 0px 0 hsl(var(--accent));
-}
-
-.console-btn-sm {
-  @apply w-10 h-10 rounded-full bg-zinc-600 flex-cc cursor-pointer hover:scale-105 transform-gpu transition-transform duration-150;
-}
-
-.navbar-clip {
-  position: relative;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 10px,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    10px 100%,
-    0 calc(100% - 10px),
-    0 10px
-  );
-  background: hsl(var(--card));
-}
-
-.navbar-clip-border {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 11px,
-    100% calc(100% - 11px),
-    calc(100% - 11px) 100%,
-    11px 100%,
-    0 calc(100% - 11px),
-    0 11px
-  );
-  background: hsl(var(--secondary));
-  z-index: -1;
-}
-
-.navbar-clip-content {
-  position: relative;
-  z-index: 2;
-}
-
-.br-console {
-  @apply border-[#908683]
 }
 
 /* Tailwind Styles */

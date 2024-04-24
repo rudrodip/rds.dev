@@ -1,9 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next/types";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Provider } from "@/components/wallet/Provider";
-import Navbar from "@/components/Navbar/DefaultNavbar";
-import Footer from "@/components/Footer/Footer";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
@@ -104,17 +101,11 @@ export default function RootLayout({
       </head>
       <body className={cn(inter.variable, fontHeading.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Provider>
-              <div className="flex flex-col min-h-screen">
-                <div className="flex-grow">
-                  <header className="z-40 flex-cc sticky top-2">
-                    <Navbar />
-                  </header>
-                  <div className="app">{children}</div>
-                </div>
-                <Footer />
-              </div>
-          </Provider>
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-grow">
+              <div className="app">{children}</div>
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

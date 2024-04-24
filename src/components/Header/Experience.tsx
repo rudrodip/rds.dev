@@ -21,7 +21,7 @@ export const ExperienceSection = () => {
       <h1 className="text-2xl font-bold mb-3 z-50">Experiences</h1>
       <div
         id="experience"
-        className="relative flex flex-col justify-between h-[350px] overflow-y-scroll"
+        className="relative flex flex-col justify-between h-[250px] overflow-y-scroll"
       >
         {experiencesConfig.map((experience, index) => (
           <Experience key={index} experience={experience} />
@@ -53,7 +53,7 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
         "
       ></span>
       <div>
-        <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
+        {/* <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1> */}
         <div className="">
           <a
             href={experience.company.url}

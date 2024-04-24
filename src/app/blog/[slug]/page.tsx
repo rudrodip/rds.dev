@@ -9,7 +9,6 @@
 import { notFound } from "next/navigation";
 import { allAuthors, allPosts } from "contentlayer/generated";
 
-import { env } from "@env.mjs";
 import { Mdx } from "@/components/mdxComponent";
 import BlogHeaderAnimation from "@/components/blog-header-animation";
 import { getTableOfContents } from "@/lib/toc";
@@ -47,7 +46,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const url = env.NEXT_PUBLIC_APP_URL;
+  const url = process.env.NEXT_PUBLIC_APP_URL;
 
   const ogUrl = new URL(`${url}/api/og`);
   ogUrl.searchParams.set("heading", post.title);
