@@ -17,7 +17,7 @@ export const ExperienceSection = () => {
       after:z-10
       after:absolute"
     >
-      <h1 className="text-4xl primary-gradient font-bold tracking-tighter mb-3 z-50">
+      <h1 className="text-4xl font-bold tracking-tighter mb-3 z-50">
         Experiences
       </h1>
       <div className="relative flex flex-col justify-between h-[350px] overflow-y-scroll">
@@ -51,12 +51,12 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
                   "
       ></span>
       <div>
-        <h1 className="text-lg primary-gradient mb-1">{experience.title}</h1>
+        {/* <h1 className="text-lg mb-1">{experience.title}</h1> */}
         <div className="">
           <a
             href={experience.company.url}
             target="_blank"
-            className="hover:underline font-semibold primary-gradient"
+            className="hover:underline font-semibold"
           >
             {experience.company.name}
           </a>
