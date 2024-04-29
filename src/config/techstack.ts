@@ -44,12 +44,6 @@ export const techStack: Tech[] = [
     experience: 0.7,
   },
   {
-    name: "MongoDB",
-    icon: "/assets/images/techlogo/mongodb.svg",
-    color: "#45A538",
-    experience: 0.7,
-  },
-  {
     name: "Firebase",
     icon: "/assets/images/techlogo/firebase.svg",
     color: "#f58220",
@@ -66,18 +60,6 @@ export const techStack: Tech[] = [
     icon: "/assets/images/techlogo/redux.svg",
     color: "#764abc",
     experience: 0.8,
-  },
-  {
-    name: "Recoil",
-    icon: "/assets/images/techlogo/recoil.svg",
-    color: "#764abc",
-    experience: 0.8,
-  },
-  {
-    name: "NestJS",
-    icon: "/assets/images/techlogo/nestjs.png",
-    color: "#b52d3f",
-    experience: 0.7,
   },
   {
     name: "Flutter",
@@ -98,40 +80,16 @@ export const techStack: Tech[] = [
     experience: 0.8,
   },
   {
-    name: "Git",
-    icon: "/assets/images/techlogo/git.png",
-    color: "#0db7ed",
-    experience: 0.8,
-  },
-  {
-    name: "Github",
-    icon: "/assets/images/techlogo/github.svg",
-    color: "#0db7ed",
-    experience: 0.8,
-  },
-  {
     name: "Python",
     icon: "/assets/images/techlogo/python.svg",
     color: "#306998",
     experience: 0.9,
   },
   {
-    name: "Flask",
-    icon: "/assets/images/techlogo/flask.svg",
-    color: "#306998",
-    experience: 0.7,
-  },
-  {
     name: "FastAPI",
     icon: "/assets/images/techlogo/fastapi.svg",
     color: "#306998",
     experience: 0.8,
-  },
-  {
-    name: "Langchain",
-    icon: "/assets/images/techlogo/langchain.jpeg",
-    color: "#306998",
-    experience: 0.7,
   },
   {
     name: "OpenCV",
@@ -164,40 +122,10 @@ export const techStack: Tech[] = [
     experience: 0.8,
   },
   {
-    name: "C++",
-    icon: "/assets/images/techlogo/cpp.svg",
-    color: "#306998",
-    experience: 0.5,
-  },
-  {
-    name: "Rust",
-    icon: "/assets/images/techlogo/rust.svg",
-    color: "#306998",
-    experience: 0.5,
-  },
-  {
-    name: "Apache Kafka",
-    icon: "/assets/images/techlogo/kafka.svg",
-    color: "#306998",
-    experience: 0.5,
-  },
-  {
     name: "Redis",
     icon: "/assets/images/techlogo/redis.svg",
     color: "#306998",
     experience: 0.7,
-  },
-  {
-    name: "BullMQ",
-    icon: "/assets/images/techlogo/bullmq.png",
-    color: "#306998",
-    experience: 0.6,
-  },
-  {
-    name: "AWS",
-    icon: "/assets/images/techlogo/aws.svg",
-    color: "#306998",
-    experience: 0.6,
   },
   {
     name: "Selenium",
@@ -210,12 +138,6 @@ export const techStack: Tech[] = [
     icon: "/assets/images/techlogo/playwright.svg",
     color: "#306998",
     experience: 0.6,
-  },
-  {
-    name: "Puppeteer",
-    icon: "/assets/images/techlogo/puppeteer.png",
-    color: "#306998",
-    experience: 0.8,
   },
   {
     name: "Electron js",
