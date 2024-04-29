@@ -64,7 +64,7 @@ const CodeQuote = () => {
             code.
           </strong>
         </span>
-        <span className="text-right font-heading text-lg primary-gradient">
+        <span className="text-right text-lg tracking-wide">
           - Linus Torvald
         </span>
       </span>
