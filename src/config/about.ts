@@ -1,10 +1,10 @@
 import { AboutConfig } from "@/types";
 
 export const aboutConfig: AboutConfig = {
-  name: "Rudrodip Sarker",
-  bio: "Fullstack Dev | I turn ideas into M.V.P. & take M.V.P.s to production",
+  name: "Rudro Dip Sarker",
+  bio: "Fullstack Developer | stack agnostic",
   description:
-    "I am Rudrodip Sarker, an enthusiast computer programmer building webapps, mobile apps, backend, python scripts for automation, embedded systems programming, robotics, and visualizing mathematical concepts using programming.",
+    "Hey, Rudro here! 👋 I'm a stack agnostic fullstack developer. What I build? web applications, mobile applications, robots, electronic devices, chrome extension, cli tool and ... anything you can think of. Do I work on blockchain? yes I do, search for 'sonicrypt' on google. Do I make AI products? yes I do",
   image: "https://rudrodip.tech/android-chrome-512x512.png",
   address: "Rajshahi, Bangladesh",
   phone: "+8801778881194",
