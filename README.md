@@ -1,3 +1,14 @@
+# Notice
+
+**This repository has been archived. New portfolio here: [https://rdsx.dev](https://rdsx.dev) & repo [rudrodip/rdsx.dev](https://github.com/rudrodip/rdsx.dev)**
+
+This project will not get any updates from now on. Keep an eye on the latest repo if you're interested.
+
+This project will still be deployed at [old.rdsx.dev](https://old.rdsx.dev)
+
+For more updates, follow me on [x (formerly twitter)](https://x.com/rds_agi)
+
+---
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
